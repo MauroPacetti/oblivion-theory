@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background-color: #0a0a10; --panel-background: rgba(20, 20, 30, 0.8);
+            --text-color: #c0c0d0; --heading-color: #ffffff; --accent-color: #00aaff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Roboto', sans-serif; line-height: 1.8; background-color: var(--background-color);
+            background-image: url('images/sfondo-oblivion.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: var(--text-color);
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+        .sticky-header {
+            position: sticky; top: 0; width: 100%; z-index: 1000; background: rgba(10, 10, 20, 0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .header-container {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 15px 20px;
+        }
+        .logo a {
+            font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--heading-color);
+            text-decoration: none; font-weight: 700;
+        }
+        .main-nav a {
+            color: var(--text-color); text-decoration: none; margin: 0 15px; font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active { color: var(--accent-color); }
+        .language-switcher button {
+            background: none; border: 1px solid var(--text-color); color: var(--text-color);
+            padding: 5px 10px; margin-left: 5px; cursor: pointer; transition: all 0.3s ease;
+        }
+        .language-switcher button.active {
+            background-color: var(--accent-color); border-color: var(--accent-color); color: #fff;
+        }
+        .hero {
+            min-height: 90vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 20px;
+            color: var(--heading-color); text-shadow: 0 2px 15px rgba(0,0,0,0.8);
+        }
+        .hero-title { font-family: 'Orbitron', sans-serif; font-size: 4rem; margin-bottom: 15px; }
+        .hero-subtitle { font-size: 1.8rem; font-weight: 300; margin-bottom: 40px; opacity: 0.9; }
+        .cta-button {
+            display: inline-block; background-color: var(--accent-color); color: #fff;
+            padding: 15px 35px; text-decoration: none; border-radius: 50px;
+            font-size: 1.1rem; font-weight: bold; transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+        }
+        .cta-button:hover { background-color: transparent; color: var(--accent-color); transform: scale(1.05); }
+        .section-panel {
+            background-color: var(--panel-background); border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1); position: relative;
+            z-index: 10; margin-bottom: 40px;
+        }
+        #home .section-panel { margin-top: -80px; }
+        .section-panel h2 {
+            font-family: 'Orbitron', sans-serif; text-align: center; font-size: 2.5rem;
+            margin-bottom: 40px; color: var(--heading-color);
+        }
+        .key-points-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+        .key-point {
+            background-size: cover; background-position: center; border-radius: 8px;
+            min-height: 200px; position: relative; overflow: hidden;
+            color: #fff; text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .key-point-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            height: 100%; display: flex; flex-direction: column;
+            justify-content: flex-end; opacity: 0.8; transition: opacity 0.4s ease;
+        }
+        .key-point:hover .key-point-overlay { opacity: 1; }
+        .key-point h4 { font-size: 1.4rem; margin-bottom: 5px; }
+        .key-point p { font-size: 0.9rem; }
+        
+        .index-list { list-style: none; padding: 0; columns: 2; column-gap: 40px; }
+        .index-item {
+            padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            break-inside: avoid-column;
+        }
+        .index-item:first-child { padding-top: 0; }
+        .index-item h4 { font-size: 1.2rem; margin-bottom: 8px; }
+        .index-item h4 a { color: var(--heading-color); text-decoration: none; transition: color 0.3s ease; }
+        .index-item h4 a:hover { color: var(--accent-color); }
+        .item-description { font-size: 0.95rem; opacity: 0.7; margin-bottom: 12px; font-style: italic; }
+        .appendix-link { display: block; margin-left: 20px; margin-top: 8px; font-size: 0.9rem; }
+        .appendix-link a { color: var(--text-color); text-decoration: none; transition: color 0.3s, padding-left 0.3s; }
+        .appendix-link a:hover { color: var(--accent-color); padding-left: 5px; }
+        .appendix-math::before { content: '∑ '; color: var(--accent-color); font-weight: bold; }
+        .appendix-philo::before { content: '✧ '; color: var(--accent-color); font-weight: bold; }
+
+        .about-content { display: flex; align-items: center; gap: 40px; }
+        .about-photo { flex-shrink: 0; width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color); }
+        .about-text p { margin-bottom: 20px; }
+        .footer { background-color: #000; text-align: center; padding: 30px 20px; }
+        .footer-quote { font-style: italic; opacity: 0.6; margin-top: 10px; font-size: 0.9rem; }
+        @media (max-width: 900px) {
+            .index-list { columns: 1; }
+        }
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 10px; }
+            .main-nav { width: 100%; display: flex; justify-content: space-around; }
+            .main-nav a { margin: 0 5px; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .key-points-grid { grid-template-columns: 1fr; }
+            .about-content { flex-direction: column; text-align: center; }
+        }
+        .lang-content { display: none; }
+        body.lang-en .lang-content[lang="en"] { display: inline; }
+        body.lang-it .lang-content[lang="it"] { display: inline; }
+                /* ======================================================== */
+        /* ====== STILI PER LA NUOVA SEZIONE "PRINCIPIO UNIFICANTE" ===== */
+        /* ======================================================== */
+        .unifying-principle-section {
+            padding: 60px 0;
+        }
+        .unifying-content {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 30px;
+        }
+        .unifying-text {
+            text-align: right;
+        }
+        .unifying-text.microcosm {
+            text-align: left;
+        }
+        .unifying-text h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        .unifying-image img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 25px var(--glow-color);
+        }
+        @media (max-width: 768px) {
+            .unifying-content {
+                grid-template-columns: 1fr;
+            }
+                    .unifying-image {
+            justify-self: center; /* Aggiungi questa riga per centrare l'immagine */
+        }
+            .unifying-text, .unifying-text.microcosm {
+                text-align: center;
+            }
+            .unifying-image {
+                order: -1; /* Mette l'immagine in cima su mobile */
+                margin-bottom: 30px;
+            }
+        }
+                .title-link { text-decoration: none; }
+        .unifying-image-link { display: block; transition: transform 0.3s ease; }
+        .unifying-image-link:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="#home"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="#sommario"><span class="lang-content" lang="it">Sommario</span><span class="lang-content" lang="en">Index</span></a>
+                <a href="#download">Download</a>
+                <a href="#autore"><span class="lang-content" lang="it">L'Autore</span><span class="lang-content" lang="en">The Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>.
+            </nav>
+            <div class="language-switcher"><button id="lang-it" class="lang-btn active">IT</button><button id="lang-en" class="lang-btn">EN</button></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <!-- ================================================================ -->
+            <!-- ======== NUOVO BLOCCO HERO SECTION (DA SOSTITUIRE) ============= -->
+            <!-- ================================================================ -->
+
+            <div class="hero">
+                <h1 class="hero-title">
+                    <span class="lang-content" lang="it">L'Architettura Invisibile del Tempo</span>
+                    <span class="lang-content" lang="en">The Invisible Architecture of Time</span>
+                </h1>
+                <h3 class="hero-subtitle">
+                    <span class="lang-content" lang="it">Una nuova prospettiva sulla struttura della realtà.</span>
+                    <span class="lang-content" lang="en">A new perspective on the fabric of reality.</span>
+                </h3>
+                <a href="principio-unificante.html" class="cta-button">
+                    <span class="lang-content" lang="it">Inizia il Viaggio</span>
+                    <span class="lang-content" lang="en">Begin the Journey</span>
+                </a>
+            </div>
+                        <!-- ================================================================= -->
+            <!-- ======== NUOVO BLOCCO SINTESI DA SOSTITUIRE ===================== -->
+            <!-- ================================================================= -->
+            
+            <div class="container section-panel">
+                <h2>
+                    <span class="lang-content" lang="it">Un Ponte tra Due Mondi</span>
+                    <span class="lang-content" lang="en">A Bridge Between Two Worlds</span>
+                </h2>
+                <p style="text-align: center; font-size: 1.2em; font-style: italic;">
+                    <span class="lang-content" lang="it">“Il Tempo di Oblivion (⊖) è la chiave nascosta che unisce due mondi rimasti a lungo separati: quello della relatività, dove il tempo si dilata vicino ai buchi neri, e quello della meccanica quantistica, dove ogni particella sembra obbedire all’indeterminazione. Dove Einstein e Heisenberg si ignorano, questa teoria li costringe a parlarsi, rivelando che entrambi descrivono lo stesso ritmo invisibile che pulsa alla base dell’universo.”</span>
+                    <span class="lang-content" lang="en">“The Oblivion Time (⊖) is the hidden key that unites two worlds long kept separate: that of relativity, where time dilates near black holes, and that of quantum mechanics, where every particle seems to obey indeterminacy. Where Einstein and Heisenberg ignore each other, this theory forces them to speak, revealing that both describe the same invisible rhythm pulsing at the foundation of the universe.”</span>
+                </p>
+                
+                                <!-- ================================================================== -->
+                <!-- NUOVO BLOCCO KEY-POINTS CON LINK (DA SOSTITUIRE) -->
+                <!-- ================================================================== -->
+                
+                <div class="key-points-grid">
+                    <!-- Link per Unificazione -->
+                    <a href="capitolo15.html" class="key-point-link">
+                        <div class="key-point" style="background-image: url('images/icona-fisica.png');">
+                            <div class="key-point-overlay">
+                                <h4>
+                                    <span class="lang-content" lang="it">Unificazione</span>
+                                    <span class="lang-content" lang="en">Unification</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-content" lang="it">Relatività e Meccanica Quantistica diventano due facce della stessa realtà discreta.</span>
+                                    <span class="lang-content" lang="en">Relativity and Quantum Mechanics become two sides of the same discrete reality.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Link per Misteri Quantistici -->
+                    <a href="capitolo10.html" class="key-point-link">
+                        <div class="key-point" style="background-image: url('images/icona-quantistica.png');">
+                            <div class="key-point-overlay">
+                                <h4>
+                                    <span class="lang-content" lang="it">Misteri Quantistici</span>
+                                    <span class="lang-content" lang="en">Quantum Mysteries</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-content" lang="it">L'entanglement e l'indeterminazione trovano una spiegazione meccanicistica.</span>
+                                    <span class="lang-content" lang="en">Entanglement and indeterminacy find a mechanistic explanation.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Link per Enigmi Cosmologici -->
+                    <a href="capitolo11.html" class="key-point-link">
+                        <div class="key-point" style="background-image: url('images/icona-cosmologica.png');">
+                             <div class="key-point-overlay">
+                                <h4>
+                                    <span class="lang-content" lang="it">Enigmi Cosmologici</span>
+                                    <span class="lang-content" lang="en">Cosmological Puzzles</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-content" lang="it">Vengono proposte soluzioni per la Materia Oscura e la natura del Big Bang.</span>
+                                    <span class="lang-content" lang="en">Solutions are proposed for Dark Matter and the nature of the Big Bang.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Link per Teoria Falsificabile -->
+                    <a href="capitolo26.html" class="key-point-link">
+                         <div class="key-point" style="background-image: url('images/icona-sperimentale.png');">
+                            <div class="key-point-overlay">
+                                <h4>
+                                    <span class="lang-content" lang="it">Teoria Falsificabile</span>
+                                    <span class="lang-content" lang="en">Falsifiable Theory</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-content" lang="it">Include proposte sperimentali concrete per verificare la granularità del tempo.</span>
+                                    <span class="lang-content" lang="en">It includes concrete experimental proposals to verify the granularity of time.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ================================================================== -->
+                <!-- FINE NUOVO BLOCCO KEY-POINTS -->
+                <!-- ================================================================== -->
+                </div>
+            </div>
+        </section>
+                <!-- ================================================================ -->
+        <!-- ========= SEZIONE PRINCIPIO UNIFICANTE CON LINK ATTIVI ========== -->
+        <!-- ================================================================ -->
+
+        <section id="unifying-principle" class="unifying-principle-section">
+            <div class="container section-panel">
+                <a href="principio-unificante.html" class="title-link">
+                    <h2>
+                        <span class="lang-content" lang="it">Il Principio di Relatività Ritmica</span>
+                        <span class="lang-content" lang="en">The Principle of Rhythmic Relativity</span>
+                    </h2>
+                </a>
+                <p style="text-align: center; margin-bottom: 40px;">
+                    <span class="lang-content" lang="it">La Relatività Generale e la Meccanica Quantistica non parlano lingue diverse. Obbediscono alla stessa identica legge fondamentale.</span>
+                    <span class="lang-content" lang="en">General Relativity and Quantum Mechanics do not speak different languages. They obey the same fundamental law.</span>
+                </p>
+
+                <div class="unifying-content">
+                    
+                    <div class="unifying-text">
+                        <h4>
+                            <span class="lang-content" lang="it">Il Macrocosmo</span>
+                            <span class="lang-content" lang="en">The Macrocosm</span>
+                        </h4>
+                        <p>
+                            <span class="lang-content" lang="it">Un osservatore vicino a un <strong>buco nero</strong> ha un ritmo ⊖ lentissimo. Guardando la Terra, non la vedrebbe scorrere, ma <strong>saltare</strong> a scatti.</span>
+                            <span class="lang-content" lang="en">An observer near a <strong>black hole</strong> has an extremely slow ⊖ rhythm. Looking at Earth, they would see it <strong>jump</strong> in snapshots.</span>
+                        </p>
+                    </div>
+
+                    <a href="principio-unificante.html" class="unifying-image-link">
+                        <div class="unifying-image">
+                            <img src="images/unifying-principle.png" alt="Dal Macrocosmo al Microcosmo">
+                        </div>
+                    </a>
+
+                    <div class="unifying-text microcosm">
+                        <h4>
+                            <span class="lang-content" lang="it">Il Microcosmo</span>
+                            <span class="lang-content" lang="en">The Microcosm</span>
+                        </h4>
+                        <p>
+                            <span class="lang-content" lang="it">Un osservatore sulla Terra ha un ritmo ⊖ lentissimo rispetto a un <strong>elettrone</strong>. Guardandolo, non lo vede scorrere, ma <strong>saltare</strong> a scatti.</span>
+                            <span class="lang-content" lang="en">An observer on Earth has an extremely slow ⊖ rhythm compared to an <strong>electron</strong>. Looking at it, they see it <strong>jump</strong> in snapshots.</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; font-size: 1.2em; font-style: italic; margin-top: 40px; color: var(--heading-color);">
+                    <span class="lang-content" lang="it">L'indeterminazione quantistica e la dilatazione temporale relativistica sono due manifestazioni dello stesso, unico principio.</span>
+                    <span class="lang-content" lang="en">Quantum indeterminacy and relativistic time dilation are two manifestations of the same, single principle.</span>
+                </p>
+                <!-- AGGIUNGI QUESTO BLOCCO ALLA FINE DELLA SEZIONE "PRINCIPIO UNIFICANTE" -->
+                <!-- AGGIUNGI QUESTO BLOCCO ALLA FINE DELLA SEZIONE "PRINCIPIO UNIFICANTE" -->
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="dimostrazione.html" class="cta-button" style="margin: 5px;">
+        <span class="lang-content" lang="it">Leggi la Dimostrazione (vs. Einstein)</span>
+        <span class="lang-content" lang="en">Read the Proof (vs. Einstein)</span>
+    </a>
+    <a href="calcolo-oblivion.html" class="cta-button" style="margin: 5px;">
+        <span class="lang-content" lang="it">Come si Calcola ⊖</span>
+        <span class="lang-content" lang="en">How to Calculate ⊖</span>
+    </a>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="dimostrazione.html" class="cta-button">
+        <span class="lang-content" lang="it">Leggi la Dimostrazione Tecnica</span>
+        <span class="lang-content" lang="en">Read the Technical Demonstration</span>
+    </a>
+</div>
+                <!-- NUOVA SEZIONE PULSANTI -->
+                <div style="text-align: center; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+                    <a href="principio-unificante.html" class="cta-button" style="margin: 5px;">
+                        <span class="lang-content" lang="it">Leggi la Spiegazione</span>
+                        <span class="lang-content" lang="en">Read the Explanation</span>
+                    </a>
+                    <a href="dimostrazione-muoni.html" class="cta-button" style="margin: 5px;">
+                        <span class="lang-content" lang="it">Vedi un Caso di Studio Reale</span>
+                        <span class="lang-content" lang="en">See a Real Case Study</span>
+                     </a>
+                    <a href="dimostrazione-gps.html" class="cta-button" style="margin: 5px;">
+                        <span class="lang-content" lang="it">Caso di Studio: Il GPS</span>
+                        <span class="lang-content" lang="en">Case Study: The GPS</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- =========== FINE NUOVA SEZIONE: IL PRINCIPIO UNIFICANTE =========== -->
+        <!-- ================================================================ -->
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- =========== FINE NUOVA SEZIONE: IL PRINCIPIO UNIFICANTE =========== -->
+        <!-- ================================================================ -->
+        <section id="sommario">
+            <div class="container section-panel">
+                <h2><span class="lang-content" lang="it">Indice Dettagliato</span><span class="lang-content" lang="en">Detailed Index</span></h2>
+                <ul class="index-list">
+                    <li class="index-item">
+                        <h4><a href="prefazione.html"><span class="lang-content" lang="it">Prefazione</span><span class="lang-content" lang="en">Preface</span></a></h4>
+                        <p class="item-description"><span class="lang-content" lang="it">Origine dell’intuizione. L’esperienza personale, Montecarlo...</span><span class="lang-content" lang="en">Origin of the intuition. The personal experience, Monte Carlo...</span></p>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo1.html"><span class="lang-content" lang="it">Capitolo 1 – Il Presente Istantaneo</span><span class="lang-content" lang="en">Chapter 1 – The Instantaneous Present</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo1-mat.html"><span class="lang-content" lang="it">Appendice Mat. 1: Introduzione alla discontinuità temporale</span><span class="lang-content" lang="en">Math Appendix 1: Introduction to temporal discontinuity</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo1-philo.html"><span class="lang-content" lang="it">Appendice Fil. 1: L’essenza dell’istante e il mito del tempo continuo</span><span class="lang-content" lang="en">Phil. Appendix 1: The essence of the instant and the myth of continuous time</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo2.html"><span class="lang-content" lang="it">Capitolo 2 – Il Tempo di Oblivion</span><span class="lang-content" lang="en">Chapter 2 – The Oblivion Time</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo2-mat.html"><span class="lang-content" lang="it">Appendice Mat. 2: Formulazione di ⊖ e confronto con il tempo di Planck</span><span class="lang-content" lang="en">Math Appendix 2: Formulation of ⊖ and comparison with Planck time</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo2-philo.html"><span class="lang-content" lang="it">Appendice Fil. 2: Oblio, silenzio, assenza: il tempo che non c’è</span><span class="lang-content" lang="en">Phil. Appendix 2: Oblivion, silence, absence: the time that is not</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo3.html"><span class="lang-content" lang="it">Capitolo 3 – La Quantizzazione del Tempo</span><span class="lang-content" lang="en">Chapter 3 – The Quantization of Time</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo3-mat.html"><span class="lang-content" lang="it">Appendice Mat. 3: Modelli discreti e analogie con il sampling</span><span class="lang-content" lang="en">Math Appendix 3: Discrete models and analogies with sampling</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo3-philo.html"><span class="lang-content" lang="it">Appendice Fil. 3: Il ritmo della realtà, dal battito al pensiero</span><span class="lang-content" lang="en">Phil. Appendix 3: The rhythm of reality, from beat to thought</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo4.html"><span class="lang-content" lang="it">Capitolo 4 – La Percezione Umana e il Tempo</span><span class="lang-content" lang="en">Chapter 4 – Human Perception and Time</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo4-mat.html"><span class="lang-content" lang="it">Appendice Mat. 4: fₒᵦₛ = k · P_brain / m_brain</span><span class="lang-content" lang="en">Math Appendix 4: fₒᵦₛ = k · P_brain / m_brain</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo4-philo.html"><span class="lang-content" lang="it">Appendice Fil. 4: Percepire è ricostruire: lo scotoma temporale</span><span class="lang-content" lang="en">Phil. Appendix 4: To perceive is to reconstruct: the temporal scotoma</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo5.html"><span class="lang-content" lang="it">Capitolo 5 – Velocità della Luce e Tempo di Oblivion</span><span class="lang-content" lang="en">Chapter 5 – Speed of Light and Oblivion Time</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo5-mat.html"><span class="lang-content" lang="it">Appendice Mat. 5: c = Δx / ⊖ ; reinterpretazione delle costanti</span><span class="lang-content" lang="en">Math Appendix 5: c = Δx / ⊖; reinterpretation of constants</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo5-philo.html"><span class="lang-content" lang="it">Appendice Fil. 5: Luce, onnipresenza e tempo zero</span><span class="lang-content" lang="en">Phil. Appendix 5: Light, omnipresence, and zero time</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo6.html"><span class="lang-content" lang="it">Capitolo 6 – Il Tempo di Oblivion e la Massa</span><span class="lang-content" lang="en">Chapter 6 – Oblivion Time and Mass</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo6-mat.html"><span class="lang-content" lang="it">Appendice Mat. 6: Relazione tra massa, campo gravitazionale e Δ⊖</span><span class="lang-content" lang="en">Math Appendix 6: Relation between mass, gravitational field and Δ⊖</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo6-philo.html"><span class="lang-content" lang="it">Appendice Fil. 6: Il peso del tempo</span><span class="lang-content" lang="en">Phil. Appendix 6: The weight of time</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo7.html"><span class="lang-content" lang="it">Capitolo 7 – Esperimenti Mentali Classici Riformulati</span><span class="lang-content" lang="en">Chapter 7 – Classic Thought Experiments Reformulated</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo7-mat.html"><span class="lang-content" lang="it">Appendice Mat. 7: Lorentz riletto in chiave discreta</span><span class="lang-content" lang="en">Math Appendix 7: Lorentz revisited in a discrete key</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo7-philo.html"><span class="lang-content" lang="it">Appendice Fil. 7: Esperire il paradosso</span><span class="lang-content" lang="en">Phil. Appendix 7: Experiencing the paradox</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo8.html"><span class="lang-content" lang="it">Capitolo 8 – Esperimenti Mentali Quantistici</span><span class="lang-content" lang="en">Chapter 8 – Quantum Thought Experiments</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo8-mat.html"><span class="lang-content" lang="it">Appendice Mat. 8: Tempo, funzione d’onda e collasso</span><span class="lang-content" lang="en">Math Appendix 8: Time, wave function and collapse</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo8-philo.html"><span class="lang-content" lang="it">Appendice Fil. 8: L’osservazione come atto di sincronia</span><span class="lang-content" lang="en">Phil. Appendix 8: Observation as an act of synchrony</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo9.html"><span class="lang-content" lang="it">Capitolo 9 – Il Paradosso dei Due Gemelli</span><span class="lang-content" lang="en">Chapter 9 – The Twin Paradox</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo9-mat.html"><span class="lang-content" lang="it">Appendice Mat. 9: Δn e differenza cumulativa</span><span class="lang-content" lang="en">Math Appendix 9: Δn and cumulative difference</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo9-philo.html"><span class="lang-content" lang="it">Appendice Fil. 9: Il viaggio è nel ritmo</span><span class="lang-content" lang="en">Phil. Appendix 9: The journey is in the rhythm</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo10.html"><span class="lang-content" lang="it">Capitolo 10 – Entanglement e Sincronia Quantizzata</span><span class="lang-content" lang="en">Chapter 10 – Entanglement and Quantized Synchrony</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo10-mat.html"><span class="lang-content" lang="it">Appendice Mat. 10: Analogia con Bell, sincronia e non-località</span><span class="lang-content" lang="en">Math Appendix 10: Analogy with Bell, synchrony and non-locality</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo10-philo.html"><span class="lang-content" lang="it">Appendice Fil. 10: L’armonia profonda come legame quantico</span><span class="lang-content" lang="en">Phil. Appendix 10: Deep harmony as a quantum bond</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo11.html"><span class="lang-content" lang="it">Capitolo 11 – Materia Oscura, Energia Oscura e Asincronia</span><span class="lang-content" lang="en">Chapter 11 – Dark Matter, Dark Energy, and Asynchrony</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo11-mat.html"><span class="lang-content" lang="it">Appendice Mat. 11: ⊖ fuori fase e modellazione del dark matter</span><span class="lang-content" lang="en">Math Appendix 11: Out-of-phase ⊖ and dark matter modeling</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo11-philo.html"><span class="lang-content" lang="it">Appendice Fil. 11: Il visibile e l’invisibile: la sincronia mancata</span><span class="lang-content" lang="en">Phil. Appendix 11: The visible and the invisible: the missed synchrony</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo12.html"><span class="lang-content" lang="it">Capitolo 12 – Risoluzione dei Paradossi</span><span class="lang-content" lang="en">Chapter 12 – Resolution of Paradoxes</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo12-mat.html"><span class="lang-content" lang="it">Appendice Mat. 12: Causalità e ordine in sequenze discrete</span><span class="lang-content" lang="en">Math Appendix 12: Causality and order in discrete sequences</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo12-philo.html"><span class="lang-content" lang="it">Appendice Fil. 12: Il paradosso è nell’occhio dell’osservatore</span><span class="lang-content" lang="en">Phil. Appendix 12: The paradox is in the eye of the beholder</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo13.html"><span class="lang-content" lang="it">Capitolo 13 – ⊖ nel Microcosmo</span><span class="lang-content" lang="en">Chapter 13 – ⊖ in the Microcosm</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo13-mat.html"><span class="lang-content" lang="it">Appendice Mat. 13: Tempo di Planck e salto minimo nello spazio</span><span class="lang-content" lang="en">Math Appendix 13: Planck time and minimum jump in space</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo13-philo.html"><span class="lang-content" lang="it">Appendice Fil. 13: La danza delle particelle e il battito dell’universo</span><span class="lang-content" lang="en">Phil. Appendix 13: The dance of particles and the beat of the universe</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo14.html"><span class="lang-content" lang="it">Capitolo 14 – Nuova Misurabilità Quantica</span><span class="lang-content" lang="en">Chapter 14 – New Quantum Measurability</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo14-mat.html"><span class="lang-content" lang="it">Appendice Mat. 14: Superamento dell’indeterminazione</span><span class="lang-content" lang="en">Math Appendix 14: Overcoming indeterminacy</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo14-philo.html"><span class="lang-content" lang="it">Appendice Fil. 14: Dalla probabilità alla trasparenza</span><span class="lang-content" lang="en">Phil. Appendix 14: From probability to transparency</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo15.html"><span class="lang-content" lang="it">Capitolo 15 – Unificazione con la Fisica Classica</span><span class="lang-content" lang="en">Chapter 15 – Unification with Classical Physics</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo15-mat.html"><span class="lang-content" lang="it">Appendice Mat. 15: Maxwell, Newton, moto armonico e tempo discreto</span><span class="lang-content" lang="en">Math Appendix 15: Maxwell, Newton, harmonic motion and discrete time</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo15-philo.html"><span class="lang-content" lang="it">Appendice Fil. 15: Continuità apparente, realtà discreta</span><span class="lang-content" lang="en">Phil. Appendix 15: Apparent continuity, discrete reality</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo16.html"><span class="lang-content" lang="it">Capitolo 16 – Principio di Minima Azione Riformulato</span><span class="lang-content" lang="en">Chapter 16 – Principle of Least Action Reformulated</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo16-mat.html"><span class="lang-content" lang="it">Appendice Mat. 16: S → Min(Δn)</span><span class="lang-content" lang="en">Math Appendix 16: S → Min(Δn)</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo16-philo.html"><span class="lang-content" lang="it">Appendice Fil. 16: La via più breve è quella con meno click</span><span class="lang-content" lang="en">Phil. Appendix 16: The shortest path is the one with the fewest clicks</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo17.html"><span class="lang-content" lang="it">Capitolo 17 – Riformulazione della Meccanica Quantistica</span><span class="lang-content" lang="en">Chapter 17 – Reformulation of Quantum Mechanics</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo17-mat.html"><span class="lang-content" lang="it">Appendice Mat. 17: Schrödinger su n⊖</span><span class="lang-content" lang="en">Math Appendix 17: Schrödinger on n⊖</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo17-philo.html"><span class="lang-content" lang="it">Appendice Fil. 17: Il tempo non scorre, la realtà salta</span><span class="lang-content" lang="en">Phil. Appendix 17: Time doesn't flow, reality jumps</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo18.html"><span class="lang-content" lang="it">Capitolo 18 – Architettura della Realtà</span><span class="lang-content" lang="en">Chapter 18 – Architecture of Reality</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo18-mat.html"><span class="lang-content" lang="it">Appendice Mat. 18: Rete ⊖ tridimensionale e topologia discreta</span><span class="lang-content" lang="en">Math Appendix 18: 3D ⊖ network and discrete topology</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo18-philo.html"><span class="lang-content" lang="it">Appendice Fil. 18: L’impalcatura dell’invisibile</span><span class="lang-content" lang="en">Phil. Appendix 18: The scaffolding of the invisible</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo19.html"><span class="lang-content" lang="it">Capitolo 19 – Il Multiverso Asincrono</span><span class="lang-content" lang="en">Chapter 19 – The Asynchronous Multiverse</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo19-mat.html"><span class="lang-content" lang="it">Appendice Mat. 19: Universi paralleli e configurazioni di ⊖</span><span class="lang-content" lang="en">Math Appendix 19: Parallel universes and ⊖ configurations</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo19-philo.html"><span class="lang-content" lang="it">Appendice Fil. 19: L’universo come poliritmia</span><span class="lang-content" lang="en">Phil. Appendix 19: The universe as polyrhythm</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo20.html"><span class="lang-content" lang="it">Capitolo 20 – IA e Computazione Quantistica</span><span class="lang-content" lang="en">Chapter 20 – AI and Quantum Computation</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo20-mat.html"><span class="lang-content" lang="it">Appendice Mat. 20: ⊖ e architetture computazionali</span><span class="lang-content" lang="en">Math Appendix 20: ⊖ and computational architectures</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo20-philo.html"><span class="lang-content" lang="it">Appendice Fil. 20: Macchine che vedono il click</span><span class="lang-content" lang="en">Phil. Appendix 20: Machines that see the click</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo21.html"><span class="lang-content" lang="it">Capitolo 21 – Tracce nella Fisica Classica</span><span class="lang-content" lang="en">Chapter 21 – Traces in Classical Physics</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo21-mat.html"><span class="lang-content" lang="it">Appendice Mat. 21: Esempi misurabili su piccola scala</span><span class="lang-content" lang="en">Math Appendix 21: Measurable small-scale examples</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo21-philo.html"><span class="lang-content" lang="it">Appendice Fil. 21: L’evidenza era già sotto i nostri occhi</span><span class="lang-content" lang="en">Phil. Appendix 21: The evidence was already before our eyes</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo22.html"><span class="lang-content" lang="it">Capitolo 22 – ⊖ e l’Osservazione</span><span class="lang-content" lang="en">Chapter 22 – ⊖ and Observation</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo22-mat.html"><span class="lang-content" lang="it">Appendice Mat. 22: Funzioni di osservazione</span><span class="lang-content" lang="en">Math Appendix 22: Observation functions</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo22-philo.html"><span class="lang-content" lang="it">Appendice Fil. 22: Guardare è generare sincronia</span><span class="lang-content" lang="en">Phil. Appendix 22: To look is to generate synchrony</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo23.html"><span class="lang-content" lang="it">Capitolo 23 – Clessidra e Discrezione del Tempo</span><span class="lang-content" lang="en">Chapter 23 – Hourglass and Discretion of Time</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo23-mat.html"><span class="lang-content" lang="it">Appendice Mat. 23: Modelli discreti di flusso temporale</span><span class="lang-content" lang="en">Math Appendix 23: Discrete models of temporal flow</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo23-philo.html"><span class="lang-content" lang="it">Appendice Fil. 23: Il suono del tempo a scatti</span><span class="lang-content" lang="en">Phil. Appendix 23: The sound of time in snapshots</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo24.html"><span class="lang-content" lang="it">Capitolo 24 – La Coscienza Fuori dal Tempo</span><span class="lang-content" lang="en">Chapter 24 – Consciousness Outside of Time</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo24-mat.html"><span class="lang-content" lang="it">Appendice Mat. 24: Coscienza come osservatore esterno</span><span class="lang-content" lang="en">Math Appendix 24: Consciousness as an external observer</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo24-philo.html"><span class="lang-content" lang="it">Appendice Fil. 24: Pensare è guardare da fuori</span><span class="lang-content" lang="en">Phil. Appendix 24: To think is to watch from the outside</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo25.html"><span class="lang-content" lang="it">Capitolo 25 – Sincronia, Intuizione e Presente Assoluto</span><span class="lang-content" lang="en">Chapter 25 – Synchrony, Intuition, and the Absolute Present</span></a></h4>
+                        <div class="appendix-link appendix-math"><a href="capitolo25-mat.html"><span class="lang-content" lang="it">Appendice Mat. 25: Picchi di sincronia</span><span class="lang-content" lang="en">Math Appendix 25: Peaks of synchrony</span></a></div>
+                        <div class="appendix-link appendix-philo"><a href="capitolo25-philo.html"><span class="lang-content" lang="it">Appendice Fil. 25: Illuminazione come coincidenza</span><span class="lang-content" lang="en">Phil. Appendix 25: Illumination as coincidence</span></a></div>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo26.html"><span class="lang-content" lang="it">Capitolo 26 – Idee per la Sperimentazione</span><span class="lang-content" lang="en">Chapter 26 – Ideas for Experimentation</span></a></h4>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="capitolo27.html"><span class="lang-content" lang="it">Capitolo 27 – Oblio e Divino</span><span class="lang-content" lang="en">Chapter 27 – Oblivion and the Divine</span></a></h4>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="epilogo.html"><span class="lang-content" lang="it">Epilogo</span><span class="lang-content" lang="en">Epilogue</span></a></h4>
+                    </li>
+                    <li class="index-item">
+                        <h4><a href="faq.html"><span class="lang-content" lang="it">FAQ: Domande Frequenti</span><span class="lang-content" lang="en">FAQ: Frequently Asked Questions</span></a></h4>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+              <!-- ================================================================ -->
+        <!-- ========= SEZIONE DOWNLOAD CORRETTA E CENTRATA =================== -->
+        <!-- ================================================================ -->
+
+        <section id="download">
+             <div class="container section-panel text-center">
+                <h2>Download</h2>
+                <p>
+                    <span class="lang-content" lang="it">Leggi il saggio completo in formato PDF. L'opera include tutti i 27 capitoli, le appendici matematiche, le appendici filosofiche e le proposte sperimentali.</span>
+                    <span class="lang-content" lang="en">Read the complete essay in PDF format. The work includes all 27 chapters, the mathematical appendices, the philosophical appendices, and the experimental proposals.</span>
+                </p>
+                <a href="https://drive.google.com/file/d/1q7zljgvlKZdY3vc9HXMjidsLXms5ELPz/view?usp=sharing" target="_blank" class="cta-button">
+                    <span class="lang-content" lang="it">Scarica "La Teoria del Tempo di Oblivion" (PDF)</span>
+                    <span class="lang-content" lang="en">Download "The Oblivion Time Theory" (PDF)</span>
+                </a>
+            </div>
+        </section>
+        </section>
+
+                <!-- ================================================================ -->
+        <!-- ========= INIZIA LA NUOVA SEZIONE AUTORE ========================= -->
+        <!-- ================================================================ -->
+
+        <section id="autore">
+             <div class="container section-panel">
+                 <h2 class="text-center">
+                    <span class="lang-content" lang="it">Una Prospettiva Esterna</span>
+                    <span class="lang-content" lang="en">An Outsider's Perspective</span>
+                </h2>
+                 <div class="about-content">
+                    <img src="images/mauro-pacetti.jpg" alt="Foto di Mauro Pacetti" class="about-photo">
+                    <div class="about-text">
+                         <p>
+                            <span class="lang-content" lang="it">"Mi chiamo <strong>Mauro Pacetti</strong>. Non sono un fisico teorico di professione, ma un pensatore indipendente appassionato dei misteri fondamentali dell'universo. Questa teoria non è nata in un'aula universitaria, ma da un'intuizione fondamentale sulla natura del tempo.</span>
+                            <span class="lang-content" lang="en">"My name is <strong>Mauro Pacetti</strong>. I am not a professional theoretical physicist, but an independent thinker passionate about the fundamental mysteries of the universe. This theory was not born in a university classroom, but from a fundamental intuition about the nature of time.</span>
+                         </p>
+                         <p>
+                             <span class="lang-content" lang="it">Il mio status di 'outsider' mi ha permesso di esplorare connessioni libere dai dogmi accademici. Ho dedicato <strong>due anni</strong> a sviluppare questo sistema di pensiero in modo rigoroso e coerente, costruendo un'architettura matematica e filosofica completa.</span>
+                             <span class="lang-content" lang="en">My 'outsider' status has allowed me to explore connections free from academic dogma. I have dedicated <strong>two years</strong> to developing this system of thought in a rigorous and coherent manner, building a complete mathematical and philosophical architecture.</span>
+                         </p>
+                         <p>
+                             <span class="lang-content" lang="it">Il mio obiettivo non è imporre una verità, ma offrire una nuova prospettiva e stimolare un dibattito. Credo che le grandi idee possano nascere ovunque, e vi invito a giudicare quest'opera non sulla base della mia biografia, ma sulla forza e la coerenza del suo contenuto. Vi ringrazio per il vostro tempo e la vostra apertura mentale."</span>
+                             <span class="lang-content" lang="en">My goal is not to impose a truth, but to offer a new perspective and stimulate debate. I believe great ideas can arise anywhere, and I invite you to judge this work not on my biography, but on the strength and coherence of its content. Thank you for your time and your open mind."</span>
+                         </p>
+                    </div>
+                 </div>
+
+                 <!-- Biografia Estesa -->
+                 <div class="extended-bio">
+                    <h4>
+                        <span class="lang-content" lang="it">Biografia Estesa</span>
+                        <span class="lang-content" lang="en">Extended Biography</span>
+                    </h4>
+                    <p>
+                        <span class="lang-content" lang="it">Sono nato a Chiaravalle, in provincia di Ancona, nel 1976. Dopo essermi diplomato come perito elettronico, ho proseguito i miei studi in psicologia all'Università di Urbino. Questo duplice percorso – tecnico e umanistico – ha sempre influenzato il mio modo di pensare, portandomi a cercare connessioni tra la logica scientifica e l'intuizione profonda della mente umana.</span>
+                        <span class="lang-content" lang="en">I was born in Chiaravalle, in the province of Ancona, in 1976. After graduating as an electronics technician, I continued my studies in psychology at the University of Urbino. This dual path—technical and humanistic—has always influenced my way of thinking, leading me to seek connections between scientific logic and the deep intuition of the human mind.</span>
+                    </p>
+                    <p>
+                        <span class="lang-content" lang="it">Nel corso della mia vita ho indossato molte maschere: sono musicista, imprenditore, tecnico dello spettacolo, padre, e soprattutto ricercatore di senso. Nel 1991 ho fondato la band Aydra, oggi riconosciuta come una delle realtà storiche del technical death metal italiano. Con gli Aydra ho pubblicato cinque album, di cui l’ultimo, <em>Leave to Nowhere</em> (2024), è un concept dedicato alla tragedia dei migranti eritrei.</span>
+                        <span class="lang-content" lang="en">Throughout my life, I have worn many masks: I am a musician, entrepreneur, live event technician, father, and above all, a seeker of meaning. In 1991, I founded the band Aydra, now recognized as a historic name in Italian technical death metal. With Aydra, I have released five albums, the latest of which, <em>Leave to Nowhere</em> (2024), is a concept album dedicated to the tragedy of Eritrean migrants.</span>
+                    </p>
+                    <p>
+                        <span class="lang-content" lang="it">Nel 2020 ho co-fondato Mosaiko, un’azienda specializzata in LEDwall e tecnologie per eventi. Mosaiko è cresciuta rapidamente, diventando un punto di riferimento nel settore fieristico e live show.</span>
+                        <span class="lang-content" lang="en">In 2020, I co-founded Mosaiko, a company specializing in LED walls and event technologies. Mosaiko has grown rapidly, becoming a benchmark in the trade show and live show industry.</span>
+                    </p>
+                     <p>
+                        <span class="lang-content" lang="it">Nel 2024 ho dato vita anche al progetto editoriale e discografico Distorted, con l’obiettivo di sostenere la scena metal indipendente italiana attraverso un modello economico innovativo, sostenibile e anti-algoritmico.</span>
+                        <span class="lang-content" lang="en">In 2024, I also launched the publishing and record label project Distorted, with the goal of supporting the independent Italian metal scene through an innovative, sustainable, and anti-algorithmic economic model.</span>
+                    </p>
+
+                    <h4>
+                        <span class="lang-content" lang="it">La Nascita della Teoria</span>
+                        <span class="lang-content" lang="en">The Birth of the Theory</span>
+                    </h4>
+                    <p>
+                        <span class="lang-content" lang="it">La Teoria del Tempo di Oblivion è nata da un momento di sospensione. Mi trovavo in una stanza d'albergo affacciata sul porto, al confine tra Francia e Montecarlo. Guardando le luci lampeggianti delle navi nella notte, mi sono chiesto: "Quanto dura davvero un istante?". Da quella domanda è nata un’intera visione della realtà: il tempo non come flusso continuo, ma come sequenza di presenti istantanei separati da un intervallo invisibile: il tempo di oblivion.</span>
+                        <span class="lang-content" lang="en">The Oblivion Time Theory was born from a moment of suspension. I was in a hotel room overlooking the harbor, on the border between France and Monte Carlo. Watching the flashing lights of the ships in the night, I asked myself: "How long does an instant truly last?". From that question, an entire vision of reality was born: time not as a continuous flow, but as a sequence of instantaneous presents separated by an invisible interval: the oblivion time.</span>
+                    </p>
+                    
+                    <h4>
+                        <span class="lang-content" lang="it">Obiettivi e Futuro</span>
+                        <span class="lang-content" lang="en">Goals and Future</span>
+                    </h4>
+                    <p>
+                        <span class="lang-content" lang="it">Il mio sogno è che questa teoria venga esaminata da menti aperte, umane e artificiali, per verificarne la validità. Ho deciso di pubblicarla liberamente e di renderla accessibile a chiunque voglia esplorarla. Parallelamente, sto lavorando a un libro che ne racconti il percorso umano e intellettuale: <em>L’Architettura dell’Invisibile</em>.</span>
+                        <span class="lang-content" lang="en">My dream is that this theory will be examined by open minds, both human and artificial, to verify its validity. I have decided to publish it freely and make it accessible to anyone who wishes to explore it. In parallel, I am working on a book that chronicles its human and intellectual journey: <em>The Architecture of the Invisible</em>.</span>
+                    </p>
+
+                    <h4>
+                        <span class="lang-content" lang="it">Contatti</span>
+                        <span class="lang-content" lang="en">Contact</span>
+                    </h4>
+                    <p>
+                        <span class="lang-content" lang="it">📩 Per collaborazioni, interviste, confronti o approfondimenti:</span>
+                        <span class="lang-content" lang="en">📩 For collaborations, interviews, discussions, or further details:</span>
+                        <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a>
+                    </p>
+                    <p>
+                        <span class="lang-content" lang="it">🌐 Altri progetti:</span>
+                        <span class="lang-content" lang="en">🌐 Other Projects:</span>
+                    </p>
+                    <ul class="projects-list">
+                        <li><span class="lang-content" lang="it">🎵 <strong>Aydra</strong> – Technical death metal band:</span><span class="lang-content" lang="en">🎵 <strong>Aydra</strong> – Technical death metal band:</span> <a href="http://www.aydra.it" target="_blank" rel="noopener noreferrer">www.aydra.it</a></li>
+                        <li><span class="lang-content" lang="it">🔧 <strong>Mosaiko</strong> – LEDwall e tecnologie per eventi:</span><span class="lang-content" lang="en">🔧 <strong>Mosaiko</strong> – LED walls and event technologies:</span> <a href="http://www.mosaiko.net" target="_blank" rel="noopener noreferrer">www.mosaiko.net</a></li>
+                        <li><span class="lang-content" lang="it">🔥 <strong>Distorted</strong> – Etichetta e network metal indipendente:</span><span class="lang-content" lang="en">🔥 <strong>Distorted</strong> – Independent metal label and network:</span> <a href="http://www.distortedprod.org" target="_blank" rel="noopener noreferrer">www.distortedprod.org</a></li>
+                    </ul>
+                 </div>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- ========= FINE DELLA NUOVA SEZIONE AUTORE ========================== -->
+        <!-- ================================================================ -->
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+        <p class="footer-quote">"Quid est ergo tempus? Si nemo ex me quaerat, scio; si quaerenti explicare velim, nescio." - Sant'Agostino</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn'); const body = document.body;
+            function switchLanguage(targetLang) {
+                body.classList.remove('lang-en', 'lang-it'); body.classList.add(`lang-${targetLang}`);
+                langButtons.forEach(btn => { btn.classList.toggle('active', btn.id === `lang-${targetLang}`); });
+                localStorage.setItem('preferredLanguage', targetLang);
+            }
+            langButtons.forEach(button => { button.addEventListener('click', function() { switchLanguage(this.id.split('-')[1]); }); });
+            const savedLang = localStorage.getItem('preferredLanguage'); switchLanguage(savedLang || 'it');
+            const sectionsForScroll = document.querySelectorAll('main > section');
+            const navLinksForScroll = document.querySelectorAll('.main-nav a');
+            function onScroll() {
+                let currentSectionId = '';
+                sectionsForScroll.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 150) { currentSectionId = section.getAttribute('id'); }
+                });
+                navLinksForScroll.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').endsWith(`#${currentSectionId}`)) { link.classList.add('active'); }
+                });
+            }
+            window.addEventListener('scroll', onScroll);
+        });
+    </script>
+
+</body>
+</html>

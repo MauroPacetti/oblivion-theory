@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 21 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo21.html" class="nav-arrow left" title="Torna al Capitolo 21"><span>◀</span></a>
+        <a href="capitolo21-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 21"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 21</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 21</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Esempi misurabili su piccola scala</span>
+                <span class="lang-content" lang="en">Measurable Small-Scale Examples</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Discretizzazione del moto uniforme</span><span class="lang-content" lang="en">1. Discretization of Uniform Motion</span></h3>
+                <p><span class="lang-content" lang="it">Un corpo in moto uniforme descrive una sequenza di posizioni fisse rilevate ogni intervallo ${\Theta}$.</span><span class="lang-content" lang="en">A body in uniform motion describes a sequence of fixed positions detected at each interval ${\Theta}$.</span></p>
+                <div class="formula-box">$$ x_n = x_0 + v \cdot n \cdot \Theta $$</div>
+                <ul>
+                    <li>$x_n$: <span class="lang-content" lang="it">posizione al click $n$</span><span class="lang-content" lang="en">position at click $n$</span></li>
+                    <li>$x_0$: <span class="lang-content" lang="it">posizione iniziale</span><span class="lang-content" lang="en">initial position</span></li>
+                    <li>$v$: <span class="lang-content" lang="it">velocità costante</span><span class="lang-content" lang="en">constant velocity</span></li>
+                    <li>${\Theta}$: <span class="lang-content" lang="it">Tempo di Oblivion</span><span class="lang-content" lang="en">Oblivion Time</span></li>
+                    <li>$n$: <span class="lang-content" lang="it">numero di click</span><span class="lang-content" lang="en">number of clicks</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">2. Discretizzazione dell’accelerazione gravitazionale</span><span class="lang-content" lang="en">2. Discretization of Gravitational Acceleration</span></h3>
+                <p><span class="lang-content" lang="it">In caduta libera, la legge classica $x = \frac{1}{2}gt^2$ diventa una somma discreta.</span><span class="lang-content" lang="en">In free fall, the classical law $x = \frac{1}{2}gt^2$ becomes a discrete sum.</span></p>
+                <div class="formula-box">$$ x_n = x_0 + \frac{1}{2} g (n \cdot \Theta)^2 = x_0 + \frac{1}{2} g n^2 \Theta^2 $$</div>
+                <p><span class="lang-content" lang="it">Possibile verifica: osservare se piccole deviazioni dalla curva continua emergono per eventi ultrarapidi.</span><span class="lang-content" lang="en">Possible verification: observing if small deviations from the continuous curve emerge for ultra-fast events.</span></p>
+
+                <h3><span class="lang-content" lang="it">3. Discretizzazione del pendolo</span><span class="lang-content" lang="en">3. Discretization of the Pendulum</span></h3>
+                <p><span class="lang-content" lang="it">L'equazione del moto armonico $x(t) = A \cos(\omega t + \phi)$ diventa:</span><span class="lang-content" lang="en">The equation for harmonic motion $x(t) = A \cos(\omega t + \phi)$ becomes:</span></p>
+                <div class="formula-box">$$ x_n = A \cos(\omega n \Theta + \phi) $$</div>
+                <p><span class="lang-content" lang="it">Anomalia rilevabile: disallineamento progressivo tra modello e misura ad altissime frequenze.</span><span class="lang-content" lang="en">Detectable anomaly: progressive misalignment between the model and measurement at very high frequencies.</span></p>
+
+                <h3><span class="lang-content" lang="it">4. Quantizzazione di un’onda meccanica</span><span class="lang-content" lang="en">4. Quantization of a Mechanical Wave</span></h3>
+                <p><span class="lang-content" lang="it">Un'onda $y(x, t) = A \sin(kx - \omega t)$ viene riscritta quantizzando il tempo, o sia il tempo che lo spazio:</span><span class="lang-content" lang="en">A wave $y(x, t) = A \sin(kx - \omega t)$ is rewritten by quantizing time, or both time and space:</span></p>
+                <div class="formula-box">$$ y(x, n) = A \sin(kx - \omega n \Theta) \quad \text{o} \quad y(m, n) = A \sin(k m \Delta x - \omega n \Theta) $$</div>
+                
+                <h3><span class="lang-content" lang="it">5. Intervallo minimo tra eventi</span><span class="lang-content" lang="en">5. Minimum Interval Between Events</span></h3>
+                <p><span class="lang-content" lang="it">Ogni evento fisico deve avvenire in tempi separati almeno da ${\Theta}$.</span><span class="lang-content" lang="en">Every physical event must occur at times separated by at least ${\Theta}$.</span></p>
+                <div class="formula-box">$$ \Delta t \ge \Theta $$</div>
+                <p><span class="lang-content" lang="it">Per eventi apparentemente sincroni, si ipotizza $\Delta t = n \cdot \Theta$, con $n \in \mathbb{N}$. Questo permette di stimare un “ritardo minimo misurabile”.</span><span class="lang-content" lang="en">For apparently synchronous events, we hypothesize $\Delta t = n \cdot \Theta$, with $n \in \mathbb{N}$. This allows for the estimation of a "minimum measurable delay."</span></p>
+
+                <h3><span class="lang-content" lang="it">6. Frequenza massima osservabile</span><span class="lang-content" lang="en">6. Maximum Observable Frequency</span></h3>
+                <p><span class="lang-content" lang="it">La frequenza più alta compatibile con la discretizzazione è:</span><span class="lang-content" lang="en">The highest frequency compatible with discretization is:</span></p>
+                <div class="formula-box">$$ f_{max} = \frac{1}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">Nel caso del tempo di Planck, $f_{max} \approx 1.85 \times 10^{43}$ Hz. Se esiste un limite fisico alla frequenza osservabile in laboratorio, questo potrebbe essere legato a ${\Theta}$.</span><span class="lang-content" lang="en">In the case of Planck time, $f_{max} \approx 1.85 \times 10^{43}$ Hz. If a physical limit to the observable frequency in a laboratory exists, it could be related to ${\Theta}$.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

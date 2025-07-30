@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+    
+    <style>
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .faq-answer {
+            text-align: justify;
+        }
+    </style>
+    
+    <!-- Script per MathJax -->
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="epilogo.html" class="nav-arrow left" title="Torna all'Epilogo"><span>◀</span></a>
+        <a href="index.html" class="nav-arrow right" title="Torna alla Home"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Domande Frequenti (FAQ)</span>
+                <span class="lang-content" lang="en">Frequently Asked Questions (FAQ)</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Risposte semplici e chiare a dubbi, obiezioni e curiosità.</span>
+                <span class="lang-content" lang="en">Simple and clear answers to doubts, objections, and curiosities.</span>
+            </p>
+
+            <div class="content-body">
+                
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">1. Cos’è esattamente il Tempo di Oblivion (${\Theta}$)?</span><span class="lang-content" lang="en">1. What exactly is the Oblivion Time (${\Theta}$)?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">È l’intervallo minimo e indivisibile che separa due "fotogrammi" della realtà (presenti istantanei). In questo intervallo non esiste nulla: né moto, né energia, né tempo. È il “vuoto” quantizzato tra due stati dell’universo.</span><span class="lang-content" lang="en">It is the minimum and indivisible interval that separates two "frames" of reality (instantaneous presents). In this interval, nothing exists: no motion, no energy, no time. It is the quantized "void" between two states of the universe.</span></p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">2. È simile al tempo di Planck?</span><span class="lang-content" lang="en">2. Is it similar to Planck time?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">Sì, per le particelle fondamentali come l’elettrone, ${\Theta}$ coincide con il tempo de Planck. Tuttavia, ogni osservatore e sistema complesso ha un proprio tempo di oblivion effettivo, che può essere più lungo a causa della massa o della velocità.</span><span class="lang-content" lang="en">Yes, for fundamental particles like the electron, ${\Theta}$ coincides with Planck time. However, every observer and complex system has its own effective oblivion time, which can be longer due to mass or velocity.</span></p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">3. Se il tempo è discreto, perché ci sembra continuo?</span><span class="lang-content" lang="en">3. If time is discrete, why does it seem continuous to us?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">Per la stessa ragione per cui un film (fatto di fotogrammi statici) ci appare in movimento. Il nostro cervello ha una "frequenza di aggiornamento" molto più lenta dei "click" fondamentali della realtà. La coscienza colma i vuoti, creando un'illusione di fluidità.</span><span class="lang-content" lang="en">For the same reason a movie (made of static frames) appears to be in motion. Our brain has an "update frequency" that is much slower than the fundamental "clicks" of reality. Consciousness fills in the gaps, creating an illusion of fluidity.</span></p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">4. Il ${\Theta}$ è misurabile?</span><span class="lang-content" lang="en">4. Is ${\Theta}$ measurable?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">Non direttamente, perché è un'assenza di tempo e di eventi. Tuttavia, i suoi effetti sono teoricamente rilevabili, ad esempio attraverso micro-deviazioni nel comportamento di sistemi ad altissima frequenza o precisione (come orologi atomici).</span><span class="lang-content" lang="en">Not directly, because it is an absence of time and events. However, its effects are theoretically detectable, for example, through micro-deviations in the behavior of very high-frequency or high-precision systems (like atomic clocks).</span></p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">5. A cosa serve questa teoria?</span><span class="lang-content" lang="en">5. What is the purpose of this theory?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">Serve a unificare le contraddizioni tra meccanica quantistica e relatività, offrendo una spiegazione coerente per fenomeni come l'entanglement, la non-località e la natura della materia oscura, partendo da un unico, semplice principio.</span><span class="lang-content" lang="en">It serves to unify the contradictions between quantum mechanics and relativity, offering a coherent explanation for phenomena like entanglement, non-locality, and the nature of dark matter, starting from a single, simple principle.</span></p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">6. Come si collega ${\Theta}$ con la relatività di Einstein?</span><span class="lang-content" lang="en">6. How does ${\Theta}$ connect with Einstein's relativity?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">Einstein mostrò che il tempo rallenta con la gravità e la velocità. La Teoria di Oblivion spiega questo come una dilatazione dell'intervallo ${\Theta}$ tra i "click" della realtà. Il ritmo degli eventi rallenta, non il tempo stesso.</span><span class="lang-content" lang="en">Einstein showed that time slows down with gravity and velocity. The Oblivion Theory explains this as a dilation of the ${\Theta}$ interval between the "clicks" of reality. The rhythm of events slows down, not time itself.</span></p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">7. La coscienza è soggetta al Tempo di Oblivion?</span><span class="lang-content" lang="en">7. Is consciousness subject to Oblivion Time?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">No. La teoria postula che la coscienza sia un osservatore esterno alla griglia ${\Theta}$. Non "clicca", ma osserva e collega i click, creando la nostra percezione di un tempo fluido e continuo.</span><span class="lang-content" lang="en">No. The theory postulates that consciousness is an observer external to the ${\Theta}$ grid. It does not "click," but observes and connects the clicks, creating our perception of a fluid and continuous time.</span></p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">8. La teoria implica una visione deterministica?</span><span class="lang-content" lang="en">8. Does the theory imply a deterministic view?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">Non necessariamente. Anche se ogni presente istantaneo è definito, il passaggio da uno stato all’altro (che avviene "durante" ${\Theta}$) può contenere variabilità e biforcazioni. L'indeterminazione si sposta dal presente all'intervallo tra i presenti.</span><span class="lang-content" lang="en">Not necessarily. Although each instantaneous present is defined, the transition from one state to another (which occurs "during" ${\Theta}$) can contain variability and bifurcations. Indeterminacy shifts from the present to the interval between presents.</span></p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">9. Esistono universi paralleli?</span><span class="lang-content" lang="en">9. Do parallel universes exist?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">Sì. La teoria ipotizza l’esistenza di universi asincroni, che "esistono" nelle pause del nostro tempo, ovvero sono sfasati rispetto al nostro ritmo di ${\Theta}$. Per questo non li percepiamo direttamente, ma solo attraverso la loro influenza gravitazionale (materia oscura).</span><span class="lang-content" lang="en">Yes. The theory hypothesizes the existence of asynchronous universes, which "exist" in the pauses of our time, meaning they are out of phase with our rhythm of ${\Theta}$. This is why we do not perceive them directly, but only through their gravitational influence (dark matter).</span></p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question"><span class="lang-content" lang="it">10. Cosa rappresenta la morte in questa teoria?</span><span class="lang-content" lang="en">10. What does death represent in this theory?</span></p>
+                    <p class="faq-answer"><span class="lang-content" lang="it">È l'interruzione del ciclo di "click" personali di un osservatore. Non è un annullamento, ma una pausa indefinita. L'informazione che costituiva l'osservatore non si perde, ma cessa di aggiornarsi in una sequenza.</span><span class="lang-content" lang="en">It is the interruption of an observer's personal "click" cycle. It is not an annihilation, but an indefinite pause. The information that constituted the observer is not lost, but it ceases to update in a sequence.</span></p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

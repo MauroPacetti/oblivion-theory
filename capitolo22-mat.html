@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 22 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo22.html" class="nav-arrow left" title="Torna al Capitolo 22"><span>◀</span></a>
+        <a href="capitolo22-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 22"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 22</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 22</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Funzioni di osservazione e coerenza tra tempi</span>
+                <span class="lang-content" lang="en">Observation Functions and Coherence Between Times</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Tempo di oblivion dell’osservatore</span><span class="lang-content" lang="en">1. Observer's Oblivion Time</span></h3>
+                <p><span class="lang-content" lang="it">Ogni osservatore è caratterizzato da un proprio ritmo percettivo, ovvero un tempo di oblivion individuale (${\Theta_o}$):</span><span class="lang-content" lang="en">Each observer is characterized by their own perceptual rhythm, i.e., an individual oblivion time (${\Theta_o}$):</span></p>
+                <div class="formula-box">$$ \Theta_o = \frac{1}{f_{obs}} $$</div>
+                <p><span class="lang-content" lang="it">dove $f_{obs}$ è la frequenza di osservazione del cervello (o del sistema osservante).</span><span class="lang-content" lang="en">where $f_{obs}$ is the observation frequency of the brain (or the observing system).</span></p>
+
+                <h3><span class="lang-content" lang="it">2. Coerenza di osservazione</span><span class="lang-content" lang="en">2. Observation Coherence</span></h3>
+                <p><span class="lang-content" lang="it">Affinché un evento quantizzato sia osservabile, è necessario che il tempo di oblivion dell'osservatore ${\Theta_o}$ sia in risonanza compatibile con quello dell’evento ${\Theta_e}$:</span><span class="lang-content" lang="en">For a quantized event to be observable, the observer's oblivion time ${\Theta_o}$ must be in compatible resonance with that of the event ${\Theta_e}$:</span></p>
+                <div class="formula-box">$$ |\Theta_o - \Theta_e| < \varepsilon $$</div>
+                <p><span class="lang-content" lang="it">Dove $\varepsilon$ è una soglia minima di desincronizzazione. Se la differenza è superiore alla soglia, l'evento non è osservabile.</span><span class="lang-content" lang="en">Where $\varepsilon$ is a minimum desynchronization threshold. If the difference exceeds the threshold, the event is not observable.</span></p>
+                
+                <h3><span class="lang-content" lang="it">3. Funzione di coerenza</span><span class="lang-content" lang="en">3. Coherence Function</span></h3>
+                <p><span class="lang-content" lang="it">Definiamo una funzione di coerenza di osservazione $C(\Theta_o, \Theta_e)$ che descrive il grado di sincronizzazione (usando una distribuzione gaussiana):</span><span class="lang-content" lang="en">We define an observation coherence function $C(\Theta_o, \Theta_e)$ that describes the degree of synchronization (using a Gaussian distribution):</span></p>
+                <div class="formula-box">$$ C(\Theta_o, \Theta_e) = e^{ - \frac{(\Theta_o - \Theta_e)^2}{\sigma^2} } $$</div>
+                <ul>
+                    <li><span class="lang-content" lang="it">$\sigma$ è il parametro di tolleranza (legato a $\varepsilon$).</span><span class="lang-content" lang="en">$\sigma$ is the tolerance parameter (related to $\varepsilon$).</span></li>
+                    <li><span class="lang-content" lang="it">$C \to 1$ per ${\Theta_o \approx \Theta_e}$ (massima coerenza).</span><span class="lang-content" lang="en">$C \to 1$ for ${\Theta_o \approx \Theta_e}$ (maximum coherence).</span></li>
+                    <li><span class="lang-content" lang="it">$C \to 0$ per ${\Theta_o}$ molto diverso da ${\Theta_e}$.</span><span class="lang-content" lang="en">$C \to 0$ for ${\Theta_o}$ very different from ${\Theta_e}$.</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">4. Osservazione e collasso</span><span class="lang-content" lang="en">4. Observation and Collapse</span></h3>
+                <p><span class="lang-content" lang="it">L’osservazione provoca il collasso solo per gli stati sincronizzati. La probabilità di “vedere” o “far collassare” uno stato è proporzionale alla coerenza temporale:</span><span class="lang-content" lang="en">Observation causes collapse only for synchronized states. The probability of "seeing" or "collapsing" a state is proportional to the temporal coherence:</span></p>
+                <div class="formula-box">$$ P(\text{collasso}) \propto C(\Theta_o, \Theta_e) $$</div>
+
+                <h3><span class="lang-content" lang="it">5. Multiosservazione</span><span class="lang-content" lang="en">5. Multi-observation</span></h3>
+                <p><span class="lang-content" lang="it">Nel caso di più osservatori (es. un uomo e un’IA), si può definire una funzione collettiva di osservazione come somma dei contributi:</span><span class="lang-content" lang="en">In the case of multiple observers (e.g., a human and an AI), a collective observation function can be defined as the sum of the contributions:</span></p>
+                <div class="formula-box">$$ C_{total}(\Theta_e) = \sum_i C_i(\Theta_i, \Theta_e) $$</div>
+                <p><span class="lang-content" lang="it">Il numero effettivo di presenti che “collassano” nella realtà condivisa sarà proporzionale a questa somma.</span><span class="lang-content" lang="en">The effective number of presents that "collapse" into the shared reality will be proportional to this sum.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

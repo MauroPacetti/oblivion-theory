@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 25 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo25.html" class="nav-arrow left" title="Torna al Capitolo 25"><span>◀</span></a>
+        <a href="capitolo25-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 25"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 25</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 25</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Picchi di sincronia nella griglia temporale</span>
+                <span class="lang-content" lang="en">Peaks of Synchrony in the Temporal Grid</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nel modello basato sul Tempo di Oblivion, ogni entità fisica, inclusa la coscienza, si muove su questa griglia a una frequenza caratteristica.</span>
+                    <span class="lang-content" lang="en">In the model based on Oblivion Time, every physical entity, including consciousness, moves on this grid at a characteristic frequency.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">1. Frequenze temporali e armonizzazione</span><span class="lang-content" lang="en">1. Temporal Frequencies and Harmonization</span></h3>
+                <p><span class="lang-content" lang="it">Chiamiamo $f = 1/\Theta$ la frequenza quantica di un sistema. Dati tre sistemi (osservatore A, realtà B, coscienza C) con i loro rispettivi tempi di oblivion:</span><span class="lang-content" lang="en">Let's call $f = 1/\Theta$ the quantum frequency of a system. Given three systems (observer A, reality B, consciousness C) with their respective oblivion times:</span></p>
+                <div class="formula-box">$$ f_1 = 1/\Theta_1 \quad , \quad f_2 = 1/\Theta_2 \quad , \quad f_c = 1/\Theta_c $$</div>
+                <p><span class="lang-content" lang="it">Si ha un picco di sincronia quando si verifica una coincidenza perfetta tra i ritmi, per alcuni interi $n_1, n_2, n_c$:</span><span class="lang-content" lang="en">A peak of synchrony occurs when there is a perfect coincidence between the rhythms, for some integers $n_1, n_2, n_c$:</span></p>
+                <div class="formula-box">$$ n_1 \cdot \Theta_1 = n_2 \cdot \Theta_2 = n_c \cdot \Theta_c $$</div>
+                <p><span class="lang-content" lang="it">L'istante di sincronia $t_{sync}$ corrisponde al minimo comune multiplo (LCM) dei tempi di oblivion:</span><span class="lang-content" lang="en">The instant of synchrony $t_{sync}$ corresponds to the least common multiple (LCM) of the oblivion times:</span></p>
+                 <div class="formula-box">$$ t_{sync} = \text{LCM}(\Theta_1, \Theta_2, \Theta_c) $$</div>
+
+                <h3><span class="lang-content" lang="it">2. Funzione di sincronia istantanea</span><span class="lang-content" lang="en">2. Instantaneous Synchrony Function</span></h3>
+                <p><span class="lang-content" lang="it">Definiamo una funzione di sincronia locale $S(t)$ che vale 1 solo quando tutte le griglie si allineano:</span><span class="lang-content" lang="en">We define a local synchrony function $S(t)$ that equals 1 only when all grids align:</span></p>
+                <div class="formula-box">$$ S(t) = \delta_{\text{mod}}(t, \Theta_1) \cdot \delta_{\text{mod}}(t, \Theta_2) \cdot \delta_{\text{mod}}(t, \Theta_c) $$</div>
+                <p><span class="lang-content" lang="it">Dove $\delta_{\text{mod}}(t, \Theta) = 1$ se $t \pmod{\Theta} = 0$, e 0 altrimenti. In tale punto si ha massima coerenza.</span><span class="lang-content" lang="en">Where $\delta_{\text{mod}}(t, \Theta) = 1$ if $t \pmod{\Theta} = 0$, and 0 otherwise. At such a point, maximum coherence is achieved.</span></p>
+                
+                <h3><span class="lang-content" lang="it">3. Densità dei picchi</span><span class="lang-content" lang="en">3. Density of Peaks</span></h3>
+                <p><span class="lang-content" lang="it">La densità dei picchi di sincronia, $\rho_{sync}$, in un intervallo di tempo, dipende dall’inverso del LCM:</span><span class="lang-content" lang="en">The density of synchrony peaks, $\rho_{sync}$, in a time interval, depends on the inverse of the LCM:</span></p>
+                <div class="formula-box">$$ \rho_{sync} = \frac{1}{\text{LCM}(\Theta_1, \Theta_2, \Theta_c)} $$</div>
+                <p><span class="lang-content" lang="it">Maggiore è la compatibilità (armonia) tra i tempi, più frequenti saranno i momenti di sincronia assoluta. Minore è la compatibilità (dissonanza), più rari saranno questi picchi.</span><span class="lang-content" lang="en">The greater the compatibility (harmony) between the times, the more frequent the moments of absolute synchrony will be. The lesser the compatibility (dissonance), the rarer these peaks will be.</span></p>
+
+                <p>
+                    <span class="lang-content" lang="it">Questa struttura permette di interpretare momenti di “illuminazione” o “intuizione” come eventi emergenti da una rara coincidenza ritmica tra coscienza, realtà e griglia temporale.</span>
+                    <span class="lang-content" lang="en">This structure allows for the interpretation of moments of "enlightenment" or "intuition" as emergent events from a rare rhythmic coincidence between consciousness, reality, and the temporal grid.</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

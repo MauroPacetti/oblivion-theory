@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 23 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo23.html" class="nav-arrow left" title="Torna al Capitolo 23"><span>◀</span></a>
+        <a href="capitolo23-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 23"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 23</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 23</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Modelli discreti di flusso temporale</span>
+                <span class="lang-content" lang="en">Discrete Models of Temporal Flow</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nel modello del Tempo di Oblivion, il tempo è una sequenza discreta di istanti. Questo ci permette di descrivere il flusso del tempo come una funzione a gradini.</span>
+                    <span class="lang-content" lang="en">In the Oblivion Time model, time is a discrete sequence of instants. This allows us to describe the flow of time as a step function.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">1. Definizione della sequenza temporale</span><span class="lang-content" lang="en">1. Definition of the Temporal Sequence</span></h3>
+                <p><span class="lang-content" lang="it">Sia $n$ il numero di presenti istantanei trascorsi. Il tempo percepito è:</span><span class="lang-content" lang="en">Let $n$ be the number of elapsed instantaneous presents. The perceived time is:</span></p>
+                <div class="formula-box">$$ t_n = n \cdot \Theta $$</div>
+
+                <h3><span class="lang-content" lang="it">2. Derivata temporale in contesto discreto</span><span class="lang-content" lang="en">2. Time Derivative in a Discrete Context</span></h3>
+                <p><span class="lang-content" lang="it">La derivata continua si esprime come differenza finita. Non esiste una derivata continua nel nostro modello, solo variazioni tra stati discreti.</span><span class="lang-content" lang="en">The continuous derivative is expressed as a finite difference. There is no continuous derivative in our model, only variations between discrete states.</span></p>
+                <div class="formula-box">$$ \frac{dx}{dt} \to \frac{\Delta x}{\Delta t} = \frac{x_n - x_{n-1}}{\Theta} $$</div>
+
+                <h3><span class="lang-content" lang="it">3. Equazione del moto discreta</span><span class="lang-content" lang="en">3. Discrete Equation of Motion</span></h3>
+                <p><span class="lang-content" lang="it">Il moto di un oggetto può essere espresso in modo iterativo (algoritmico):</span><span class="lang-content" lang="en">The motion of an object can be expressed iteratively (algorithmically):</span></p>
+                <div class="formula-box">$$ v_n = v_{n-1} + a_{n-1} \cdot \Theta $$</div>
+                <div class="formula-box">$$ x_n = x_{n-1} + v_{n-1} \cdot \Theta + \frac{1}{2} a_{n-1} \cdot \Theta^2 $$</div>
+                <p><span class="lang-content" lang="it">Questa è l'equivalente discreto della classica equazione del moto.</span><span class="lang-content" lang="en">This is the discrete equivalent of the classic equation of motion.</span></p>
+
+                <h3><span class="lang-content" lang="it">4. Tempo come funzione a gradini</span><span class="lang-content" lang="en">4. Time as a Step Function</span></h3>
+                <p><span class="lang-content" lang="it">Il tempo stesso può essere descritto come una funzione a gradini $T(n) = \Theta \cdot n$, che genera la successione:</span><span class="lang-content" lang="en">Time itself can be described as a step function $T(n) = \Theta \cdot n$, which generates the sequence:</span></p>
+                <div class="formula-box">$$ T = \{0, \Theta, 2\Theta, 3\Theta, \dots\} $$</div>
+
+                <h3><span class="lang-content" lang="it">5. Energia come quantità per click</span><span class="lang-content" lang="en">5. Energy as a Per-Click Quantity</span></h3>
+                <p><span class="lang-content" lang="it">L’energia totale associata a un sistema può essere pensata come un integrale discreto (una somma) sull’intervallo dei click:</span><span class="lang-content" lang="en">The total energy associated with a system can be thought of as a discrete integral (a sum) over the interval of clicks:</span></p>
+                <div class="formula-box">$$ E_{total} = \sum_n (E_n \cdot \Theta) $$</div>
+
+                <h3><span class="lang-content" lang="it">6. Impulso quantizzato</span><span class="lang-content" lang="en">6. Quantized Impulse</span></h3>
+                <p><span class="lang-content" lang="it">La caduta di un "granello" corrisponde al rilascio di un impulso minimo. Ogni istante genera un’unità minima di cambiamento nella quantità di moto:</span><span class="lang-content" lang="en">The fall of a "grain" corresponds to the release of a minimum impulse. Each instant generates a minimum unit of change in momentum:</span></p>
+                <div class="formula-box">$$ \Delta p = m \cdot \Delta v = m \cdot a \cdot \Theta $$</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>
