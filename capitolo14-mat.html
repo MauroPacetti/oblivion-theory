@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 14 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo14.html" class="nav-arrow left" title="Torna al Capitolo 14"><span>◀</span></a>
+        <a href="capitolo14-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 14"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 14</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 14</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Superamento dell’indeterminazione tramite ${\Delta\Theta}$</span>
+                <span class="lang-content" lang="en">Overcoming Indeterminacy via ${\Delta\Theta}$</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nel paradigma tradizionale, la posizione $x$ e la quantità di moto $p$ sono legate dal principio di indeterminazione di Heisenberg:</span>
+                    <span class="lang-content" lang="en">In the traditional paradigm, position $x$ and momentum $p$ are linked by the Heisenberg uncertainty principle:</span>
+                </p>
+                <div class="formula-box">$$ \Delta x \cdot \Delta p \ge \frac{\hbar}{2} $$</div>
+                <p>
+                    <span class="lang-content" lang="it">Proponiamo che questa indeterminazione derivi non da un principio ontologico, ma dalla limitata frequenza di osservazione dell’osservatore rispetto al ritmo temporale ${\Theta}$ della particella.</span>
+                    <span class="lang-content" lang="en">We propose that this indeterminacy arises not from an ontological principle, but from the limited observation frequency of the observer relative to the particle's actual temporal rhythm, ${\Theta}$.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">1. Frequenza di click temporali</span><span class="lang-content" lang="en">1. Temporal Click Frequency</span></h3>
+                <p><span class="lang-content" lang="it">Ogni particella è associata a una frequenza di click temporali ($f_{\Theta}$) definita da:</span><span class="lang-content" lang="en">Each particle is associated with a temporal click frequency ($f_{\Theta}$) defined by:</span></p>
+                <div class="formula-box">$$ f_{\Theta} = \frac{1}{\Theta} $$</div>
+                
+                <h3><span class="lang-content" lang="it">2. Distanza percorsa in un click</span><span class="lang-content" lang="en">2. Distance Traveled in a Click</span></h3>
+                <p><span class="lang-content" lang="it">Se la particella compie uno spostamento $\Delta x$ in un intervallo ${\Theta}$, la sua velocità reale è $v = \Delta x / \Theta$. Possiamo quindi ricavare la sua posizione esatta dopo $n$ click:</span><span class="lang-content" lang="en">If the particle undergoes a displacement $\Delta x$ in an interval ${\Theta}$, its real velocity is $v = \Delta x / \Theta$. We can thus derive its exact position after $n$ clicks:</span></p>
+                <div class="formula-box">$$ x_n = x_0 + n \cdot \Delta x = x_0 + n \cdot v \cdot \Theta $$</div>
+
+                <h3><span class="lang-content" lang="it">3. Quantizzazione della traiettoria</span><span class="lang-content" lang="en">3. Trajectory Quantization</span></h3>
+                <p><span class="lang-content" lang="it">Assumendo una velocità costante, la traiettoria è una successione discreta di posizioni, a distanza fissa $\Delta x = v \cdot \Theta$. La posizione è univocamente determinabile a ogni presente istantaneo, purché si conosca ${\Theta}$.</span><span class="lang-content" lang="en">Assuming constant velocity, the trajectory is a discrete sequence of positions, at a fixed distance $\Delta x = v \cdot \Theta$. The position is uniquely determinable at each instantaneous present, provided that ${\Theta}$ is known.</span></p>
+
+                <h3><span class="lang-content" lang="it">4. Superamento dell’indeterminazione</span><span class="lang-content" lang="en">4. Overcoming Indeterminacy</span></h3>
+                <p><span class="lang-content" lang="it">Se un osservatore potesse sincronizzarsi con il ritmo della particella ($\Delta t_{obs} = \Theta_{particella}$), potrebbe dedurre sia la posizione sia la quantità di moto con alta precisione. Idealmente, la relazione di indeterminazione si trasformerebbe in:</span><span class="lang-content" lang="en">If an observer could synchronize with the particle's rhythm ($\Delta t_{obs} = \Theta_{particle}$), they could deduce both position and momentum with high precision. Ideally, the uncertainty relation would transform into:</span></p>
+                <div class="formula-box">$$ \Delta x \cdot \Delta p \approx 0 $$</div>
+                <p><span class="lang-content" lang="it">(Solo nel limite in cui l’osservatore ha accesso al ritmo reale della particella).</span><span class="lang-content" lang="en">(Only in the limit where the observer has access to the particle's real rhythm).</span></p>
+
+                <h3><span class="lang-content" lang="it">5. Discrepanza tra osservatori</span><span class="lang-content" lang="en">5. Discrepancy Between Observers</span></h3>
+                <p><span class="lang-content" lang="it">Due osservatori, A e B, con tempi di oblivion differenti (${\Theta_A}$ e ${\Theta_B}$), percepiranno traiettorie diverse. Se ${\Theta_B \gg \Theta_A}$, l’osservatore B percepirà un comportamento più “probabilistico” rispetto all’osservatore A, che segue la traiettoria in modo quasi deterministico.</span><span class="lang-content" lang="en">Two observers, A and B, with different oblivion times (${\Theta_A}$ and ${\Theta_B}$), will perceive different trajectories. If ${\Theta_B \gg \Theta_A}$, observer B will perceive a more "probabilistic" behavior compared to observer A, who follows the trajectory in an almost deterministic way.</span></p>
+
+                <h3><span class="lang-content" lang="it">Conclusione</span><span class="lang-content" lang="en">Conclusion</span></h3>
+                <p><span class="lang-content" lang="it">La misurabilità quantica assoluta non è preclusa in linea di principio, ma subordinata alla conoscenza e sincronizzazione con il ritmo ${\Theta}$ della particella. L’indeterminazione, in questo contesto, non è un limite della realtà, ma un artefatto della nostra asincronia percettiva.</span><span class="lang-content" lang="en">Absolute quantum measurability is not precluded in principle but is subject to the knowledge of and synchronization with the particle's real rhythm ${\Theta}$. Indeterminacy, in this context, is not a limit of reality, but an artifact of our perceptual asynchrony.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 7 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo7.html" class="nav-arrow left" title="Torna al Capitolo 7"><span>◀</span></a>
+        <a href="capitolo7-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 7"><span>▶</span></a>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- HEADER UNIVERSALE (ORA INSERITO CORRETTAMENTE) -->
+    <!-- =================================================================== -->
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 7</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 7</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Lorentz riletto in chiave discreta</span>
+                <span class="lang-content" lang="en">Lorentz Revisited in a Discrete Framework</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Le trasformazioni di Lorentz sono il cuore matematico della relatività speciale. Esse descrivono come le misure di spazio e tempo cambiano tra sistemi di riferimento in moto relativo. La Teoria del Tempo di Oblivion non nega queste trasformazioni, ma ne offre una reinterpretazione meccanicistica basata sulla natura granulare del tempo. Invece di "distorcere" un continuo, vedremo come la velocità influenzi il <strong>conteggio</strong> delle unità fondamentali di tempo (${\Theta}$) e spazio.</span>
+                    <span class="lang-content" lang="en">The Lorentz transformations are the mathematical heart of special relativity. They describe how measurements of space and time change between reference frames in relative motion. The Oblivion Time Theory does not deny these transformations but offers a mechanistic reinterpretation based on the granular nature of time. Instead of "distorting" a continuum, we will see how velocity affects the <strong>counting</strong> of fundamental units of time (${\Theta}$) and space.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">1. Dal Tempo Continuo al Conteggio di Istanti</span><span class="lang-content" lang="en">1. From Continuous Time to a Count of Instants</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Il primo passo è sostituire il concetto di durata continua $t$ con un conteggio di eventi discreti. Ogni osservatore è dotato di un "contachilometri cosmico" che non misura secondi, ma il numero $n$ di Presenti Istantanei che ha vissuto. La durata totale è quindi:</span>
+                    <span class="lang-content" lang="en">The first step is to replace the concept of continuous duration $t$ with a count of discrete events. Every observer is equipped with a "cosmic odometer" that does not measure seconds, but the number $n$ of Instantaneous Presents they have lived. The total duration is therefore:</span>
+                </p>
+                <div class="formula-box">$$ t = n \cdot \Theta $$</div>
+                <p>
+                    <span class="lang-content" lang="it">Dove ${\Theta}$ è il Tempo di Oblivion locale di quell'osservatore. Questo significa che i fenomeni relativistici non sono più una "distorsione" del tempo, ma una <strong>differenza nel numero di "click" accumulati</strong>.</span>
+                    <span class="lang-content" lang="en">Where ${\Theta}$ is the local Oblivion Time of that observer. This means that relativistic phenomena are no longer a "distortion" of time, but a <strong>difference in the number of accumulated "clicks."</strong></span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">2. La Dilatazione Temporale come "Perdita di Click"</span><span class="lang-content" lang="en">2. Time Dilation as a "Loss of Clicks"</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">La formula classica della dilatazione temporale, dove $\Delta t'$ è il tempo percepito dall'osservatore in moto e $\Delta t$ quello misurato da fermo, è:</span>
+                    <span class="lang-content" lang="en">The classic time dilation formula, where $\Delta t'$ is the time perceived by the moving observer and $\Delta t$ is that measured at rest, is:</span>
+                </p>
+                $$ \Delta t' = \Delta t \cdot \sqrt{1 - v^2/c^2} $$
+                <p>
+                    <span class="lang-content" lang="it">Sostituiamo ora $t$ con il nostro conteggio $n \cdot \Theta$. Ipotizziamo che il "ritmo" ${\Theta}$ sia una proprietà intrinseca dell'osservatore e non cambi. Ciò che cambia è il numero di istanti $n$ che riesce a "vivere". La formula diventa:</span>
+                    <span class="lang-content" lang="en">We now substitute $t$ with our count $n \cdot \Theta$. We hypothesize that the "rhythm" ${\Theta}$ is an intrinsic property of the observer and does not change. What changes is the number of instants $n$ they manage to "live." The formula becomes:</span>
+                </p>
+                $$ n' \cdot \Theta = (n \cdot \Theta) \cdot \sqrt{1 - v^2/c^2} $$
+                <p>
+                    <span class="lang-content" lang="it">Semplificando ${\Theta}$ da entrambi i lati, otteniamo la relazione tra i conteggi:</span>
+                    <span class="lang-content" lang="en">By simplifying ${\Theta}$ on both sides, we obtain the relationship between the counts:</span>
+                </p>
+                <div class="formula-box">$$ n' = n \cdot \sqrt{1 - v^2/c^2} $$</div>
+                <p>
+                    <span class="lang-content" lang="it">L'interpretazione fisica è diretta e potente: un osservatore in moto a velocità $v$ per un periodo che un osservatore fermo conta come $n$ "click", <strong>vivrà un numero inferiore di istanti, $n'$</strong>. Non è il suo tempo a rallentare, ma il suo "contatore di realtà" a registrare meno eventi.</span>
+                    <span class="lang-content" lang="en">The physical interpretation is direct and powerful: an observer moving at velocity $v$ for a period that a stationary observer counts as $n$ "clicks" will <strong>experience a smaller number of instants, $n'$</strong>. It is not that their time slows down, but that their "reality counter" registers fewer events.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">3. La Contrazione delle Lunghezze come "Perdita di Passi"</span><span class="lang-content" lang="en">3. Length Contraction as a "Loss of Steps"</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Applichiamo esattamente la stessa logica alla contrazione delle lunghezze. La formula classica è:</span>
+                    <span class="lang-content" lang="en">We apply the exact same logic to length contraction. The classic formula is:</span>
+                </p>
+                $$ L' = L \cdot \sqrt{1 - v^2/c^2} $$
+                <p>
+                    <span class="lang-content" lang="it">Se discretizziamo la lunghezza $L$ in un numero $m$ di "passi" minimi e indivisibili $\Delta x$, abbiamo $L = m \cdot \Delta x$. La formula diventa:</span>
+                    <span class="lang-content" lang="en">If we discretize length $L$ into a number $m$ of minimal, indivisible "steps" $\Delta x$, we have $L = m \cdot \Delta x$. The formula becomes:</span>
+                </p>
+                $$ m' \cdot \Delta x = (m \cdot \Delta x) \cdot \sqrt{1 - v^2/c^2} $$
+                <p>
+                    <span class="lang-content" lang="it">Di nuovo, semplificando $\Delta x$, otteniamo la relazione tra i conteggi spaziali:</span>
+                    <span class="lang-content" lang="en">Again, by simplifying $\Delta x$, we obtain the relationship between the spatial counts:</span>
+                </p>
+                <div class="formula-box">$$ m' = m \cdot \sqrt{1 - v^2/c^2} $$</div>
+                <p>
+                    <span class="lang-content" lang="it">L'interpretazione è analoga: la lunghezza di un oggetto in moto appare contratta perché, dal nostro sistema di riferimento, misuriamo un <strong>numero inferiore di "passi" quantizzati</strong> per coprirne l'estensione.</span>
+                    <span class="lang-content" lang="en">The interpretation is analogous: the length of a moving object appears contracted because, from our frame of reference, we measure a <strong>smaller number of quantized "steps"</strong> to cover its extent.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">Conclusione: La Fisica come Contabilità</span><span class="lang-content" lang="en">Conclusion: Physics as Accounting</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Rileggere Lorentz in chiave discreta trasforma la relatività da una teoria sulla deformazione dello spaziotempo a una <strong>teoria sulla contabilità degli eventi quantizzati</strong>. La velocità non "stira" o "comprime" un tessuto continuo, ma modifica il <strong>tasso con cui un osservatore accumula unità discrete di tempo e di spazio</strong>. Questa visione, pur riproducendo gli stessi risultati numerici di Einstein, offre una spiegazione meccanicistica e più intuitiva, radicata nella natura granulare della realtà.</span>
+                    <span class="lang-content" lang="en">Re-reading Lorentz in a discrete framework transforms relativity from a theory about the deformation of spacetime to a <strong>theory about the accounting of quantized events</strong>. Velocity does not "stretch" or "compress" a continuous fabric; it modifies the <strong>rate at which an observer accumulates discrete units of time and space</strong>. This view, while reproducing the same numerical results as Einstein's, offers a mechanistic and more intuitive explanation, rooted in the granular nature of reality.</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

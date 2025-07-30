@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore di Relatività Ritmica - Teoria del Tempo di Oblivion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        :root {
+            --background-color: #0a0a10;
+            --panel-background: rgba(20, 20, 30, 0.85);
+            --text-color: #c0c0d0;
+            --heading-color: #ffffff;
+            --accent-color: #00aaff;
+            --input-background: rgba(10, 10, 20, 0.9);
+            --border-color: rgba(255, 255, 255, 0.2);
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            background-color: var(--background-color);
+            background-image: url('images/sfondo-oblivion.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        .sticky-header {
+            position: sticky; top: 0; width: 100%; z-index: 1000; background: rgba(10, 10, 20, 0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 20px; }
+        .logo a { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--heading-color); text-decoration: none; font-weight: 700; }
+        .main-nav a { color: var(--text-color); text-decoration: none; margin: 0 15px; font-weight: 400; transition: color 0.3s ease; }
+        .main-nav a:hover, .main-nav a.active { color: var(--accent-color); }
+        .language-switcher button { background: none; border: 1px solid var(--text-color); color: var(--text-color); padding: 5px 10px; margin-left: 5px; cursor: pointer; transition: all 0.3s ease; }
+        .language-switcher button.active { background-color: var(--accent-color); border-color: var(--accent-color); color: #fff; }
+        .chapter-panel {
+            max-width: 800px; margin: 40px auto; padding: 40px;
+            background-color: var(--panel-background);
+            border-radius: 12px; border: 1px solid var(--border-color);
+        }
+        .chapter-title {
+            font-family: 'Orbitron', sans-serif; font-size: 2.8rem;
+            color: var(--heading-color); text-align: center; margin-bottom: 15px;
+        }
+        .chapter-subtitle {
+            font-size: 1.2rem; color: var(--accent-color);
+            text-align: center; margin-bottom: 40px; font-style: italic;
+        }
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+        .calculator-container label {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .calculator-container select {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--input-background);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+        .calculator-button {
+            grid-column: 1 / -1;
+            padding: 12px 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .calculator-button:hover {
+            background-color: #0077cc;
+            transform: scale(1.02);
+        }
+        #result-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            min-height: 100px;
+            transition: opacity 0.5s ease;
+        }
+        #result-container h4 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--heading-color);
+            margin-top: 0;
+        }
+        .lang-content { display: none; }
+        body.lang-it .lang-content[lang="it"] { display: inline-block; }
+        body.lang-en .lang-content[lang="en"] { display: inline-block; }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+        @media (max-width: 600px) {
+            .calculator-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="lang-it">
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html">Oblivion Time Theory</a></div>
+            <nav class="main-nav">
+                <a href="index.html#sommario"><span class="lang-content" lang="it">Indice</span><span class="lang-content" lang="en">Index</span></a>
+                <a href="principio-unificante.html"><span class="lang-content" lang="it">Principio</span><span class="lang-content" lang="en">Principle</span></a>
+                <a href="calcolatore.html" class="active"><span class="lang-content" lang="it">Calcolatore</span><span class="lang-content" lang="en">Calculator</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" class="active" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="chapter-panel">
+            <h1 class="chapter-title">
+                <span class="lang-content" lang="it">Calcolatore di Relatività Ritmica</span>
+                <span class="lang-content" lang="en">Rhythmic Relativity Calculator</span>
+            </h1>
+            <p class="chapter-subtitle">
+                <span class="lang-content" lang="it">Sperimenta come la fisica cambi in base al ritmo con cui osservi l'universo.</span>
+                <span class="lang-content" lang="en">Experience how physics changes based on the rhythm you observe the universe with.</span>
+            </p>
+
+            <form id="calculator-form" onsubmit="calculatePhysics(event)">
+                <div class="calculator-container">
+                    <label for="observer">
+                        <span class="lang-content" lang="it">1. Scegli il tuo ritmo (Osservatore):</span>
+                        <span class="lang-content" lang="en">1. Choose Your Rhythm (Observer):</span>
+                    </label>
+                    <label for="system">
+                        <span class="lang-content" lang="it">2. Scegli il ritmo da osservare:</span>
+                        <span class="lang-content" lang="en">2. Choose the Rhythm to Observe:</span>
+                    </label>
+                    <select id="observer" name="observer">
+                        <option value="electron">Elettrone / Electron</option>
+                        <option value="fly">Mosca / Fly</option>
+                        <option value="human" selected>Umano / Human</option>
+                        <option value="turtle">Tartaruga / Turtle</option>
+                        <option value="earth">Terra / Earth</option>
+                        <option value="sun">Sole / Sun</option>
+                        <option value="blackhole">Buco Nero / Black Hole</option>
+                    </select>
+                    <select id="system" name="system">
+                        <option value="electron">Elettrone / Electron</option>
+                        <option value="fly">Mosca / Fly</option>
+                        <option value="human" selected>Umano / Human</option>
+                        <option value="turtle">Tartaruga / Turtle</option>
+                        <option value="earth">Terra / Earth</option>
+                        <option value="sun">Sole / Sun</option>
+                        <option value="blackhole">Buco Nero / Black Hole</option>
+                    </select>
+                </div>
+                <button type="submit" class="calculator-button">
+                    <span class="lang-content" lang="it">Calcola la Fisica Percepita</span>
+                    <span class="lang-content" lang="en">Calculate Perceived Physics</span>
+                </button>
+            </form>
+
+            <div id="result-container" style="opacity: 0;">
+                <h4>
+                    <span class="lang-content" lang="it">Risultato:</span>
+                    <span class="lang-content" lang="en">Result:</span>
+                </h4>
+                <p id="result-text"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html#sommario">
+            <span class="lang-content" lang="it">Torna all'Indice Completo</span>
+            <span class="lang-content" lang="en">Back to Full Index</span>
+        </a>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            document.getElementById('lang-it-btn').classList.toggle('active', lang === 'it');
+            document.getElementById('lang-en-btn').classList.toggle('active', lang === 'en');
+            
+            // Riesegue il calcolo per aggiornare la lingua del risultato
+            calculatePhysics(); 
+        }
+
+        // Valori di Theta Normalizzati (adimensionali)
+        // Questi valori determinano il "ritmo" fondamentale di ogni sistema
+        const thetaValues = {
+            electron: 4.8e-43,
+            fly: 1.0e-26,      // Stima: più veloce di un umano
+            human: 2.0e-26,
+            turtle: 5.0e-26,   // Stima: più lento di un umano
+            earth: 1.4e-9,
+            sun: 4.2e-6,
+            blackhole: 1.0
+        };
+        
+        // Funzione principale che viene chiamata al submit del form o al cambio lingua
+        function calculatePhysics(event) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            const observerKey = document.getElementById('observer').value;
+            const systemKey = document.getElementById('system').value;
+
+            const observerTheta = thetaValues[observerKey];
+            const systemTheta = thetaValues[systemKey];
+
+            const resultContainer = document.getElementById('result-container');
+            const resultText = document.getElementById('result-text');
+            
+            resultContainer.style.opacity = '0';
+
+            const K = observerTheta / systemTheta;
+
+            let explanationIT = '';
+            let explanationEN = '';
+
+            // LOGICA CORRETTA E GERARCHICA
+            // Prima i casi speciali (Buchi Neri), poi la sincronia, poi i regimi generali.
+            if (observerKey === 'blackhole' && systemKey !== 'blackhole') {
+                explanationIT = `<b>Rapporto Ritmico (K) ≈ ${K.toExponential(2)}</b><br><br><b>CASO LIMITE (OSSERVATORE):</b> Come osservatore da un Buco Nero, il tuo ritmo è il più lento dell'universo ($\Theta=1$). Qualsiasi altro sistema "clicca" a una velocità quasi infinita rispetto a te. L'intero universo esterno ti apparirebbe come un singolo flash istantaneo ed eterno.`;
+                explanationEN = `<b>Rhythmic Ratio (K) ≈ ${K.toExponential(2)}</b><br><br><b>LIMIT CASE (OBSERVER):</b> As an observer from a Black Hole, your rhythm is the slowest in the universe ($\Theta=1$). Any other system "clicks" at a nearly infinite speed compared to you. The entire external universe would appear to you as a single, instantaneous, and eternal flash.`;
+            } else if (systemKey === 'blackhole') {
+                 explanationIT = `<b>Rapporto Ritmico (K) ≈ ${K.toExponential(2)}</b><br><br><b>CASO LIMITE (OSSERVATO):</b> Un Buco Nero ha un ritmo $\Theta = 1$. È il sistema più lento possibile. Dal tuo punto di vista, il tempo sul Buco Nero è completamente fermo. Qualsiasi evento lì richiederebbe un'eternità per compiersi.`;
+                 explanationEN = `<b>Rhythmic Ratio (K) ≈ ${K.toExponential(2)}</b><br><br><b>LIMIT CASE (OBSERVED):</b> A Black Hole has a rhythm $\Theta = 1$. It is the slowest possible system. From your perspective, time on the Black Hole is completely frozen. Any event there would take an eternity to unfold.`;
+            } else if (observerKey === systemKey) {
+                explanationIT = `<b>Rapporto Ritmico (K) = 1</b><br><br><b>SINCRONIA PERFETTA:</b> Sei perfettamente sincronizzato con te stesso. La realtà appare coerente, stabile e deterministica. Questa è la base della tua percezione quotidiana, il punto di riferimento da cui emergono tutti gli altri fenomeni.`;
+                explanationEN = `<b>Rhythmic Ratio (K) = 1</b><br><br><b>PERFECT SYNCHRONY:</b> You are perfectly synchronized with yourself. Reality appears coherent, stable, and deterministic. This is the baseline of your everyday perception, the reference point from which all other phenomena emerge.`;
+            } else if (K > 1e6) { // Limite Quantistico
+                explanationIT = `<b>Rapporto Ritmico (K) ≈ ${K.toExponential(2)}</b><br><br><b>REGIME QUANTISTICO:</b> Stai osservando un sistema che "clicca" ad una velocità inimmaginabile rispetto a te. È impossibile per te coglierne i singoli istanti. La sua traiettoria definita ti appare come una "nube di probabilità". <b>Hai appena scoperto l'origine dell'indeterminazione quantistica.</b>`;
+                explanationEN = `<b>Rhythmic Ratio (K) ≈ ${K.toExponential(2)}</b><br><br><b>QUANTUM REGIME:</b> You are observing a system that "clicks" at an unimaginable speed compared to you. It's impossible for you to capture its individual moments. Its defined trajectory appears to you as a "probability cloud." <b>You have just discovered the origin of quantum uncertainty.</b>`;
+            } else if (K < 1e-6) { // Limite Relativistico
+                explanationIT = `<b>Rapporto Ritmico (K) ≈ ${K.toExponential(2)}</b><br><br><b>REGIME RELATIVISTICO:</b> Stai osservando un sistema il cui ritmo è immensamente più lento del tuo. Per ogni singolo "click" del sistema, hai già vissuto innumerevoli istanti. Il sistema ti appare quasi congelato, estremamente rallentato. <b>Hai appena scoperto il principio alla base della dilatazione temporale.</b>`;
+                explanationEN = `<b>Rhythmic Ratio (K) ≈ ${K.toExponential(2)}</b><br><br><b>RELATIVISTIC REGIME:</b> You are observing a system whose rhythm is immensely slower than yours. For every single "click" of the system, you have already experienced countless moments. The system appears almost frozen, extremely slowed down. <b>You have just discovered the principle behind time dilation.</b>`;
+            } else { // Regime Classico/Biologico
+                let comparisonIT, comparisonEN;
+                if (K > 1) {
+                    comparisonIT = `il sistema osservato appare <b>${K.toFixed(1)} volte più veloce</b> e "sfuggente" di te.`;
+                    comparisonEN = `the observed system appears <b>${K.toFixed(1)} times faster</b> and more "elusive" than you.`;
+                } else {
+                    comparisonIT = `il sistema osservato appare <b>${(1/K).toFixed(1)} volte più lento</b> e "posato" di te.`;
+                    comparisonEN = `the observed system appears <b>${(1/K).toFixed(1)} times slower</b> and more "sedate" than you.`;
+                }
+                explanationIT = `<b>Rapporto Ritmico (K) ≈ ${K.toFixed(2)}</b><br><br><b>REGIME CLASSICO/BIOLOGICO:</b> C'è una dissonanza ritmica percepibile tra te e il sistema. In questo caso, ${comparisonIT} Questa è la base della nostra percezione relativa del tempo nel mondo di tutti i giorni.`;
+                explanationEN = `<b>Rhythmic Ratio (K) ≈ ${K.toFixed(2)}</b><br><br><b>CLASSICAL/BIOLOGICAL REGIME:</b> There is a perceivable rhythmic dissonance between you and the system. In this case, ${comparisonEN} This is the basis of our relative perception of time in the everyday world.`;
+            }
+
+            resultText.innerHTML = `<span class="lang-content" lang="it">${explanationIT}</span><span class="lang-content" lang="en">${explanationEN}</span>`;
+            
+            setTimeout(() => { 
+                resultContainer.style.opacity = '1';
+                if (window.MathJax) {
+                    MathJax.typesetPromise([resultContainer]).catch(err => console.log(err));
+                }
+            }, 100);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setLanguage(localStorage.getItem('preferredLanguage') || 'it');
+        });
+
+    </script>
+</body>
+</html>

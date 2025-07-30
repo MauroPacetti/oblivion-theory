@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Calcolo del Tempo di Oblivion - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+    <style>
+        :root {
+            --background-color: #0a0a10; --panel-background: rgba(20, 20, 30, 0.85);
+            --text-color: #c0c0d0; --heading-color: #ffffff; --accent-color: #00aaff;
+            --formula-bg: rgba(0,0,0,0.3); --formula-border: rgba(0, 170, 255, 0.3);
+            --table-border: rgba(0, 170, 255, 0.5);
+        }
+        body {
+            font-family: 'Roboto', sans-serif; line-height: 1.8; background-color: var(--background-color);
+            background-image: url('images/sfondo-oblivion.jpg'); background-size: cover;
+            background-position: center; background-attachment: fixed; color: var(--text-color);
+        }
+        .sticky-header {
+            position: sticky; top: 0; width: 100%; z-index: 1000; background: rgba(10, 10, 20, 0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .header-container {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 15px 20px;
+        }
+        .logo a {
+            font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--heading-color);
+            text-decoration: none; font-weight: 700;
+        }
+        .main-nav a {
+            color: var(--text-color); text-decoration: none; margin: 0 15px; font-weight: 400; transition: color 0.3s ease;
+        }
+        .main-nav a:hover { color: var(--accent-color); }
+        .language-switcher button {
+            background: none; border: 1px solid var(--text-color); color: var(--text-color);
+            padding: 5px 10px; margin-left: 5px; cursor: pointer; transition: all 0.3s ease;
+        }
+        .language-switcher button.active {
+            background-color: var(--accent-color); border-color: var(--accent-color); color: #fff;
+        }
+        .chapter-panel {
+            max-width: 800px; margin: 40px auto; padding: 40px; background-color: var(--panel-background);
+            border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .chapter-title {
+            font-family: 'Orbitron', sans-serif; font-size: 2.8rem; color: var(--heading-color);
+            text-align: center; margin-bottom: 15px;
+        }
+        .chapter-subtitle {
+            font-size: 1.2rem; color: var(--accent-color); text-align: center; margin-bottom: 40px; font-style: italic;
+        }
+        .chapter-content h3 {
+            font-family: 'Orbitron', sans-serif; font-size: 1.7rem; color: var(--heading-color); margin-top: 40px; margin-bottom: 20px;
+            padding-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .chapter-content p { margin-bottom: 20px; text-align: justify; }
+        .chapter-content strong { color: var(--accent-color); font-weight: bold; }
+        .formula {
+            background-color: var(--formula-bg); border: 1px solid var(--formula-border);
+            padding: 20px; margin: 25px 0; border-radius: 8px;
+            text-align: center; font-size: 1.3em; overflow-x: auto;
+        }
+        .final-formula {
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+        }
+        .results-table {
+            width: 100%; margin-top: 25px; border-collapse: collapse; text-align: left;
+        }
+        .results-table th, .results-table td {
+            border-bottom: 1px solid var(--table-border); padding: 12px;
+        }
+        .results-table th { background-color: rgba(0, 170, 255, 0.1); font-family: 'Orbitron', sans-serif; }
+        .footer { background-color: #000; text-align: center; padding: 30px 20px; }
+        .footer a { color: var(--text-color); text-decoration: none; opacity: 0.7; transition: all 0.3s ease; }
+        .footer a:hover { opacity: 1; color: var(--accent-color); }
+        .lang-content { display: none; }
+        body.lang-en .lang-content[lang="en"] { display: inline-block; width: 100%; }
+        body.lang-it .lang-content[lang="it"] { display: inline-block; width: 100%; }
+    </style>
+</head>
+<body>
+
+    <header class="sticky-header">
+        <!-- ... header content ... -->
+    </header>
+
+    <main>
+        <div class="chapter-panel">
+            
+            <h1 class="chapter-title">
+                <span class="lang-content" lang="it">Il Calcolo del Ritmo Universale</span>
+                <span class="lang-content" lang="en">Calculating the Universal Rhythm</span>
+            </h1>
+            
+            <p class="chapter-subtitle">
+                <span class="lang-content" lang="it">Come definire il Tempo di Oblivion (⊖) per ogni oggetto nell'universo.</span>
+                <span class="lang-content" lang="en">How to define the Oblivion Time (⊖) for every object in the universe.</span>
+            </p>
+
+            <div class="chapter-content">
+                <h3><span class="lang-content" lang="it">Passo 1: Identificare i Punti Fissi</span><span class="lang-content" lang="en">Step 1: Identifying the Fixed Points</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Per costruire una formula universale, dobbiamo prima definire i limiti estremi della scala dei ritmi. La teoria pone tre assiomi fondamentali:</span>
+                    <span class="lang-content" lang="en">To build a universal formula, we must first define the extreme limits of the rhythm scale. The theory sets three fundamental axioms:</span>
+                </p>
+                <ul>
+                    <li><span class="lang-content" lang="it"><strong>Limite Superiore (Ritmo Massimo):</strong> La <strong>luce</strong>, essendo priva di massa a riposo, rappresenta il sistema più veloce possibile. Il suo ritmo di aggiornamento è istantaneo, quindi il suo Tempo di Oblivion è <strong>zero</strong>.</span><span class="lang-content" lang="en"><strong>Upper Limit (Maximum Rhythm):</strong> <strong>Light</strong>, being massless at rest, represents the fastest possible system. Its update rhythm is instantaneous, so its Oblivion Time is <strong>zero</strong>.</span></li>
+                    <li><span class="lang-content" lang="it"><strong>Limite Inferiore (Ritmo Nullo):</strong> Una <strong>singolarità gravitazionale</strong> (un buco nero) rappresenta un punto in cui il tempo, dal punto di vista di un osservatore esterno, si ferma. Questo è il ritmo più lento possibile, un "click" di durata infinita. Assegniamo a questo stato il valore massimo di <strong>uno</strong>.</span><span class="lang-content" lang="en"><strong>Lower Limit (Null Rhythm):</strong> A <strong>gravitational singularity</strong> (a black hole) represents a point where time, from an external observer's perspective, stops. This is the slowest possible rhythm, a "click" of infinite duration. We assign this state the maximum value of <strong>one</strong>.</span></li>
+                    <li><span class="lang-content" lang="it"><strong>Ogni altro oggetto</strong> nell'universo, possedendo una massa e una dimensione, deve avere un ritmo compreso in questo intervallo normalizzato [0, 1].</span><span class="lang-content" lang="en"><strong>Every other object</strong> in the universe, possessing mass and size, must have a rhythm within this normalized interval [0, 1].</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">Passo 2: Trovare il Parametro Fisico Corretto</span><span class="lang-content" lang="en">Step 2: Finding the Correct Physical Parameter</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Abbiamo bisogno di una grandezza adimensionale (un numero puro) che dipenda da massa e gravità e che si comporti esattamente come i nostri punti fissi. La Relatività Generale ci offre lo strumento perfetto: il <strong>Raggio di Schwarzschild ($R_s$)</strong>. Questo è il raggio critico a cui un oggetto deve essere compresso per collassare in un buco nero ($R_s = 2GM/c^2$). Confrontando questo raggio teorico con il raggio fisico reale ($r$) di un oggetto, otteniamo un indice di "densità gravitazionale" che chiamiamo <strong>Compattezza Gravitazionale ($\sigma$)</strong>:</span>
+                    <span class="lang-content" lang="en">We need a dimensionless quantity (a pure number) that depends on mass and gravity and behaves exactly like our fixed points. General Relativity provides the perfect tool: the <strong>Schwarzschild Radius ($R_s$)</strong>. This is the critical radius to which an object must be compressed to collapse into a black hole ($R_s = 2GM/c^2$). By comparing this theoretical radius with an object's actual physical radius ($r$), we obtain an index of "gravitational density" that we call <strong>Gravitational Compactness ($\sigma$)</strong>:</span>
+                </p>
+                <div class="formula">$$ \sigma = \frac{R_s}{r} = \frac{2GM}{rc^2} $$</div>
+                <p><span class="lang-content" lang="it">Questa grandezza mappa perfettamente i nostri limiti: per la luce (massa zero) $\sigma=0$; per un buco nero ($r=R_s$) $\sigma=1$.</span><span class="lang-content" lang="en">This quantity perfectly maps our limits: for light (zero mass) $\sigma=0$; for a black hole ($r=R_s$) $\sigma=1$.</span></p>
+
+                <h3><span class="lang-content" lang="it">Passo 3: La Legge Fondamentale del Ritmo</span><span class="lang-content" lang="en">Step 3: The Fundamental Law of Rhythm</span></h3>
+                <p><span class="lang-content" lang="it">L'ipotesi più elegante e potente è che il <strong>Tempo di Oblivion Normalizzato</strong> ($\Theta_{norm}$) di qualsiasi sistema sia esattamente uguale alla sua Compattezza Gravitazionale. Questa diventa la legge fondamentale che definisce il ritmo di ogni cosa:</span><span class="lang-content" lang="en">The most elegant and powerful hypothesis is that the <strong>Normalized Oblivion Time</strong> ($\Theta_{norm}$) of any system is exactly equal to its Gravitational Compactness. This becomes the fundamental law defining the rhythm of everything:</span></p>
+                <div class="formula final-formula">$$ \Theta_{norm} = \frac{2GM}{rc^2} $$</div>
+                
+                <h3><span class="lang-content" lang="it">Passo 4: La Gerarchia dei Ritmi - Calcoli Pratici</span><span class="lang-content" lang="en">Step 4: The Hierarchy of Rhythms - Practical Calculations</span></h3>
+                <p><span class="lang-content" lang="it">Applichiamo la formula a diversi oggetti per visualizzare la scala dei ritmi. Un $\Theta$ più grande significa un ritmo di "click" più lento.</span><span class="lang-content" lang="en">Let's apply the formula to different objects to visualize the scale of rhythms. A larger $\Theta$ means a slower "click" rhythm.</span></p>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th><span class="lang-content" lang="it">Oggetto</span><span class="lang-content" lang="en">Object</span></th>
+                            <th><span class="lang-content" lang="it">Tempo di Oblivion Normalizzato ($\Theta_{norm}$)</span><span class="lang-content" lang="en">Normalized Oblivion Time ($\Theta_{norm}$)</span></th>
+                            <th><span class="lang-content" lang="it">Ritmo Relativo (vs Elettrone)</span><span class="lang-content" lang="en">Relative Rhythm (vs Electron)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="lang-content" lang="it">Fotone</span><span class="lang-content" lang="en">Photon</span></td><td>$0$</td><td><span class="lang-content" lang="it">Infinito</span><span class="lang-content" lang="en">Infinite</span></td></tr>
+                        <tr><td><span class="lang-content" lang="it">Elettrone</span><span class="lang-content" lang="en">Electron</span></td><td>$\approx 4.8 \times 10^{-43}$</td><td>1x (Riferimento)</td></tr>
+                        <tr><td><span class="lang-content" lang="it">Essere Umano</span><span class="lang-content" lang="en">Human Being</span></td><td>$\approx 2 \times 10^{-26}$</td><td>$\approx 10^{17}$ volte più lento</td></tr>
+                        <tr><td><span class="lang-content" lang="it">Terra</span><span class="lang-content" lang="en">Earth</span></td><td>$\approx 1.4 \times 10^{-9}$</td><td>$\approx 10^{34}$ volte più lento</td></tr>
+                        <tr><td><span class="lang-content" lang="it">Sole</span><span class="lang-content" lang="en">Sun</span></td><td>$\approx 4.2 \times 10^{-6}$</td><td>$\approx 10^{37}$ volte più lento</td></tr>
+                        <tr><td><span class="lang-content" lang="it">Buco Nero</span><span class="lang-content" lang="en">Black Hole</span></td><td>$1$</td><td><span class="lang-content" lang="it">Nullo</span><span class="lang-content" lang="en">Null</span></td></tr>
+                    </tbody>
+                </table>
+                <p><span class="lang-content" lang="it">Il valore calcolato per l'elettrone ($\approx 10^{-43}$) è dello stesso ordine di grandezza del tempo di Planck ($\approx 10^{-44}$ s), suggerendo che il $\Theta$ dell'elettrone definisca il "quanto" minimo di tempo reale per la materia. La tabella mostra chiaramente come oggetti più complessi e massivi abbiano ritmi di aggiornamento intrinsecamente più lenti.</span><span class="lang-content" lang="en">The calculated value for the electron ($\approx 10^{-43}$) is of the same order of magnitude as Planck time ($\approx 10^{-44}$ s), suggesting that the electron's $\Theta$ defines the minimum "quantum" of real time for matter. The table clearly shows how more complex and massive objects have intrinsically slower update rhythms.</span></p>
+            </div>
+        </div>
+   
+
+</body>
+</html>
+
+    <footer class="footer">
+        <a href="index.html">
+            <span class="lang-content" lang="it">Torna alla Home Page</span>
+            <span class="lang-content" lang="en">Back to Home Page</span>
+        </a>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const body = document.body;
+            function switchLanguage(targetLang) {
+                body.classList.remove('lang-en', 'lang-it');
+                body.classList.add(`lang-${targetLang}`);
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.id === `lang-${targetLang}`);
+                });
+                localStorage.setItem('preferredLanguage', targetLang);
+            }
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetLang = this.id.split('-')[1];
+                    switchLanguage(targetLang);
+                });
+            });
+            const savedLang = localStorage.getItem('preferredLanguage');
+            switchLanguage(savedLang || 'it');
+        });
+    </script>
+
+</body>
+</html>

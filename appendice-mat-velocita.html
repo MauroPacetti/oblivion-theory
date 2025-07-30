@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica: Metriche del Movimento - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.6">
+
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="approfondimento-velocita-relativa.html" class="nav-arrow left" title="Precedente: Concetto Generale"><span>◀</span></a>
+        <a href="appendice-philo-velocita.html" class="nav-arrow right" title="Successivo: Appendice Filosofica"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti" class="active"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica</span>
+                <span class="lang-content" lang="en">Mathematical Appendix</span>
+            </h1>
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Le Metriche del Movimento Ritmico</span>
+                <span class="lang-content" lang="en">The Metrics of Rhythmic Motion</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Velocità Relativa Interna (v̂)</span><span class="lang-content" lang="en">1. Internal Relative Velocity (v̂)</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Questa grandezza normalizza la velocità classica rispetto alla scala corporea dell'entità in movimento.</span>
+                    <span class="lang-content" lang="en">This quantity normalizes classical velocity with respect to the body scale of the moving entity.</span>
+                </p>
+                <div class="formula-box">$$ \hat{v} = \frac{v}{L} = \frac{d/t}{L} $$</div>
+                <ul>
+                    <li>$d$: <span class="lang-content" lang="it">Distanza percorsa (metri)</span><span class="lang-content" lang="en">Distance traveled (meters)</span></li>
+                    <li>$t$: <span class="lang-content" lang="it">Tempo impiegato (secondi)</span><span class="lang-content" lang="en">Time taken (seconds)</span></li>
+                    <li>$v$: <span class="lang-content" lang="it">Velocità classica (m/s)</span><span class="lang-content" lang="en">Classical velocity (m/s)</span></li>
+                    <li>$L$: <span class="lang-content" lang="it">Lunghezza caratteristica dell'entità (metri)</span><span class="lang-content" lang="en">Characteristic length of the entity (meters)</span></li>
+                </ul>
+                <h4 style="color:var(--heading-color); border:none; margin-top:20px;"><span class="lang-content" lang="it">Caso Pratico</span><span class="lang-content" lang="en">Practical Case</span></h4>
+                <p>
+                    <span class="lang-content" lang="it"><strong>Uomo:</strong> $d=1$ m, $t=1$ s, $L=1.8$ m. $v = 1$ m/s. $\hat{v} = 1 / 1.8 \approx 0.56$ lunghezze/s.</span>
+                    <span class="lang-content" lang="en"><strong>Human:</strong> $d=1$ m, $t=1$ s, $L=1.8$ m. $v = 1$ m/s. $\hat{v} = 1 / 1.8 \approx 0.56$ lengths/s.</span>
+                </p>
+                <p>
+                    <span class="lang-content" lang="it"><strong>Formica:</strong> $d=1$ m, $t=10$ s, $L=0.01$ m. $v = 0.1$ m/s. $\hat{v} = 0.1 / 0.01 = 10$ lunghezze/s.</span>
+                    <span class="lang-content" lang="en"><strong>Ant:</strong> $d=1$ m, $t=10$ s, $L=0.01$ m. $v = 0.1$ m/s. $\hat{v} = 0.1 / 0.01 = 10$ lengths/s.</span>
+                </p>
+                <p>
+                    <span class="lang-content" lang="it"><strong>Conclusione:</strong> Sebbene la sua velocità classica sia 10 volte inferiore, la prestazione relativa della formica è quasi 18 volte superiore a quella dell'uomo.</span>
+                    <span class="lang-content" lang="en"><strong>Conclusion:</strong> Although its classical velocity is 10 times lower, the ant's relative performance is almost 18 times higher than the human's.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">2. Velocità Ritmica (v⊖)</span><span class="lang-content" lang="en">2. Rhythmic Velocity (v⊖)</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Questa grandezza misura la frequenza di "aggiornamento" della realtà per un'entità, ovvero la sua densità di esperienza temporale.</span>
+                    <span class="lang-content" lang="en">This quantity measures the "update" frequency of reality for an entity, i.e., its density of temporal experience.</span>
+                </p>
+                <div class="formula-box">$$ v_{\Theta} = \frac{1}{\Theta} $$</div>
+                <ul>
+                    <li>$\Theta$: <span class="lang-content" lang="it">Tempo di Oblivion dell'entità (secondi)</span><span class="lang-content" lang="en">Oblivion Time of the entity (seconds)</span></li>
+                </ul>
+                <h4 style="color:var(--heading-color); border:none; margin-top:20px;"><span class="lang-content" lang="it">Caso Pratico</span><span class="lang-content" lang="en">Practical Case</span></h4>
+                <p>
+                    <span class="lang-content" lang="it"><strong>Elettrone:</strong> $\Theta \approx 5.39 \times 10^{-44}$ s. $v_{\Theta} \approx 1.85 \times 10^{43}$ presenti/s.</span>
+                    <span class="lang-content" lang="en"><strong>Electron:</strong> $\Theta \approx 5.39 \times 10^{-44}$ s. $v_{\Theta} \approx 1.85 \times 10^{43}$ presents/s.</span>
+                </p>
+                 <p>
+                    <span class="lang-content" lang="it"><strong>Uomo (stima):</strong> $\Theta \approx 0.01$ s. $v_{\Theta} = 100$ presenti/s.</span>
+                    <span class="lang-content" lang="en"><strong>Human (estimate):</strong> $\Theta \approx 0.01$ s. $v_{\Theta} = 100$ presents/s.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">3. Prestazione Esistenziale (PE)</span><span class="lang-content" lang="en">3. Existential Performance (EP)</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Questa metrica unificata combina la performance motoria relativa alla scala con la densità di esperienza temporale, offrendo una misura completa della "velocità" nel senso più profondo.</span>
+                    <span class="lang-content" lang="en">This unified metric combines motor performance relative to scale with the density of temporal experience, offering a complete measure of "velocity" in the deepest sense.</span>
+                </p>
+                 <div class="formula-box final-result">$$ PE = \hat{v} \cdot v_{\Theta} $$</div>
+                <p>
+                    <span class="lang-content" lang="it">L'unità di misura è "lunghezze corporee per presente istantaneo". Rappresenta quanto del proprio mondo un'entità è in grado di attraversare in un singolo "click" della sua esistenza.</span>
+                    <span class="lang-content" lang="en">The unit of measurement is "body lengths per instantaneous present." It represents how much of its own world an entity is able to traverse in a single "click" of its existence.</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p>
+                <span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span>
+                <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,770 @@
+/* =================================================================== */
+/* FILE: stile.css                                                     */
+/* DESCRIZIONE: Foglio di Stile Maestro per la Teoria del Tempo di Oblivion */
+/* VERSIONE: 2.4 (Correzioni per Mobile e Sintassi)                    */
+/* =================================================================== */
+
+/*---------------------------------------------------------------------*/
+/* 1. VARIABILI FONDAMENTALI E IMPOSTAZIONI GLOBALI
+/*---------------------------------------------------------------------*/
+:root {
+    --background-color: #0a0a10;
+    --panel-background: rgba(20, 20, 30, 0.85);
+    --text-color: #c0c0d0;
+    --heading-color: #ffffff;
+    --accent-color: #00aaff;
+    --gold-color: #FFD700;
+    --red-color: #ff4d4d;
+    --green-color: #4dff88;
+    --input-background: rgba(10, 10, 20, 0.9);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --table-border-color: rgba(255, 255, 255, 0.4);
+    --glow-color: rgba(0, 170, 255, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    background-color: var(--background-color);
+    background-image: url('../images/sfondo-oblivion.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    padding-bottom: 80px;
+}
+
+/* Gestione multilingua */
+.lang-content { display: none; }
+body.lang-it .lang-content[lang="it"] { display: inline; }
+body.lang-en .lang-content[lang="en"] { display: inline; }
+
+/*---------------------------------------------------------------------*/
+/* 2. HEADER E NAVIGAZIONE PRINCIPALE
+/*---------------------------------------------------------------------*/
+.sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 20, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--accent-color);
+}
+
+.language-switcher button {
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-switcher button.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+/*---------------------------------------------------------------------*/
+/* 3. STRUTTURA DELLE PAGINE DI CONTENUTO
+/*---------------------------------------------------------------------*/
+.content-panel {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: var(--panel-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.panel-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.panel-subtitle {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.content-body h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.content-body p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.content-body strong {
+    color: var(--heading-color);
+}
+
+.content-body .formula-box {
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    /* --- CORREZIONE MOBILE: Permette lo scroll orizzontale per le formule lunghe --- */
+    overflow-x: auto;
+}
+
+/*---------------------------------------------------------------------*/
+/* 4. NAVIGAZIONE SEQUENZIALE A FRECCE (PAGINE CONTENUTO)
+/*---------------------------------------------------------------------*/
+.side-navigation {
+    position: fixed;
+    top: 50%;
+    left: 20px; /* --- MODIFICA: Posiziona a 20px dal bordo sinistro --- */
+    right: 20px; /* --- MODIFICA: Posiziona a 20px dal bordo destro --- */
+    width: auto; /* --- MODIFICA: Larghezza automatica --- */
+    transform: translateY(-50%);
+    z-index: 999;
+    pointer-events: none;
+    /* Rimosso 'padding' perché ora usiamo left e right */
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-arrow {
+    pointer-events: all;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.nav-arrow.disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/*---------------------------------------------------------------------*/
+/* 5. STILI SPECIFICI PER LA HOMEPAGE (index.html)
+/*---------------------------------------------------------------------*/
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--heading-color);
+    text-shadow: 0 2px 15px rgba(0,0,0,0.8);
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+    margin: 5px;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.key-points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.key-point {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.key-point:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.1);
+}
+
+.key-point-overlay {
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.98), transparent);
+}
+
+.key-point h4 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--heading-color);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.key-point p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+
+/*---------------------------------------------------------------------*/
+/* 6. STILI SPECIFICI PER LA PAGINA INDICE (saggio.html)
+/*---------------------------------------------------------------------*/
+.index-list {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 40px;
+}
+
+.index-item {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    break-inside: avoid-column;
+}
+
+.index-item:first-child {
+    padding-top: 0;
+}
+
+.index-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.index-item h4 a {
+    color: var(--heading-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.index-item h4 a:hover {
+    color: var(--accent-color);
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.appendix-link {
+    display: block;
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.appendix-link a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.appendix-link a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.appendix-math::before {
+    content: '∑ ';
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.appendix-philo::before {
+    content: '✧ ';
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.unifying-principle-section {
+    padding-top: 0;
+}
+
+.unifying-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.unifying-text {
+    text-align: right;
+}
+
+.unifying-text.microcosm {
+    text-align: left;
+}
+
+.unifying-text h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.unifying-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 25px var(--glow-color);
+    transition: transform 0.3s ease;
+}
+
+.unifying-image-link {
+    display: block;
+}
+
+.unifying-image-link:hover img {
+    transform: scale(1.05);
+}
+
+/*---------------------------------------------------------------------*/
+/* 7. STILI SPECIFICI PER PAGINE VARIE
+/*---------------------------------------------------------------------*/
+.author-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.author-photo {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+.author-bio {
+    flex: 1;
+    min-width: 300px;
+}
+
+.projects-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.projects-list li {
+    margin-bottom: 10px;
+}
+
+.projects-list a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.projects-list a:hover {
+    text-decoration: underline;
+}
+
+.comparison-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+.comparison-table th, .comparison-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: center;
+}
+.comparison-table th {
+    background-color: rgba(0,0,0,0.3);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.religion-section h3 a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.religion-section h3 a:hover {
+    color: var(--heading-color);
+}
+
+.review-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 4px solid var(--accent-color);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
+}
+
+.review-card .ai-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 0 0 15px 0;
+}
+
+.review-card .ai-quote {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.review-card .ai-review-text {
+    text-align: justify;
+    color: var(--text-color);
+}
+/* Incolla questo intero blocco nel tuo file stile.css */
+
+/* PAGINA AUTORE (autore.html) */
+.author-layout {
+    display: flex;
+    flex-wrap: wrap; /* Permette al testo di andare a capo su schermi piccoli */
+    align-items: flex-start; /* Allinea l'immagine e il testo in alto */
+    gap: 30px;
+    margin-bottom: 20px; /* Aggiunge spazio sotto */
+}
+
+.author-photo {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene le proporzioni e riempie il cerchio */
+    border-radius: 50%; /* Rende l'immagine circolare */
+    border: 3px solid var(--accent-color); /* Aggiunge il bordo blu */
+    box-shadow: 0 0 20px var(--glow-color); /* Aggiunge un'ombra luminosa */
+}
+
+.author-bio {
+    flex: 1; /* Permette al testo di occupare lo spazio rimanente */
+    min-width: 300px; /* Evita che il testo diventi troppo stretto */
+}
+
+/* Lista dei progetti */
+.projects-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.projects-list li {
+    margin-bottom: 10px;
+}
+
+.projects-list a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.projects-list a:hover {
+    text-decoration: underline;
+}
+/*---------------------------------------------------------------------*/
+/* 8. FOOTER UNIVERSALE
+/*---------------------------------------------------------------------*/
+.site-footer {
+    background-color: rgba(10, 10, 20, 0.7);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.footer-content .contact-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-content .contact-link:hover {
+    color: #fff;
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+/*---------------------------------------------------------------------*/
+/* 9. ELEMENTI SPECIALI E TABELLE
+/*---------------------------------------------------------------------*/
+.proof-box {
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    background-color: rgba(20, 20, 30, 0.4);
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.proof-box h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: var(--gold-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.proof-step {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid var(--accent-color);
+}
+.proof-step:last-child { margin-bottom: 0; }
+.proof-step p:first-child { margin-bottom: 10px; }
+
+.theorem-box {
+    background-color: rgba(0,0,0,0.3);
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--gold-color);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    font-style: italic;
+}
+
+.theorem-box p {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 0.95rem;
+    border-style: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.data-table th, 
+.data-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--table-border-color); 
+    text-align: center;
+    vertical-align: middle;
+}
+.data-table th {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--heading-color);
+}
+.data-table td { background-color: rgba(0, 0, 0, 0.2); }
+.data-table .coherent { color: var(--green-color); font-weight: bold; }
+.data-table .incoherent { color: var(--red-color); font-weight: bold; }
+
+.formula-box.gold { border-left: 4px solid var(--gold-color); }
+
+.implications-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.implications-list li {
+    padding-left: 25px;
+    margin-bottom: 15px;
+    position: relative;
+    text-align: justify;
+}
+.implications-list li::before {
+    content: '»';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-color);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+}
+
+.formula-box.final-result {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 20px var(--glow-color);
+    color: var(--heading-color);
+    transform: scale(1.02);
+}
+
+
+/*---------------------------------------------------------------------*/
+/* 10. RESPONSIVE DESIGN
+/*---------------------------------------------------------------------*/
+@media (max-width: 960px) {
+    .side-navigation { padding: 0 10px; }
+}
+
+@media (max-width: 768px) {
+    body { line-height: 1.7; }
+    .side-navigation { top: auto; bottom: 20px; transform: none; }
+    .index-list { columns: 1; }
+    .hero-title { font-size: 2.8rem; }
+    .hero-subtitle { font-size: 1.3rem; }
+    .panel-title { font-size: 2.2rem; }
+    .panel-subtitle { font-size: 1.1rem; }
+    .content-panel { padding: 25px; margin: 20px 15px; }
+    .unifying-content { grid-template-columns: 1fr; }
+    .unifying-image { order: -1; margin-bottom: 30px; justify-self: center; }
+    .unifying-text, .unifying-text.microcosm { text-align: center; }
+.panel-title {
+    font-size: clamp(2rem, 10vw, 2.2rem); /* --- NUOVA REGOLA FONT FLUIDO --- */
+    line-height: 1.2; /* Migliora la spaziatura verticale */
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 12vw, 2.8rem); /* --- NUOVA REGOLA FONT FLUIDO --- */
+    line-height: 1.2;
+}
+
+.key-point h4 {
+    font-size: 1rem; /* Assicura che i titoli dei riquadri non siano troppo grandi */
+}
+
+/* Modifica al padding del pannello per dare più respiro */
+.content-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+    /* --- CORREZIONE MOBILE: Rimossa la regola che centrava tutti i paragrafi --- */
+    /* La regola .content-body p { text-align: center; } è stata rimossa. */
+    /* I paragrafi ora manterranno text-align: justify; come da impostazione base. */
+
+    /* La pagina autore ha la sua gestione responsive specifica */
+    .author-bio p {
+        text-align: center; /* Applica il testo centrato solo nella biografia dell'autore su mobile */
+    }
+}
+
+@media (max-width: 550px) {
+    .author-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* --- CORREZIONE: Aggiunte le parentesi graffe mancanti --- */

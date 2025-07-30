@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica: Metriche del Buco Nero - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.6">
+
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="approfondimento-buconero.html" class="nav-arrow left" title="Precedente: Concetto Generale"><span>◀</span></a>
+        <a href="approfondimento-sperimentale.html" class="nav-arrow right" title="Successivo: Appendice sperimentale"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti" class="active"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica</span>
+                <span class="lang-content" lang="en">Mathematical Appendix</span>
+            </h1>
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Ritmo, Soglia e Congelamento Temporale</span>
+                <span class="lang-content" lang="en">Rhythm, Threshold, and Temporal Freezing</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Richiami Fondamentali</span><span class="lang-content" lang="en">1. Fundamental Concepts</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">La base del nostro modello è la quantizzazione del tempo. Definiamo il ritmo di esistenza $R$ di un sistema come l'inverso del suo tempo di oblivion $\Theta$:</span>
+                    <span class="lang-content" lang="en">The basis of our model is the quantization of time. We define the rhythm of existence $R$ of a system as the inverse of its oblivion time $\Theta$:</span>
+                </p>
+                <div class="formula-box">$$ R = \frac{1}{\Theta} $$</div>
+                
+                <h3><span class="lang-content" lang="it">2. Tempo di Oblivion e Massa Gravitazionale</span><span class="lang-content" lang="en">2. Oblivion Time and Gravitational Mass</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Assumiamo che il tempo di oblivion si allunghi in un campo gravitazionale. Una formulazione ipotetica semplificata lega $\Theta$ al raggio di Schwarzschild $r_s$ dell'oggetto:</span>
+                    <span class="lang-content" lang="en">We assume that oblivion time stretches in a gravitational field. A simplified hypothetical formulation links $\Theta$ to the object's Schwarzschild radius $r_s$:</span>
+                </p>
+                <div class="formula-box">$$ \Theta(r) = t_P \cdot \left(1 + \alpha \cdot \frac{r_s}{r}\right) \quad \text{dove} \quad r_s = \frac{2GM}{c^2} $$</div>
+                <ul>
+                    <li>$t_P$: <span class="lang-content" lang="it">Tempo di Planck ($\approx 5.39 \times 10^{-44}$ s)</span><span class="lang-content" lang="en">Planck Time ($\approx 5.39 \times 10^{-44}$ s)</span></li>
+                    <li>$r$: <span class="lang-content" lang="it">Distanza dal centro della massa</span><span class="lang-content" lang="en">Distance from the center of mass</span></li>
+                    <li>$\alpha$: <span class="lang-content" lang="it">Costante empirica (valore indicativo $\approx 1$)</span><span class="lang-content" lang="en">Empirical constant (indicative value $\approx 1$)</span></li>
+                </ul>
+                <p>
+                    <span class="lang-content" lang="it">Quando $r \to r_s$, allora $\Theta \to \infty$, il che implica un ritmo $R \to 0$. Questo è il congelamento temporale.</span>
+                    <span class="lang-content" lang="en">When $r \to r_s$, then $\Theta \to \infty$, which implies a rhythm $R \to 0$. This is temporal freezing.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">3. Scala Normalizzata del Tempo di Oblivion</span><span class="lang-content" lang="en">3. Normalized Scale of Oblivion Time</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Per un modello più fruibile, usiamo una scala normalizzata $\Theta_{norm} \in [0, 1]$, che coincide con la compattezza gravitazionale $\sigma$:</span>
+                    <span class="lang-content" lang="en">For a more usable model, we use a normalized scale $\Theta_{norm} \in [0, 1]$, which coincides with gravitational compactness $\sigma$:</span>
+                </p>
+                <div class="formula-box">$$ \Theta_{norm} = \sigma = \frac{r_s}{r} = \frac{2GM}{rc^2} $$</div>
+                
+                <h3><span class="lang-content" lang="it">4. Soglia Aurea della Percepibilità ($\phi^{-1}$)</span><span class="lang-content" lang="en">4. Golden Threshold of Perceptibility ($\phi^{-1}$)</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Postuliamo una soglia critica, legata all'inverso della sezione aurea, oltre la quale un oggetto inizia il processo di desincronizzazione percettiva dal nostro universo:</span>
+                    <span class="lang-content" lang="en">We postulate a critical threshold, linked to the inverse of the golden ratio, beyond which an object begins the process of perceptual desynchronization from our universe:</span>
+                </p>
+                <div class="formula-box">$$ \Theta_{soglia} = \phi^{-1} = \frac{1}{\phi} \approx 0.618 $$</div>
+                <p>
+                    <span class="lang-content" lang="it">Se $\Theta_{norm} < 0.618$, l'oggetto è ritmicamente visibile (es. stella di neutroni). Se $\Theta_{norm} \ge 0.618$, inizia il congelamento percettivo che culmina nel buco nero, dove $\Theta_{norm} = 1$.</span>
+                    <span class="lang-content" lang="en">If $\Theta_{norm} < 0.618$, the object is rhythmically visible (e.g., a neutron star). If $\Theta_{norm} \ge 0.618$, perceptual freezing begins, culminating in a black hole, where $\Theta_{norm} = 1$.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">5. Funzione di Congelamento Temporale (CTF)</span><span class="lang-content" lang="en">5. Temporal Freezing Function (TFF)</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Possiamo modellare l'attenuazione del ritmo percepibile con una funzione $CTF(r) \in (0, 1]$:</span>
+                    <span class="lang-content" lang="en">We can model the attenuation of perceived rhythm with a function $TFF(r) \in (0, 1]$:</span>
+                </p>
+                <div class="formula-box">$$ CTF(r) = 1 - \left(\frac{r_s}{r}\right)^n $$</div>
+                 <p>
+                    <span class="lang-content" lang="it">Quando $r \gg r_s$, $CTF(r) \approx 1$ (ritmo normale). Quando $r \to r_s$, $CTF(r) \to 0$ (congelamento totale). $n$ è una costante di curvatura.</span>
+                    <span class="lang-content" lang="en">When $r \gg r_s$, $TFF(r) \approx 1$ (normal rhythm). When $r \to r_s$, $TFF(r) \to 0$ (total freezing). $n$ is a curvature constant.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">6. Redshift Gravitazionale Ritmico</span><span class="lang-content" lang="en">6. Rhythmic Gravitational Redshift</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Il redshift gravitazionale può essere reinterpretato come effetto della diminuzione del numero di presenti percepiti al secondo. Il fattore di redshift $z$ diventa un rapporto tra i ritmi (e quindi un rapporto inverso tra i tempi di oblivion) dell'emettitore e dell'osservatore:</span>
+                    <span class="lang-content" lang="en">Gravitational redshift can be reinterpreted as an effect of the decrease in the number of perceived presents per second. The redshift factor $z$ becomes a ratio of the rhythms (and thus an inverse ratio of the oblivion times) of the emitter and the observer:</span>
+                </p>
+                <div class="formula-box final-result">$$ z_{\Theta} = \frac{R_{em}}{R_{oss}} - 1 = \frac{\Theta_{oss}}{\Theta_{em}} - 1 $$</div>
+
+                <blockquote class="theorem-box" style="margin-top:40px;">
+                    <p>
+                        <span class="lang-content" lang="it"><strong>Conclusione Matematica:</strong> L'approccio quantizzato del Tempo di Oblivion permette di modellare il congelamento del tempo, la transizione di visibilità degli oggetti estremi e le distorsioni osservabili, prevedendo effetti come la modulazione ritmica della realtà in prossimità di un campo gravitazionale estremo.</span>
+                        <span class="lang-content" lang="en"><strong>Mathematical Conclusion:</strong> The quantized approach of Oblivion Time allows for modeling the freezing of time, the visibility transition of extreme objects, and observable distortions, predicting new effects like the rhythmic modulation of reality near an extreme gravitational field.</span>
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p>
+                <span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span>
+                <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 19 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo19.html" class="nav-arrow left" title="Torna al Capitolo 19"><span>◀</span></a>
+        <a href="capitolo19-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 19"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 19</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 19</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Universi paralleli come configurazioni di ${\Theta}$</span>
+                <span class="lang-content" lang="en">Parallel Universes as Configurations of ${\Theta}$</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Sequenza di Presenti Istantanei</span><span class="lang-content" lang="en">1. Sequence of Instantaneous Presents</span></h3>
+                <p><span class="lang-content" lang="it">Per ogni universo $U_i$, i presenti istantanei sono dati dall'insieme $T_i$:</span><span class="lang-content" lang="en">For each universe $U_i$, the instantaneous presents are given by the set $T_i$:</span></p>
+                <div class="formula-box">$$ T_i = \{ t^{(i)}_n \mid t^{(i)}_n = n \cdot \Theta + \phi_i \} $$</div>
+                <ul>
+                    <li><span class="lang-content" lang="it">${\Theta}$ è il Tempo di Oblivion (costante per tutti gli universi).</span><span class="lang-content" lang="en">${\Theta}$ is the Oblivion Time (constant for all universes).</span></li>
+                    <li><span class="lang-content" lang="it">$n$ è un numero intero naturale ($n=0, 1, 2, \dots$).</span><span class="lang-content" lang="en">$n$ is a natural number ($n=0, 1, 2, \dots$).</span></li>
+                    <li><span class="lang-content" lang="it">$\phi_i$ è la fase iniziale dell’universo $U_i$, compresa tra $0$ e ${\Theta}$.</span><span class="lang-content" lang="en">$\phi_i$ is the initial phase of universe $U_i$, ranging from $0$ to ${\Theta}$.</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">2. Condizione di Asincronia</span><span class="lang-content" lang="en">2. Condition of Asynchrony</span></h3>
+                <p><span class="lang-content" lang="it">Due universi $U_i$ e $U_j$ sono asincroni se le loro fasi iniziali sono diverse, ovvero hanno presenti istantanei sfalsati nel tempo.</span><span class="lang-content" lang="en">Two universes $U_i$ and $U_j$ are asynchronous if their initial phases are different, meaning they have time-shifted instantaneous presents.</span></p>
+                <div class="formula-box">$$ \phi_i \neq \phi_j $$</div>
+                
+                <h3><span class="lang-content" lang="it">3. Sincronia Temporanea</span><span class="lang-content" lang="en">3. Temporary Synchrony</span></h3>
+                <p><span class="lang-content" lang="it">Esiste un istante in cui $U_i$ e $U_j$ sono sincroni se, per due interi $n$ e $m$:</span><span class="lang-content" lang="en">An instant exists where $U_i$ and $U_j$ are synchronous if, for two integers $n$ and $m$:</span></p>
+                <div class="formula-box">$$ n \cdot \Theta + \phi_i = m \cdot \Theta + \phi_j $$</div>
+                <p><span class="lang-content" lang="it">che implica:</span><span class="lang-content" lang="en">which implies:</span></p>
+                <div class="formula-box">$$ (n - m) \cdot \Theta = \phi_j - \phi_i $$</div>
+                <p><span class="lang-content" lang="it">Se $(\phi_j - \phi_i)$ è un multiplo razionale di ${\Theta}$, la sincronia si ripete periodicamente. Se è irrazionale, la sincronia è praticamente impossibile.</span><span class="lang-content" lang="en">If $(\phi_j - \phi_i)$ is a rational multiple of ${\Theta}$, the synchrony repeats periodically. If it is irrational, synchrony is practically impossible.</span></p>
+                
+                <h3><span class="lang-content" lang="it">4. Buchi Neri come Nodi Sincronizzati</span><span class="lang-content" lang="en">4. Black Holes as Synchronized Nodes</span></h3>
+                <p><span class="lang-content" lang="it">In prossimità di una singolarità di un buco nero, ipotizziamo che la fase si azzeri:</span><span class="lang-content" lang="en">Near a black hole singularity, we hypothesize that the phase resets to zero:</span></p>
+                <div class="formula-box">$$ \phi_i \to 0 $$</div>
+                <p><span class="lang-content" lang="it">per ogni universo $U_i$ che vi collassa. Quindi, tutti condividono lo stesso presente istantaneo:</span><span class="lang-content" lang="en">for every universe $U_i$ that collapses into it. Therefore, they all share the same instantaneous present:</span></p>
+                <div class="formula-box">$$ t = n \cdot \Theta $$</div>
+
+                <h3><span class="lang-content" lang="it">5. Funzione a Impulsi (Treno di Dirac)</span><span class="lang-content" lang="en">5. Impulse Function (Dirac Comb)</span></h3>
+                <p><span class="lang-content" lang="it">Ogni universo può essere visualizzato come una sequenza di impulsi (un pettine di Dirac discreto):</span><span class="lang-content" lang="en">Each universe can be visualized as a sequence of impulses (a discrete Dirac comb):</span></p>
+                <div class="formula-box">$$ f_i(t) = \sum_{n \in \mathbb{Z}} \delta(t - n \cdot \Theta - \phi_i) $$</div>
+                
+                <h3><span class="lang-content" lang="it">Conclusione</span><span class="lang-content" lang="en">Conclusion</span></h3>
+                <p><span class="lang-content" lang="it">Ogni universo ha la stessa griglia ${\Theta}$, ma è sfalsato nella fase iniziale $\phi_i$. Le interazioni tra universi asincroni possono avvenire solo nei punti in cui le sequenze si sovrappongono, cioè quando il loro sfasamento diventa nullo in un click comune.</span><span class="lang-content" lang="en">Each universe shares the same ${\Theta}$ grid but is shifted by an initial phase $\phi_i$. Interactions between asynchronous universes can only occur at points where their sequences overlap, that is, when their phase shift becomes null in a common click.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

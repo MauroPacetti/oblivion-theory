@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 5 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo5.html" class="nav-arrow left" title="Torna al Capitolo 5"><span>◀</span></a>
+        <a href="capitolo5-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 5"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 5</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 5</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">$c = \Delta x / \Theta$: Reinterpretazione delle costanti fondamentali</span>
+                <span class="lang-content" lang="en">$c = \Delta x / \Theta$: Reinterpretation of Fundamental Constants</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nella Teoria del Tempo di Oblivion, la velocità della luce può essere reinterpretata come il rapporto tra lo spazio minimo percorribile e l'intervallo minimo di tempo tra due presenti istantanei.</span>
+                    <span class="lang-content" lang="en">In the Oblivion Time Theory, the speed of light can be reinterpreted as the ratio between the minimum traversable space and the minimum time interval between two instantaneous presents.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">Formula fondamentale</span><span class="lang-content" lang="en">Fundamental Formula</span></h3>
+                <div class="formula-box">$$ c = \frac{\Delta x}{\Theta} $$</div>
+                <ul>
+                    <li><span class="lang-content" lang="it"><strong>$c$</strong> è la velocità della luce nel vuoto.</span><span class="lang-content" lang="en"><strong>$c$</strong> is the speed of light in a vacuum.</span></li>
+                    <li><span class="lang-content" lang="it"><strong>$\Delta x$</strong> è lo spazio minimo percorribile (es. lunghezza di Planck).</span><span class="lang-content" lang="en"><strong>$\Delta x$</strong> is the minimum traversable space (e.g., Planck length).</span></li>
+                    <li><span class="lang-content" lang="it"><strong>${\Theta}$</strong> è il tempo minimo tra due presenti (Tempo di Oblivion).</span><span class="lang-content" lang="en"><strong>${\Theta}$</strong> is the minimum time between two presents (Oblivion Time).</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">Nel caso della luce</span><span class="lang-content" lang="en">The Case of Light</span></h3>
+                <p><span class="lang-content" lang="it">Idealmente, ${\Theta_{luce} \approx 0}$. Tuttavia, per evitare divisioni per zero, assumiamo che il movimento della luce sia scandito dal tempo di Planck, $t_P$:</span><span class="lang-content" lang="en">Ideally, ${\Theta_{light} \approx 0}$. However, to avoid division by zero, we assume the movement of light is paced by the Planck time, $t_P$:</span></p>
+                <div class="formula-box">$$ \Theta_{luce} \approx t_P = \sqrt{\frac{\hbar G}{c^5}} \approx 5.39 \times 10^{-44} \, \text{s} $$</div>
+                <p><span class="lang-content" lang="it">Allora, usando la lunghezza di Planck $l_P$:</span><span class="lang-content" lang="en">Then, using the Planck length $l_P$:</span></p>
+                <div class="formula-box">$$ c = \frac{l_P}{t_P} \quad \text{dove} \quad l_P = \sqrt{\frac{\hbar G}{c^3}} \approx 1.616 \times 10^{-35} \, \text{m} $$</div>
+                
+                <h3><span class="lang-content" lang="it">Costanti fisiche riformulate</span><span class="lang-content" lang="en">Physical Constants Reformulated</span></h3>
+                <ul>
+                    <li><span class="lang-content" lang="it"><strong>Velocità della luce (c):</strong> Non una velocità, ma il rapporto tra lo spazio minimo e il tempo minimo della griglia della realtà.</span><span class="lang-content" lang="en"><strong>Speed of Light (c):</strong> Not a velocity, but the ratio of the minimum space to the minimum time of reality's grid.</span></li>
+                    <li><span class="lang-content" lang="it"><strong>Costante di Planck ridotta (ħ):</strong> Esprime la granularità dell'azione in un sistema a presenti discontinui.</span><span class="lang-content" lang="en"><strong>Reduced Planck Constant (ħ):</strong> Expresses the granularity of action in a system with discontinuous presents.</span></li>
+                    <li><span class="lang-content" lang="it"><strong>Costante gravitazionale (G):</strong> Interpretabile come indice della deformazione locale del Tempo di Oblivion.</span><span class="lang-content" lang="en"><strong>Gravitational Constant (G):</strong> Interpretable as an index of the local deformation of Oblivion Time.</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">Generalizzazione per altri oggetti</span><span class="lang-content" lang="en">Generalization for Other Objects</span></h3>
+                <p><span class="lang-content" lang="it">Ogni entità ha un proprio tempo di oblivion ${\Theta_i}$, quindi una velocità limite interna:</span><span class="lang-content" lang="en">Each entity has its own oblivion time ${\Theta_i}$, and therefore an internal speed limit:</span></p>
+                <div class="formula-box">$$ v_{max_i} = \frac{\Delta x_i}{\Theta_i} $$</div>
+                <p><span class="lang-content" lang="it">Per la luce, la velocità è massima perché il suo Tempo di Oblivion è il minimo possibile:</span><span class="lang-content" lang="en">For light, the velocity is maximal because its Oblivion Time is the minimum possible:</span></p>
+                <div class="formula-box">$$ v_{luce} = \frac{l_P}{t_P} = c $$</div>
+                <p><span class="lang-content" lang="it">Per oggetti massivi, dove ${\Theta > t_P}$, ne consegue che la loro velocità massima è sempre inferiore a c:</span><span class="lang-content" lang="en">For massive objects, where ${\Theta > t_P}$, it follows that their maximum velocity is always less than c:</span></p>
+                <div class="formula-box">$$ v < c $$</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

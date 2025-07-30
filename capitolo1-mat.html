@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 1 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo1.html" class="nav-arrow left" title="Torna al Capitolo 1"><span>◀</span></a>
+        <a href="capitolo1-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 1"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 1</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 1</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Introduzione alla discontinuità temporale</span>
+                <span class="lang-content" lang="en">Introduction to temporal discontinuity</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nel contesto della Teoria del Tempo di Oblivion, ipotizziamo che il tempo non sia continuo, ma quantizzato in unità discrete chiamate Presenti Istantanei, separati da intervalli indivisibili di tempo chiamati Tempo di Oblivion, indicato con il simbolo ${\Theta}$.</span>
+                    <span class="lang-content" lang="en">In the context of the Oblivion Time Theory, we hypothesize that time is not continuous, but quantized into discrete units called Instantaneous Presents, separated by indivisible intervals of time called Oblivion Time, denoted by the symbol ${\Theta}$.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">1. Definizione del tempo quantizzato</span><span class="lang-content" lang="en">1. Definition of quantized time</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Sia $n$ un numero intero positivo che rappresenta l’ordine del presente istantaneo:</span>
+                    <span class="lang-content" lang="en">Let $n$ be a positive integer representing the order of the instantaneous present:</span>
+                </p>
+                <div class="formula-box">
+                    $t_n = n \cdot \Theta$
+                </div>
+                <ul>
+                    <li><span class="lang-content" lang="it">$t_n$ è il tempo percepito al passo $n$.</span><span class="lang-content" lang="en">$t_n$ is the perceived time at step $n$.</span></li>
+                    <li><span class="lang-content" lang="it">${\Theta}$ è l’intervallo minimo di tempo indivisibile (Tempo di Oblivion).</span><span class="lang-content" lang="en">${\Theta}$ is the minimum indivisible time interval (Oblivion Time).</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">2. Variazione di posizione</span><span class="lang-content" lang="en">2. Change in position</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Se una particella si muove nello spazio tra due presenti istantanei consecutivi, la variazione di posizione sarà:</span>
+                    <span class="lang-content" lang="en">If a particle moves in space between two consecutive instantaneous presents, the change in position will be:</span>
+                </p>
+                <div class="formula-box">
+                     $\Delta x = x_n - x_{n-1}$
+                </div>
+                <ul>
+                     <li><span class="lang-content" lang="it">$x_n$ è la posizione della particella al tempo $t_n$.</span><span class="lang-content" lang="en">$x_n$ is the particle's position at time $t_n$.</span></li>
+                     <li><span class="lang-content" lang="it">$x_{n-1}$ è la posizione al tempo $t_{n-1}$.</span><span class="lang-content" lang="en">$x_{n-1}$ is the position at time $t_{n-1}$.</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">3. Velocità discreta</span><span class="lang-content" lang="en">3. Discrete velocity</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">La velocità osservabile tra due presenti istantanei diventa una differenza osservata tra due istanti separati da un tempo ${\Theta}$:</span>
+                    <span class="lang-content" lang="en">The observable velocity between two instantaneous presents becomes an observed difference between two instants separated by a time ${\Theta}$:</span>
+                </p>
+                <div class="formula-box">
+                    $v_n = \frac{\Delta x}{\Theta} = \frac{x_n - x_{n-1}}{\Theta}$
+                </div>
+
+                <h3><span class="lang-content" lang="it">4. Velocità della luce come limite massimo</span><span class="lang-content" lang="en">4. Speed of light as a maximum limit</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Nel contesto di questa teoria, la velocità della luce ($c$) rappresenta il limite massimo di spostamento tra due presenti istantanei. Resta una costante universale, ma è legata alla struttura ritmica del tempo.</span>
+                    <span class="lang-content" lang="en">In the context of this theory, the speed of light ($c$) represents the maximum limit of displacement between two instantaneous presents. It remains a universal constant, but it is linked to the rhythmic structure of time.</span>
+                </p>
+                <div class="formula-box">
+                    $c = \frac{\Delta x_{max}}{\Theta}$
+                </div>
+                <ul>
+                     <li><span class="lang-content" lang="it">${\Delta x_{max}}$ è lo spazio massimo percorribile tra due presenti consecutivi.</span><span class="lang-content" lang="en">${\Delta x_{max}}$ is the maximum distance that can be traveled between two consecutive presents.</span></li>
+                </ul>
+                
+                <h3><span class="lang-content" lang="it">5. Tempo di Planck come riferimento</span><span class="lang-content" lang="en">5. Planck time as a reference</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Se accettiamo che il Tempo di Oblivion per la materia fondamentale sia pari al tempo de Planck ($t_P$), ovvero circa $5.39 \times 10^{-44}$ secondi, allora tutta la realtà osservabile risulta scandita da una griglia temporale fondamentale, comune a tutto l’universo.</span>
+                    <span class="lang-content" lang="en">If we accept that the Oblivion Time for fundamental matter is equal to the Planck time ($t_P$), which is approximately $5.39 \times 10^{-44}$ seconds, then all observable reality is marked by a fundamental temporal grid, common to the entire universe.</span>
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 8 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo8.html" class="nav-arrow left" title="Torna al Capitolo 8"><span>◀</span></a>
+        <a href="capitolo8-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 8"><span>▶</span></a>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- HEADER UNIVERSALE (ORA INSERITO CORRETTAMENTE) -->
+    <!-- =================================================================== -->
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 8</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 8</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Tempo, Funzione d’Onda e Collasso</span>
+                <span class="lang-content" lang="en">Time, Wave Function, and Collapse</span>
+            </p>
+
+            <div class="content-body">
+                 <p>
+                    <span class="lang-content" lang="it">La meccanica quantistica si fonda sulla funzione d’onda $\Psi(x, t)$, che descrive lo stato di un sistema. La sua evoluzione nel tempo è governata dall'equazione di Schrödinger. Tuttavia, nella Teoria del Tempo di Oblivion, il tempo $t$ non è più una variabile continua, ma una sequenza discreta di istanti. Vediamo come questo cambia le fondamenta matematiche.</span>
+                    <span class="lang-content" lang="en">Quantum mechanics is based on the wave function $\Psi(x, t)$, which describes the state of a system. Its evolution in time is governed by the Schrödinger equation. However, in the Oblivion Time Theory, time $t$ is no longer a continuous variable, but a discrete sequence of instants. Let's see how this changes the mathematical foundations.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">1. La Funzione d'Onda come Sequenza di Stati</span><span class="lang-content" lang="en">1. The Wave Function as a Sequence of States</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Il primo passo è sostituire la variabile continua $t$ con la sua controparte discreta, $t_n = n \cdot \Theta$, dove $n$ è un intero che conta i "click" temporali. Di conseguenza, la funzione d'onda $\Psi(x, t)$ diventa una sequenza di "istantanee" dello stato quantistico:</span>
+                    <span class="lang-content" lang="en">The first step is to replace the continuous variable $t$ with its discrete counterpart, $t_n = n \cdot \Theta$, where $n$ is an integer counting the temporal "clicks." Consequently, the wave function $\Psi(x, t)$ becomes a sequence of "snapshots" of the quantum state:</span>
+                </p>
+                <div class="formula-box">$$ \Psi(x, t) \rightarrow \Psi_n(x) $$</div>
+                <p>
+                    <span class="lang-content" lang="it">$\Psi_n(x)$ rappresenta lo stato completo del sistema al "click" numero $n$. Tra $\Psi_n(x)$ e $\Psi_{n+1}(x)$ non esiste un'evoluzione fluida, ma solo un "salto" attraverso l'intervallo di non-esistenza ${\Theta}$.</span>
+                    <span class="lang-content" lang="en">$\Psi_n(x)$ represents the complete state of the system at "click" number $n$. Between $\Psi_n(x)$ and $\Psi_{n+1}(x)$, there is no smooth evolution, only a "jump" across the interval of non-existence ${\Theta}$.</span>
+                </p>
+
+                <h3><span class="lang-content" lang="it">2. L'Evoluzione Discreta: Dall'Equazione di Schrödinger all'Operatore Unitario</span><span class="lang-content" lang="en">2. Discrete Evolution: From the Schrödinger Equation to the Unitary Operator</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">L’equazione di Schrödinger descrive come cambia la funzione d'onda nel tempo:</span>
+                    <span class="lang-content" lang="en">The Schrödinger equation describes how the wave function changes over time:</span>
+                </p>
+                $$ i\hbar \frac{\partial\Psi(x,t)}{\partial t} = \hat{H}\Psi(x,t) $$
+                <p>
+                    <span class="lang-content" lang="it">In un tempo discreto, la derivata $\frac{\partial\Psi}{\partial t}$ può essere approssimata da una differenza finita: $\frac{\Psi_{n+1} - \Psi_n}{\Theta}$. Questo ci dà una "regola di aggiornamento" approssimata:</span>
+                    <span class="lang-content" lang="en">In discrete time, the derivative $\frac{\partial\Psi}{\partial t}$ can be approximated by a finite difference: $\frac{\Psi_{n+1} - \Psi_n}{\Theta}$. This gives us an approximate "update rule":</span>
+                </p>
+                $$ \Psi_{n+1}(x) \approx \Psi_n(x) - \frac{i\Theta}{\hbar}\hat{H}\Psi_n(x) $$
+                <p>
+                    <span class="lang-content" lang="it">Tuttavia, esiste un modo più rigoroso e potente per descrivere questo "salto" da uno stato al successivo. In meccanica quantistica, l'evoluzione temporale è governata da un Operatore di Evoluzione Unitaria, $U$. Per un singolo "click" di durata ${\Theta}$, questo operatore assume la forma:</span>
+                    <span class="lang-content" lang="en">However, there is a more rigorous and powerful way to describe this "jump" from one state to the next. In quantum mechanics, time evolution is governed by a Unitary Evolution Operator, $U$. For a single "click" of duration ${\Theta}$, this operator takes the form:</span>
+                </p>
+                <div class="formula-box">$$ U(\Theta) = e^{-\frac{i\hat{H}\Theta}{\hbar}} $$</div>
+                <p>
+                    <span class="lang-content" lang="it">L'evoluzione della funzione d'onda diventa quindi una regola di aggiornamento esatta e deterministica:</span>
+                    <span class="lang-content" lang="en">The evolution of the wave function thus becomes an exact and deterministic update rule:</span>
+                </p>
+                <div class="formula-box">$$ \Psi_{n+1}(x) = U(\Theta) \cdot \Psi_n(x) $$</div>
+                <p>
+                    <span class="lang-content" lang="it">Questa è la vera equazione del moto del mondo quantistico nel nostro modello. Dato lo stato al click $n$, possiamo calcolare deterministicamente lo stato al click $n+1$.</span>
+                    <span class="lang-content" lang="en">This is the true equation of motion for the quantum world in our model. Given the state at click $n$, we can deterministically calculate the state at click $n+1$.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">3. Collasso e Osservazione in un Mondo a Scatti</span><span class="lang-content" lang="en">3. Collapse and Observation in a Snapshot World</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Il "collasso della funzione d'onda" avviene quando un'osservazione forza la realtà a "scegliere" uno stato tra i tanti possibili. Nel nostro modello, questo avviene in un preciso istante $n_0$. La probabilità di trovare la particella nella posizione $x_0$ è data dalla regola di Born, ma applicata a una specifica "istantanea":</span>
+                    <span class="lang-content" lang="en">The "collapse of the wave function" occurs when an observation forces reality to "choose" one state among the many possible. In our model, this happens at a precise instant $n_0$. The probability of finding the particle at position $x_0$ is given by the Born rule, but applied to a specific "snapshot":</span>
+                </p>
+                <div class="formula-box">$$ P(x_0) = |\Psi_{n_0}(x_0)|^2 $$</div>
+                <p>
+                    <span class="lang-content" lang="it">L'osservazione non fa altro che "fissare" il contenuto del fotogramma $n_0$, terminando la libera evoluzione deterministica e ancorando la sequenza a un risultato specifico.</span>
+                    <span class="lang-content" lang="en">The observation does nothing more than "fix" the content of frame $n_0$, ending the free deterministic evolution and anchoring the sequence to a specific outcome.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">Conclusione</span><span class="lang-content" lang="en">Conclusion</span></h3>
+                <ul>
+                    <li><span class="lang-content" lang="it">La funzione d’onda $\Psi(x,t)$ viene riformulata come una sequenza di stati discreti $\Psi_n(x)$.</span><span class="lang-content" lang="en">The wave function $\Psi(x,t)$ is reformulated as a sequence of discrete states $\Psi_n(x)$.</span></li>
+                    <li><span class="lang-content" lang="it">L’evoluzione temporale è un'operazione deterministica da uno stato al successivo, governata dall'operatore unitario $U(\Theta)$.</span><span class="lang-content" lang="en">Time evolution is a deterministic operation from one state to the next, governed by the unitary operator $U(\Theta)$.</span></li>
+                    <li><span class="lang-content" lang="it">Il "salto quantico" è il passaggio tra $\Psi_n(x)$ e $\Psi_{n+1}(x)$, che avviene attraverso il vuoto di ${\Theta}$.</span><span class="lang-content" lang="en">The "quantum leap" is the transition between $\Psi_n(x)$ and $\Psi_{n+1}(x)$, which occurs across the void of ${\Theta}$.</span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

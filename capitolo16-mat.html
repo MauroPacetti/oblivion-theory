@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 16 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo16.html" class="nav-arrow left" title="Torna al Capitolo 16"><span>◀</span></a>
+        <a href="capitolo16-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 16"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 16</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 16</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">$S \to \text{Min}(\Delta n)$: Nuova Formulazione Lagrangiana</span>
+                <span class="lang-content" lang="en">$S \to \text{Min}(\Delta n)$: A New Lagrangian Formulation</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nel formalismo classico, l'azione $S$ è definita come l'integrale nel tempo della funzione lagrangiana $L=T-V$ (energia cinetica meno potenziale). La traiettoria effettiva è quella che minimizza $S$.</span>
+                    <span class="lang-content" lang="en">In the classical formalism, the action $S$ is defined as the time integral of the Lagrangian function $L=T-V$ (kinetic minus potential energy). The actual trajectory is the one that minimizes $S$.</span>
+                </p>
+                <div class="formula-box">$$ S = \int L \, dt $$</div>
+
+                <h3><span class="lang-content" lang="it">1. Sostituzione con tempo discreto</span><span class="lang-content" lang="en">1. Substitution with Discrete Time</span></h3>
+                <p><span class="lang-content" lang="it">Se assumiamo che il tempo sia discretizzato in $n$ istanti separati da ${\Theta}$, l'integrale viene sostituito da una somma:</span><span class="lang-content" lang="en">If we assume time is discretized into $n$ instants separated by ${\Theta}$, the integral is replaced by a summation:</span></p>
+                <div class="formula-box">$$ S \approx \sum_{n} L(n) \cdot \Theta $$</div>
+                <ul>
+                    <li><span class="lang-content" lang="it">$L(n)$ è la lagrangiana calcolata all'istante $n$.</span><span class="lang-content" lang="en">$L(n)$ is the Lagrangian calculated at instant $n$.</span></li>
+                    <li><span class="lang-content" lang="it">${\Theta}$ è il tempo di oblivion.</span><span class="lang-content" lang="en">${\Theta}$ is the oblivion time.</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">2. Principio di minima azione reinterpretato</span><span class="lang-content" lang="en">2. Principle of Least Action Reinterpreted</span></h3>
+                <p><span class="lang-content" lang="it">La nuova formulazione suggerisce che la natura non minimizza l’integrale dell’energia, ma il numero di istanti $n$ necessari a realizzare una traiettoria:</span><span class="lang-content" lang="en">The new formulation suggests that nature does not minimize the energy integral, but the number of instants $n$ required to realize a trajectory:</span></p>
+                <div class="formula-box">$$ S \to \text{Min}(\Delta n) $$</div>
+                <p><span class="lang-content" lang="it">dove $\Delta n$ è il numero totale di presenti istantanei necessari per completare un processo. L'azione diventa una funzione del numero di click temporali.</span><span class="lang-content" lang="en">where $\Delta n$ is the total number of instantaneous presents needed to complete a process. Action becomes a function of the number of temporal clicks.</span></p>
+
+                <h3><span class="lang-content" lang="it">3. Variazione Lagrangiana discreta</span><span class="lang-content" lang="en">3. Discrete Lagrangian Variation</span></h3>
+                <p><span class="lang-content" lang="it">Il principio di minima azione si traduce nell’imposizione di una variazione nulla della funzione discreta:</span><span class="lang-content" lang="en">The principle of least action translates into imposing a null variation of the discrete function:</span></p>
+                <div class="formula-box">$$ \delta S \approx \delta\left(\sum L(n) \cdot \Theta\right) = 0 $$</div>
+                <p><span class="lang-content" lang="it">Ciò implica che la sequenza di stati deve essere quella che richiede il minor numero possibile di click temporali, mantenendo coerenza con le leggi di conservazione.</span><span class="lang-content" lang="en">This implies that the sequence of states must be the one that requires the minimum possible number of temporal clicks, while maintaining consistency with conservation laws.</span></p>
+
+                <h3><span class="lang-content" lang="it">4. Confronto con il formalismo classico</span><span class="lang-content" lang="en">4. Comparison with the Classical Formalism</span></h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th><span class="lang-content" lang="it">Fisica Classica</span><span class="lang-content" lang="en">Classical Physics</span></th>
+                            <th><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">Oblivion Time Theory</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$ S = \int L \, dt $</td>
+                            <td>$ S \approx \sum L(n) \cdot \Theta $</td>
+                        </tr>
+                        <tr>
+                            <td><span class="lang-content" lang="it">Minimizzazione dell'energia</span><span class="lang-content" lang="en">Minimization of energy</span></td>
+                            <td><span class="lang-content" lang="it">Minimizzazione di $\Delta n$ (click)</span><span class="lang-content" lang="en">Minimization of $\Delta n$ (clicks)</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="lang-content" lang="it">Tempo continuo</span><span class="lang-content" lang="en">Continuous time</span></td>
+                            <td><span class="lang-content" lang="it">Tempo discreto</span><span class="lang-content" lang="en">Discrete time</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3><span class="lang-content" lang="it">5. Implicazioni sulla computazione fisica</span><span class="lang-content" lang="en">5. Implications for Physical Computation</span></h3>
+                <p><span class="lang-content" lang="it">Se ogni click ${\Theta}$ rappresenta un passo computazionale della realtà, la traiettoria ottimale è quella che minimizza il costo computazionale in termini di click necessari. Questa visione è compatibile con una lettura quantistico-informazionale della realtà.</span><span class="lang-content" lang="en">If each click ${\Theta}$ represents a computational step of reality, the optimal trajectory is the one that minimizes the computational cost in terms of necessary clicks. This view is compatible with a quantum-informational reading of reality.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

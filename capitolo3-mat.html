@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 3 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo3.html" class="nav-arrow left" title="Torna al Capitolo 3"><span>◀</span></a>
+        <a href="capitolo3-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 3"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 3</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 3</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Struttura discreta del tempo</span>
+                <span class="lang-content" lang="en">Discrete structure of time</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Il tempo come sequenza discreta</span><span class="lang-content" lang="en">1. Time as a discrete sequence</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Nel modello del Tempo di Oblivion, il tempo non è continuo ma composto da una sequenza di istanti ($t_n$) separati da un intervallo minimo indivisibile, ${\Theta}$. Ogni istante osservabile è numerato nella sequenza, dove vale:</span>
+                    <span class="lang-content" lang="en">In the Oblivion Time model, time is not continuous but composed of a sequence of instants ($t_n$) separated by a minimal indivisible interval, ${\Theta}$. Each observable instant is numbered in the sequence, where:</span>
+                </p>
+                <div class="formula-box">
+                    $t_{n+1} = t_n + \Theta$
+                </div>
+                <p>
+                    <span class="lang-content" lang="it">Questo significa che il tempo avanza a scatti discreti, come un orologio che fa tic-tac, non in modo continuo.</span>
+                    <span class="lang-content" lang="en">This means that time advances in discrete steps, like a ticking clock, not continuously.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">2. Confronto con il tempo continuo</span><span class="lang-content" lang="en">2. Comparison with continuous time</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Nella fisica classica, il tempo è un numero reale: $t \in \mathbb{R}$. Nel nostro modello discreto, il tempo può assumere solo valori multipli di ${\Theta}$:</span>
+                    <span class="lang-content" lang="en">In classical physics, time is a real number: $t \in \mathbb{R}$. In our discrete model, time can only take on values that are multiples of ${\Theta}$:</span>
+                </p>
+                <div class="formula-box">
+                    $t \in \{0, \Theta, 2\Theta, 3\Theta, ..., n\Theta\}$
+                </div>
+                
+                <h3><span class="lang-content" lang="it">3. Relazione con il tempo di Planck</span><span class="lang-content" lang="en">3. Relation to Planck time</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Il tempo di Planck ($t_P$) è considerato il più piccolo intervallo di tempo significativo:</span>
+                    <span class="lang-content" lang="en">The Planck time ($t_P$) is considered the smallest meaningful interval of time:</span>
+                </p>
+                 <div class="formula-box">
+                   $t_P = \sqrt{\frac{\hbar G}{c^5}} \approx 5.39 \times 10^{-44} \text{ s}$
+                </div>
+                <p>
+                    <span class="lang-content" lang="it">Nel nostro modello, assumiamo che per l’elettrone il Tempo di Oblivion coincida con il tempo di Planck:</span>
+                    <span class="lang-content" lang="en">In our model, we assume that for the electron, the Oblivion Time coincides with the Planck time:</span>
+                </p>
+                 <div class="formula-box">
+                   $\Theta_{elettrone} = t_P$
+                </div>
+                <p>
+                    <span class="lang-content" lang="it">Per altri oggetti, il valore di ${\Theta}$ può essere diverso.</span>
+                    <span class="lang-content" lang="en">For other objects, the value of ${\Theta}$ may be different.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">4. Universo come sistema digitale</span><span class="lang-content" lang="en">4. Universe as a digital system</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Possiamo rappresentare la realtà come un sistema digitale dove ogni "click" temporale è un presente istantaneo. La durata totale di un’esperienza osservabile ($T$) sarà quindi:</span>
+                    <span class="lang-content" lang="en">We can represent reality as a digital system where each temporal "click" is an instantaneous present. The total duration of an observable experience ($T$) will therefore be:</span>
+                </p>
+                <div class="formula-box">
+                    $T = N \times \Theta$
+                </div>
+                 <ul>
+                    <li><span class="lang-content" lang="it">$N$ è il numero di presenti istantanei campionati.</span><span class="lang-content" lang="en">$N$ is the number of sampled instantaneous presents.</span></li>
+                    <li><span class="lang-content" lang="it">${\Theta}$ è la durata dell’intervallo tra due presenti.</span><span class="lang-content" lang="en">${\Theta}$ is the duration of the interval between two presents.</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">5. Tempo e massa: dilatazione ritmica</span><span class="lang-content" lang="en">5. Time and mass: rhythmic dilation</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">In ambienti con massa maggiore o gravitazione intensa, il Tempo di Oblivion si allunga (aumenta ${\Theta}$), il che diminuisce la frequenza degli istanti. Questo spiega la dilatazione temporale gravitazionale in modo alternativo: non è il tempo a rallentare, ma è la frequenza di campionamento della realtà che cala.</span>
+                    <span class="lang-content" lang="en">In environments with greater mass or intense gravitation, the Oblivion Time lengthens (${\Theta}$ increases), which decreases the frequency of instants. This explains gravitational time dilation in an alternative way: it is not time that slows down, but the sampling frequency of reality that drops.</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

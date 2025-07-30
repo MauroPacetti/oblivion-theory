@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 18 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo18.html" class="nav-arrow left" title="Torna al Capitolo 18"><span>◀</span></a>
+        <a href="capitolo18-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 18"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 18</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 18</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Rete ${\Theta}$ tridimensionale e topologia discreta</span>
+                <span class="lang-content" lang="en">Three-Dimensional ${\Theta}$ Network and Discrete Topology</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Lo spazio-tempo come rete discreta</span><span class="lang-content" lang="en">1. Spacetime as a Discrete Network</span></h3>
+                <p><span class="lang-content" lang="it">Consideriamo lo spazio-tempo come una struttura reticolare di nodi separati da intervalli temporali ${\Theta}$ e spaziali $\Delta x$. L’universo può essere visto come una griglia 4D discreta di coordinate:</span><span class="lang-content" lang="en">We consider spacetime as a lattice structure of nodes separated by temporal intervals ${\Theta}$ and spatial intervals $\Delta x$. The universe can be seen as a discrete 4D grid of coordinates:</span></p>
+                <div class="formula-box">$$ (x, y, z, t) = (i \cdot \Delta x, j \cdot \Delta x, k \cdot \Delta x, n \cdot \Theta) $$</div>
+                <p><span class="lang-content" lang="it">dove $i, j, k, n \in \mathbb{N}$. Ogni evento accade in una cellula della rete.</span><span class="lang-content" lang="en">where $i, j, k, n \in \mathbb{N}$. Each event occurs in a cell of the network.</span></p>
+
+                <h3><span class="lang-content" lang="it">2. Topologia discreta e vicinato</span><span class="lang-content" lang="en">2. Discrete Topology and Neighborhood</span></h3>
+                <p><span class="lang-content" lang="it">Ogni nodo è connesso a un numero finito di nodi adiacenti, definendo un “vicinato” di primo ordine:</span><span class="lang-content" lang="en">Each node is connected to a finite number of adjacent nodes, defining a first-order "neighborhood":</span></p>
+                <div class="formula-box">$$ V(i, j, k, n) = \{ (i \pm 1, j, k, n), \dots, (i, j, k, n \pm 1) \} $$</div>
+                <p><span class="lang-content" lang="it">Questa definizione è la base per formulare il movimento e l’interazione nella rete ${\Theta}$.</span><span class="lang-content" lang="en">This definition is the basis for formulating movement and interaction on the ${\Theta}$ network.</span></p>
+
+                <h3><span class="lang-content" lang="it">3. Derivazione discreta</span><span class="lang-content" lang="en">3. Discrete Differentiation</span></h3>
+                <p><span class="lang-content" lang="it">Sia $\Phi(i, j, k, n)$ una funzione scalare sui nodi. La derivata discreta nel tempo è:</span><span class="lang-content" lang="en">Let $\Phi(i, j, k, n)$ be a scalar function on the nodes. The discrete time derivative is:</span></p>
+                <div class="formula-box">$$ \frac{\Delta\Phi}{\Delta t} = \frac{\Phi(i, j, k, n + 1) - \Phi(i, j, k, n)}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">E nello spazio (es. direzione x):</span><span class="lang-content" lang="en">And in space (e.g., x-direction):</span></p>
+                <div class="formula-box">$$ \frac{\Delta\Phi}{\Delta x} = \frac{\Phi(i + 1, j, k, n) - \Phi(i, j, k, n)}{\Delta x} $$</div>
+
+                <h3><span class="lang-content" lang="it">4. Propagazione dell’informazione</span><span class="lang-content" lang="en">4. Information Propagation</span></h3>
+                <p><span class="lang-content" lang="it">La velocità massima di propagazione di un segnale nella griglia è:</span><span class="lang-content" lang="en">The maximum propagation speed of a signal on the grid is:</span></p>
+                <div class="formula-box">$$ c = \frac{\Delta x}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">Ciò implica che un segnale può spostarsi al massimo di una cella spaziale per ogni click temporale.</span><span class="lang-content" lang="en">This implies that a signal can move at most one spatial cell per temporal click.</span></p>
+
+                <h3><span class="lang-content" lang="it">5. Curvatura discreta e massa</span><span class="lang-content" lang="en">5. Discrete Curvature and Mass</span></h3>
+                <p><span class="lang-content" lang="it">In prossimità di una massa $m$, il ritmo temporale si dilata. Indichiamo questa variazione come:</span><span class="lang-content" lang="en">Near a mass $m$, the temporal rhythm dilates. We denote this variation as:</span></p>
+                <div class="formula-box">$$ \Theta_m = \gamma(m) \cdot \Theta \quad (\text{con } \gamma(m) > 1) $$</div>
+                <p><span class="lang-content" lang="it">La griglia si deforma, il che equivale a una curvatura della metrica discreta.</span><span class="lang-content" lang="en">The grid deforms, which is equivalent to a curvature of the discrete metric.</span></p>
+                
+                <h3><span class="lang-content" lang="it">6. Distanza discreta</span><span class="lang-content" lang="en">6. Discrete Distance</span></h3>
+                <p><span class="lang-content" lang="it">La distanza tra due eventi nella griglia è data dal conteggio minimo dei click necessari. Una possibile metrica è:</span><span class="lang-content" lang="en">The distance between two events on the grid is given by the minimum count of clicks required. A possible metric is:</span></p>
+                <div class="formula-box">$$ D = \sqrt{ (\Delta i)^2 + (\Delta j)^2 + (\Delta k)^2 - \left(\Delta n \right)^2 } $$</div>
+
+                <h3><span class="lang-content" lang="it">7. Simulazione numerica</span><span class="lang-content" lang="en">7. Numerical Simulation</span></h3>
+                <p><span class="lang-content" lang="it">L’universo, descritto da questa struttura, può essere modellato numericamente con regole discrete, come leggi di evoluzione basate su operatori di differenza e interazioni per scambi tra nodi adiacenti.</span><span class="lang-content" lang="en">The universe, described by this structure, can be modeled numerically with discrete rules, such as evolution laws based on difference operators and interactions via exchanges between adjacent nodes.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

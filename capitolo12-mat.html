@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 12 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo12.html" class="nav-arrow left" title="Torna al Capitolo 12"><span>◀</span></a>
+        <a href="capitolo12-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 12"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 12</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 12</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Causalità e ordine in sequenze discrete</span>
+                <span class="lang-content" lang="en">Causality and Order in Discrete Sequences</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nel contesto del Tempo di Oblivion (${\Theta}$), la causalità non è più intesa come un flusso continuo ma come una relazione tra presenti istantanei ordinati. Ogni evento $E$ è un elemento della sequenza di click temporali $E_0, E_1, E_2, \dots, E_n$, dove $E_i$ rappresenta lo stato del sistema all'istante $t_i$.</span>
+                    <span class="lang-content" lang="en">In the context of Oblivion Time (${\Theta}$), causality is no longer understood as a continuous flow but as a relationship between ordered instantaneous presents. Each event $E$ is an element of the sequence of temporal clicks $E_0, E_1, E_2, \dots, E_n$, where $E_i$ represents the state of the system at instant $t_i$.</span>
+                </p>
+                <div class="formula-box">$$ t_{i+1} = t_i + \Theta $$</div>
+                
+                <h3><span class="lang-content" lang="it">1. Ordine causale tra eventi</span><span class="lang-content" lang="en">1. Causal Order Between Events</span></h3>
+                <p><span class="lang-content" lang="it">Un evento A può essere causa di un evento B solo se $t_A < t_B$ e la loro separazione è un multiplo intero positivo di ${\Theta}$:</span><span class="lang-content" lang="en">An event A can be the cause of an event B only if $t_A < t_B$ and their separation is a positive integer multiple of ${\Theta}$:</span></p>
+                <div class="formula-box">$$ t_B = t_A + n \cdot \Theta \quad \text{con} \quad n \in \mathbb{N}^+ $$</div>
+                <p><span class="lang-content" lang="it">Questa formulazione esclude la causalità retroattiva, in quanto ${\Theta > 0}$. In una sequenza discreta, il minimo intervallo causale è ${\Theta}$.</span><span class="lang-content" lang="en">This formulation excludes any possibility of retroactive causality, since ${\Theta > 0}$. In a discrete sequence, the minimum causal interval is ${\Theta}$.</span></p>
+
+                <h3><span class="lang-content" lang="it">2. ${\Delta n}$ come differenza di griglia tra osservatori</span><span class="lang-content" lang="en">2. ${\Delta n}$ as the Grid Difference Between Observers</span></h3>
+                <p><span class="lang-content" lang="it">Supponiamo due osservatori con griglie temporali diverse, ${\Theta_1}$ e ${\Theta_2}$. L’asincronia tra i due si misura come:</span><span class="lang-content" lang="en">Suppose two observers have different temporal grids, ${\Theta_1}$ and ${\Theta_2}$. The asynchrony between them is measured as:</span></p>
+                <div class="formula-box">$$ \Delta n = \frac{\Theta_2}{\Theta_1} \cdot n $$</div>
+                <p><span class="lang-content" lang="it">Se ${\Theta_2 > \Theta_1}$, l’osservatore 2 percepisce meno eventi nello stesso intervallo. La realtà gli appare “più lenta”.</span><span class="lang-content" lang="en">If ${\Theta_2 > \Theta_1}$, observer 2 perceives fewer events in the same interval. Reality appears "slower" to them.</span></p>
+                
+                <h3><span class="lang-content" lang="it">3. Funzione causale discreta</span><span class="lang-content" lang="en">3. Discrete Causal Function</span></h3>
+                <p><span class="lang-content" lang="it">Possiamo definire una funzione causale $C(t)$ su una griglia temporale:</span><span class="lang-content" lang="en">We can define a causal function $C(t)$ on a temporal grid:</span></p>
+                <div class="formula-box">$$ C(t) = \sum_i f(E_i) \cdot \delta(t - t_i) $$</div>
+                <ul>
+                    <li><span class="lang-content" lang="it">$f(E_i)$ è il contributo causale dell’evento i-esimo.</span><span class="lang-content" lang="en">$f(E_i)$ is the causal contribution of the i-th event.</span></li>
+                    <li><span class="lang-content" lang="it">$\delta(t - t_i)$ è la delta di Dirac discreta (1 se $t=t_i$, 0 altrimenti).</span><span class="lang-content" lang="en">$\delta(t - t_i)$ is the discrete Dirac delta (1 if $t=t_i$, 0 otherwise).</span></li>
+                </ul>
+                <p><span class="lang-content" lang="it">Questa funzione può essere interpretata come la densità causale della realtà.</span><span class="lang-content" lang="en">This function can be interpreted as the causal density of reality.</span></p>
+                
+                <h3><span class="lang-content" lang="it">4. Capacità Causale di un Sistema</span><span class="lang-content" lang="en">4. Causal Capacity of a System</span></h3>
+                <p><span class="lang-content" lang="it">Più denso è il reticolo temporale (${\Theta}$ più piccolo), maggiore è la capacità di definire eventi distinti. Definiamo la capacità causale $C_a$ come:</span><span class="lang-content" lang="en">The denser the temporal lattice (smaller ${\Theta}$), the greater the ability to define distinct events. We define the causal capacity $C_a$ as:</span></p>
+                <div class="formula-box">$$ C_a = \frac{1}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">Dove $C_a$ è il numero massimo di eventi causali distinti per secondo. Un fotone ha $C_a \to \infty$ (${\Theta \approx 0}$). Un oggetto in un buco nero ha $C_a \to 0$ (${\Theta \to \infty}$).</span><span class="lang-content" lang="en">Where $C_a$ is the maximum number of distinct causal events per second. A photon has $C_a \to \infty$ (${\Theta \approx 0}$). An object in a black hole has $C_a \to 0$ (${\Theta \to \infty}$).</span></p>
+                
+                <h3><span class="lang-content" lang="it">5. Riformulazione del principio causale</span><span class="lang-content" lang="en">5. Reformulation of the Causal Principle</span></h3>
+                <p><span class="lang-content" lang="it">Ogni effetto $E_{i+1}$ può dipendere solo da $E_i$ e dai click precedenti. La causalità è sequenziale, mai continua.</span><span class="lang-content" lang="en">Every effect $E_{i+1}$ can only depend on $E_i$ and the preceding clicks. Causality is sequential, never continuous.</span></p>
+                <div class="formula-box">$$ E_{i+1} = F(E_i, E_{i-1}, \dots, E_0) $$</div>
+                <p><span class="lang-content" lang="it">Questa formulazione discreta della causalità ci permette di risolvere violazioni logiche e di riconcettualizzare la freccia del tempo come un ordine naturale di click, senza ambiguità.</span><span class="lang-content" lang="en">This discrete formulation of causality allows us to resolve logical violations and reconceptualize the arrow of time as a natural order of clicks, without ambiguity.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

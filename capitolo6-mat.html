@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 6 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo6.html" class="nav-arrow left" title="Torna al Capitolo 6"><span>◀</span></a>
+        <a href="capitolo6-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 6"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 6</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 6</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Relazione tra massa, campo gravitazionale e variazione del Tempo di Oblivion (${\Delta\Theta}$)</span>
+                <span class="lang-content" lang="en">Relation between Mass, Gravitational Field, and the Variation of Oblivion Time (${\Delta\Theta}$)</span>
+            </p>
+
+            <div class="content-body">
+                <p>
+                    <span class="lang-content" lang="it">Nel contesto della teoria del Tempo di Oblivion, ipotizziamo che l’intervallo minimo tra due presenti istantanei (${\Theta}$) non sia una costante assoluta per ogni osservatore, ma sia influenzato dalla massa e dal campo gravitazionale locale. Questa variazione può essere rappresentata con:</span>
+                    <span class="lang-content" lang="en">In the context of the Oblivion Time theory, we hypothesize that the minimum interval between two instantaneous presents (${\Theta}$) is not an absolute constant for every observer, but is influenced by the local mass and gravitational field. This variation can be represented as:</span>
+                </p>
+                <div class="formula-box">$$ \Delta\Theta = k \cdot \frac{G \cdot M}{r \cdot c^2} $$</div>
+                <ul>
+                    <li><span class="lang-content" lang="it">${\Delta\Theta}$: variazione del tempo di oblivion rispetto a un riferimento in assenza di massa.</span><span class="lang-content" lang="en">${\Delta\Theta}$: variation of oblivion time with respect to a reference in the absence of mass.</span></li>
+                    <li><span class="lang-content" lang="it">$k$: costante di proporzionalità.</span><span class="lang-content" lang="en">$k$: proportionality constant.</span></li>
+                    <li><span class="lang-content" lang="it">$G$: costante gravitazionale universale.</span><span class="lang-content" lang="en">$G$: universal gravitational constant.</span></li>
+                    <li><span class="lang-content" lang="it">$M$: massa dell’oggetto che genera il campo.</span><span class="lang-content" lang="en">$M$: mass of the object generating the field.</span></li>
+                    <li><span class="lang-content" lang="it">$r$: distanza dal centro della massa.</span><span class="lang-content" lang="en">$r$: distance from the center of mass.</span></li>
+                    <li><span class="lang-content" lang="it">$c$: velocità della luce nel vuoto.</span><span class="lang-content" lang="en">$c$: speed of light in vacuum.</span></li>
+                </ul>
+                
+                <h3><span class="lang-content" lang="it">Tempo di Oblivion osservato (${\Theta_{obs}}$)</span><span class="lang-content" lang="en">Observed Oblivion Time (${\Theta_{obs}}$)</span></h3>
+                <p><span class="lang-content" lang="it">Il tempo di oblivion locale percepito da un osservatore si può quindi esprimere come:</span><span class="lang-content" lang="en">The local oblivion time perceived by an observer can thus be expressed as:</span></p>
+                <div class="formula-box">$$ \Theta_{obs} = \Theta_0 + \Delta\Theta $$</div>
+                <ul>
+                    <li><span class="lang-content" lang="it">${\Theta_0}$ è il tempo di oblivion nel vuoto (valore minimo teorico, es. tempo di Planck).</span><span class="lang-content" lang="en">${\Theta_0}$ is the oblivion time in a vacuum (theoretical minimum value, e.g., Planck time).</span></li>
+                    <li><span class="lang-content" lang="it">${\Delta\Theta}$ è la variazione dovuta alla presenza di massa o campo gravitazionale.</span><span class="lang-content" lang="en">${\Delta\Theta}$ is the variation due to the presence of mass or a gravitational field.</span></li>
+                </ul>
+
+                <h3><span class="lang-content" lang="it">Esempio numerico semplificato</span><span class="lang-content" lang="en">Simplified Numerical Example</span></h3>
+                <p><span class="lang-content" lang="it">Assumiamo i seguenti valori per un osservatore sulla Terra:</span><span class="lang-content" lang="en">Let's assume the following values for an observer on Earth:</span></p>
+                <ul>
+                    <li>${\Theta_0 \approx 5.39 \times 10^{-44}}$ s (tempo di Planck)</li>
+                    <li>$M = 5.97 \times 10^{24}$ kg (massa della Terra)</li>
+                    <li>$r = 6.37 \times 10^6$ m (raggio della Terra)</li>
+                    <li>$G \approx 6.674 \times 10^{-11}$ m³/kg·s²</li>
+                    <li>$c \approx 3.00 \times 10^8$ m/s</li>
+                </ul>
+                <p><span class="lang-content" lang="it">Calcolando la variazione (e scegliendo $k=1$ per semplicità):</span><span class="lang-content" lang="en">Calculating the variation (and choosing $k=1$ for simplicity):</span></p>
+                <div class="formula-box">$$ \Delta\Theta \approx 1 \cdot \frac{(6.674 \times 10^{-11}) \cdot (5.97 \times 10^{24})}{(6.37 \times 10^6) \cdot (3.00 \times 10^8)^2} \approx 6.96 \times 10^{-10} \, \text{s} $$</div>
+                <p><span class="lang-content" lang="it">Pertanto, il tempo di oblivion osservato è dominato dalla variazione gravitazionale:</span><span class="lang-content" lang="en">Therefore, the observed oblivion time is dominated by the gravitational variation:</span></p>
+                <div class="formula-box">$$ \Theta_{obs} \approx 5.39 \times 10^{-44} + 6.96 \times 10^{-10} \approx 6.96 \times 10^{-10} \, \text{s} $$</div>
+                <p><span class="lang-content" lang="it">Questo dimostra che, per un osservatore in prossimità della Terra, il tempo di oblivion è ancora estremamente breve, ma ordini di grandezza più lungo di quello sperimentato nel vuoto assoluto.</span><span class="lang-content" lang="en">This shows that for an observer near Earth, the oblivion time is still extremely short, but orders of magnitude longer than that experienced in an absolute vacuum.</span></p>
+
+                <h3><span class="lang-content" lang="it">Conclusione</span><span class="lang-content" lang="en">Conclusion</span></h3>
+                <p><span class="lang-content" lang="it">Il tempo di oblivion ${\Theta}$ si dilata in prossimità di masse elevate o campi gravitazionali intensi. Questa dilatazione è misurabile attraverso una formula analoga alla relatività generale, ma rivisitata in chiave quantizzata. Ogni massa influenza la frequenza con cui si alternano i presenti istantanei osservabili, modulando il ritmo fondamentale della realtà.</span><span class="lang-content" lang="en">The oblivion time ${\Theta}$ dilates in the vicinity of large masses or intense gravitational fields. This dilation is measurable through a formula analogous to general relativity, but revisited in a quantized key. Each mass influences the frequency at which observable instantaneous presents alternate, thereby modulating the fundamental rhythm of reality.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

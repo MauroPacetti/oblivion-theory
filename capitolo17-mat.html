@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 17 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo17.html" class="nav-arrow left" title="Torna al Capitolo 17"><span>◀</span></a>
+        <a href="capitolo17-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 17"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 17</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 17</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Schrödinger riformulato su $n\Theta$</span>
+                <span class="lang-content" lang="en">Schrödinger Reformulated on $n\Theta$</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Premessa</span><span class="lang-content" lang="en">1. Premise</span></h3>
+                <p><span class="lang-content" lang="it">La formulazione classica dell'equazione di Schrödinger prevede una variabile temporale continua $t$. Ma nella teoria del Tempo di Oblivion, il tempo è discreto, scandito da click di durata ${\Theta}$. L'evoluzione di una funzione d’onda non è più un flusso continuo, ma una successione di stati quantistici discreti, numerati da un indice intero $n$, tale che:</span><span class="lang-content" lang="en">The classical formulation of the Schrödinger equation assumes a continuous time variable $t$. But in the Oblivion Time theory, time is discrete, paced by clicks of duration ${\Theta}$. The evolution of a wave function is no longer a continuous flow, but a succession of discrete quantum states, numbered by an integer index $n$, such that:</span></p>
+                <div class="formula-box">$$ t = n \cdot \Theta $$</div>
+                
+                <h3><span class="lang-content" lang="it">2. Equazione di Schrödinger (forma continua)</span><span class="lang-content" lang="en">2. Schrödinger Equation (Continuous Form)</span></h3>
+                <p><span class="lang-content" lang="it">La forma classica (una dimensione spaziale) è:</span><span class="lang-content" lang="en">The classical form (one spatial dimension) is:</span></p>
+                <div class="formula-box">$$ i\hbar \frac{\partial\psi(x, t)}{\partial t} = \hat{H} \psi(x, t) $$</div>
+                <p><span class="lang-content" lang="it">dove $\hbar$ è la costante di Planck ridotta e $\hat{H}$ è l’operatore Hamiltoniano.</span><span class="lang-content" lang="en">where $\hbar$ is the reduced Planck constant and $\hat{H}$ is the Hamiltonian operator.</span></p>
+
+                <h3><span class="lang-content" lang="it">3. Riformulazione discreta</span><span class="lang-content" lang="en">3. Discrete Reformulation</span></h3>
+                <p><span class="lang-content" lang="it">Sostituendo il tempo continuo con $n \cdot \Theta$, la derivata temporale diventa una differenza finita:</span><span class="lang-content" lang="en">Replacing continuous time with $n \cdot \Theta$, the time derivative becomes a finite difference:</span></p>
+                <div class="formula-box">$$ \frac{\partial\psi(x, t)}{\partial t} \approx \frac{\psi(x, n+1) - \psi(x, n)}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">L'equazione di Schrödinger discreta diventa quindi una regola di aggiornamento per lo stato successivo $\psi(x, n+1)$:</span><span class="lang-content" lang="en">The discrete Schrödinger equation thus becomes an update rule for the next state $\psi(x, n+1)$:</span></p>
+                <div class="formula-box">$$ \psi(x, n+1) \approx \psi(x, n) - \frac{i\Theta}{\hbar} \hat{H} \psi(x, n) $$</div>
+                
+                <h3><span class="lang-content" lang="it">4. Evoluzione iterativa</span><span class="lang-content" lang="en">4. Iterative Evolution</span></h3>
+                <p><span class="lang-content" lang="it">L'evoluzione può essere descritta in modo ricorsivo tramite un operatore di evoluzione temporale $U(\Theta)$:</span><span class="lang-content" lang="en">The evolution can be described recursively using a time evolution operator $U(\Theta)$:</span></p>
+                <div class="formula-box">$$ \psi(x, n+1) = U(\Theta) \cdot \psi(x, n) $$</div>
+                <p><span class="lang-content" lang="it">dove l'operatore, nella sua forma più rigorosa e unitaria, è:</span><span class="lang-content" lang="en">where the operator, in its most rigorous and unitary form, is:</span></p>
+                <div class="formula-box">$$ U(\Theta) = \exp\left(-\frac{i\hat{H}\Theta}{\hbar}\right) $$</div>
+                <p><span class="lang-content" lang="it">Questa versione esponenziale descrive un’evoluzione unitaria tra istanti discreti.</span><span class="lang-content" lang="en">This exponential version describes a unitary evolution between discrete instants.</span></p>
+
+                <h3><span class="lang-content" lang="it">5. Caso semplice: particella libera</span><span class="lang-content" lang="en">5. Simple Case: Free Particle</span></h3>
+                <p><span class="lang-content" lang="it">Per una particella libera, con $\hat{H} = - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}$, l'equazione di aggiornamento diventa:</span><span class="lang-content" lang="en">For a free particle, with $\hat{H} = - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}$, the update equation becomes:</span></p>
+                <div class="formula-box">$$ \psi(x, n+1) \approx \psi(x, n) + \frac{i\hbar\Theta}{2m} \frac{\partial^2\psi(x, n)}{\partial x^2} $$</div>
+
+                <h3><span class="lang-content" lang="it">Conclusione</span><span class="lang-content" lang="en">6. Conclusion</span></h3>
+                <ul>
+                    <li><span class="lang-content" lang="it">La meccanica quantistica può essere espressa in termini discreti.</span><span class="lang-content" lang="en">Quantum mechanics can be expressed in discrete terms.</span></li>
+                    <li><span class="lang-content" lang="it">L’evoluzione del sistema è ritmica, non continua.</span><span class="lang-content" lang="en">The evolution of the system is rhythmic, not continuous.</span></li>
+                    <li><span class="lang-content" lang="it">La funzione d’onda è una successione di stati determinati, collegati da trasformazioni unitarie.</span><span class="lang-content" lang="en">The wave function is a sequence of determined states, connected by unitary transformations.</span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

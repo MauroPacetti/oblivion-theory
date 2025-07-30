@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 15 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.1">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo15.html" class="nav-arrow left" title="Torna al Capitolo 15"><span>◀</span></a>
+        <a href="capitolo15-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 15"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 15</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 15</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Maxwell, Newton, moto armonico e tempo discreto</span>
+                <span class="lang-content" lang="en">Maxwell, Newton, Harmonic Motion, and Discrete Time</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Newton e il tempo discreto</span><span class="lang-content" lang="en">1. Newton and Discrete Time</span></h3>
+                <p><span class="lang-content" lang="it">La seconda legge di Newton $F=ma$ descrive l'accelerazione in tempo continuo. Nel tempo discreto, l’accelerazione è una differenza finita:</span><span class="lang-content" lang="en">Newton's second law $F=ma$ describes acceleration in continuous time. In discrete time, acceleration is a finite difference:</span></p>
+                <div class="formula-box">$$ a_n = \frac{\Delta v}{\Theta} = \frac{v_n - v_{n-1}}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">Quindi, la legge di Newton diventa una relazione tra salti discreti:</span><span class="lang-content" lang="en">Therefore, Newton's law becomes a relation between discrete jumps:</span></p>
+                <div class="formula-box">$$ F_n = m \cdot \frac{v_n - v_{n-1}}{\Theta} \quad \text{o} \quad F_n = m \cdot \frac{x_n - 2x_{n-1} + x_{n-2}}{\Theta^2} $$</div>
+
+                <h3><span class="lang-content" lang="it">2. Moto armonico in tempo discreto</span><span class="lang-content" lang="en">2. Harmonic Motion in Discrete Time</span></h3>
+                <p><span class="lang-content" lang="it">L'equazione continua $x(t) = A \cos(\omega t + \phi)$ viene discretizzata sostituendo $t$ con $n \cdot \Theta$:</span><span class="lang-content" lang="en">The continuous equation $x(t) = A \cos(\omega t + \phi)$ is discretized by replacing $t$ with $n \cdot \Theta$:</span></p>
+                <div class="formula-box">$$ x_n = A \cos(\omega n \Theta + \phi) $$</div>
+                <p><span class="lang-content" lang="it">La forza, legata all'accelerazione, diventa un'equazione ricorsiva che genera il moto punto per punto.</span><span class="lang-content" lang="en">The force, linked to acceleration, thus becomes a recursive equation that generates the motion point by point.</span></p>
+                
+                <h3><span class="lang-content" lang="it">3. Equazioni di Maxwell e tempo discreto</span><span class="lang-content" lang="en">3. Maxwell's Equations and Discrete Time</span></h3>
+                <p><span class="lang-content" lang="it">Le derivate temporali nelle equazioni di Maxwell vengono sostituite da differenze finite. Ad esempio, la legge di Ampère-Maxwell:</span><span class="lang-content" lang="en">The time derivatives in Maxwell's equations are replaced by finite differences. For example, the Ampère-Maxwell law:</span></p>
+                <div class="formula-box">$$ \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t} $$</div>
+                <p><span class="lang-content" lang="it">diventa:</span><span class="lang-content" lang="en">becomes:</span></p>
+                <div class="formula-box">$$ \nabla \times \mathbf{B}_n = \mu_0 \mathbf{J}_n + \mu_0 \epsilon_0 \frac{\mathbf{E}_{n+1} - \mathbf{E}_n}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">Analogamente per la legge di Faraday. L'evoluzione dei campi avviene in salti quantizzati nel tempo.</span><span class="lang-content" lang="en">Similarly for Faraday's law. The evolution of the fields occurs in quantized time jumps.</span></p>
+
+                <h3><span class="lang-content" lang="it">4. Onde in tempo discreto</span><span class="lang-content" lang="en">4. Waves in Discrete Time</span></h3>
+                <p><span class="lang-content" lang="it">L’equazione classica dell’onda $v = \lambda \cdot f$ viene reinterpretata. Poiché la frequenza è l'inverso del periodo (${\Theta}$ nel nostro caso), si ottiene:</span><span class="lang-content" lang="en">The classic wave equation $v = \lambda \cdot f$ is reinterpreted. Since frequency is the inverse of the period (${\Theta}$ in our case), we get:</span></p>
+                <div class="formula-box">$$ v = \frac{\lambda}{\Theta} $$</div>
+                <p><span class="lang-content" lang="it">Per la luce ($v=c$), questo rafforza l’interpretazione di $c$ come rapporto tra il "salto" spaziale minimo e quello temporale minimo nella griglia ${\Theta}$.</span><span class="lang-content" lang="en">For light ($v=c$), this reinforces the interpretation of $c$ as the ratio of the minimum spatial "jump" to the minimum temporal one in the ${\Theta}$ grid.</span></p>
+
+                <h3><span class="lang-content" lang="it">5. Riformulazione generale</span><span class="lang-content" lang="en">5. General Reformulation</span></h3>
+                <p><span class="lang-content" lang="it">In sintesi, le leggi classiche possono essere tradotte nel linguaggio discreto mediante le seguenti sostituzioni:</span><span class="lang-content" lang="en">In summary, classical laws can be translated into the discrete language through the following substitutions:</span></p>
+                <ul>
+                    <li><span class="lang-content" lang="it">Derivate: $\frac{d}{dt} \to \frac{\Delta}{\Theta}$</span><span class="lang-content" lang="en">Derivatives: $\frac{d}{dt} \to \frac{\Delta}{\Theta}$</span></li>
+                    <li><span class="lang-content" lang="it">Tempo continuo: $t \to$ sequenza di presenti $n \cdot \Theta$</span><span class="lang-content" lang="en">Continuous time: $t \to$ sequence of presents $n \cdot \Theta$</span></li>
+                    <li><span class="lang-content" lang="it">Equazioni differenziali $\to$ equazioni ricorsive (o alle differenze).</span><span class="lang-content" lang="en">Differential equations $\to$ recursive (or difference) equations.</span></li>
+                </ul>
+                <p><span class="lang-content" lang="it">Questo porta a una reinterpretazione unificata della fisica classica, dove i fenomeni emergono da una griglia temporale fondamentale scandita da ${\Theta}$.</span><span class="lang-content" lang="en">This leads to a unified reinterpretation of classical physics, where phenomena emerge from a fundamental temporal grid paced by ${\Theta}$.</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p><span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span> <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>

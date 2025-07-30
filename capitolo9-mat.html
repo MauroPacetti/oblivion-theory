@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendice Matematica 9 - Teoria del Tempo di Oblivion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/stile.css?v=1.6">
+
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="lang-it">
+
+    <div class="side-navigation">
+        <a href="capitolo9.html" class="nav-arrow left" title="Torna al Capitolo 9"><span>◀</span></a>
+        <a href="capitolo9-philo.html" class="nav-arrow right" title="Successivo: Appendice Filosofica 9"><span>▶</span></a>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html"><span class="lang-content" lang="it">Teoria del Tempo di Oblivion</span><span class="lang-content" lang="en">The Oblivion Time Theory</span></a></div>
+            <nav class="main-nav">
+                <a href="saggio.html" class="active"><span class="lang-content" lang="it">Manifesto</span><span class="lang-content" lang="en">Manifesto</span></a>
+                <a href="autore.html"><span class="lang-content" lang="it">Autore</span><span class="lang-content" lang="en">Author</span></a>
+                <a href="recensioni.html">Recensioni AI</a>
+                <a href="index.html#approfondimenti"><span class="lang-content" lang="it">Approfondimenti</span><span class="lang-content" lang="en">Insights</span></a>
+            </nav>
+            <div class="language-switcher">
+                <button id="lang-it-btn" onclick="setLanguage('it')">IT</button>
+                <button id="lang-en-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-panel">
+            
+            <h1 class="panel-title">
+                <span class="lang-content" lang="it">Appendice Matematica 9</span>
+                <span class="lang-content" lang="en">Mathematical Appendix 9</span>
+            </h1>
+            
+            <p class="panel-subtitle">
+                <span class="lang-content" lang="it">Il Paradosso dei Gemelli: Una Questione di Contabilità Ritmica</span>
+                <span class="lang-content" lang="en">The Twin Paradox: A Matter of Rhythmic Accounting</span>
+            </p>
+
+            <div class="content-body">
+                <h3><span class="lang-content" lang="it">1. Definizione dell'Invecchiamento</span><span class="lang-content" lang="en">1. Defining Aging</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">L'invecchiamento non è il "passare del tempo", ma il compimento di un numero fisso di processi biologici, $N_{anno}$. Ogni processo ("click") avviene al ritmo del $\Theta$ locale del corpo. La durata di un anno biologico ($T_{anno}$) misurata da un orologio esterno dipende quindi da $\Theta$.</span>
+                    <span class="lang-content" lang="en">Aging is not the "passing of time," but the completion of a fixed number of biological processes, $N_{year}$. Each process ("click") occurs at the rhythm of the body's local $\Theta$. The duration of a biological year ($T_{year}$), as measured by an external clock, therefore depends on $\Theta$.</span>
+                </p>
+                <div class="formula-box">$$ T_{anno} = N_{anno} \cdot \Theta $$</div>
+
+                <h3><span class="lang-content" lang="it">2. I Due Ritmi dei Gemelli</span><span class="lang-content" lang="en">2. The Two Rhythms of the Twins</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Il gemello sulla Terra ha un ritmo a riposo, $\Theta_{Terra}$. Il gemello viaggiatore, a causa dell'alta velocità $v$, ha un ritmo interno accelerato (un $\Theta$ più corto), dettato dal fattore di Lorentz $\gamma$.</span>
+                    <span class="lang-content" lang="en">The twin on Earth has a rhythm at rest, $\Theta_{Earth}$. The traveling twin, due to high velocity $v$, has an accelerated internal rhythm (a shorter $\Theta$), dictated by the Lorentz factor $\gamma$.</span>
+                </p>
+                <div class="formula-box">$$ \Theta_{viaggiatore} = \frac{\Theta_{Terra}}{\gamma} \quad \text{dove} \quad \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} $$</div>
+                <p>
+                    <span class="lang-content" lang="it">Poiché $\gamma > 1$ per $v > 0$, è matematicamente certo che $\Theta_{viaggiatore} < \Theta_{Terra}$. Il viaggiatore ha un ritmo interno **più veloce**.</span>
+                    <span class="lang-content" lang="en">Since $\gamma > 1$ for $v > 0$, it is mathematically certain that $\Theta_{traveler} < \Theta_{Earth}$. The traveler has a **faster** internal rhythm.</span>
+                </p>
+                
+                <h3><span class="lang-content" lang="it">3. Calcolo della Durata dell'Invecchiamento</span><span class="lang-content" lang="en">3. Calculation of Aging Duration</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">Calcoliamo quanto tempo terrestre ($T$) ci vuole perché entrambi i gemelli completino lo stesso numero di "click" biologici ($N_{anno}$).</span>
+                    <span class="lang-content" lang="en">Let's calculate how much Earth time ($T$) it takes for both twins to complete the same number of biological "clicks" ($N_{year}$).</span>
+                </p>
+                <ul>
+                    <li><span class="lang-content" lang="it"><strong>Tempo per il gemello a Terra:</strong> $T_{Terra} = N_{anno} \cdot \Theta_{Terra}$</span><span class="lang-content" lang="en"><strong>Time for the Earth twin:</strong> $T_{Earth} = N_{year} \cdot \Theta_{Earth}$</span></li>
+                    <li><span class="lang-content" lang="it"><strong>Tempo per il gemello viaggiatore:</strong> $T_{viaggiatore} = N_{anno} \cdot \Theta_{viaggiatore}$</span><span class="lang-content" lang="en"><strong>Time for the traveling twin:</strong> $T_{traveler} = N_{year} \cdot \Theta_{traveler}$</span></li>
+                </ul>
+                <p>
+                    <span class="lang-content" lang="it">Sostituendo la seconda equazione nella terza, otteniamo:</span>
+                    <span class="lang-content" lang="en">Substituting the second equation into the third, we get:</span>
+                </p>
+                <div class="formula-box">$$ T_{viaggiatore} = N_{anno} \cdot \left( \frac{\Theta_{Terra}}{\gamma} \right) = \frac{N_{anno} \cdot \Theta_{Terra}}{\gamma} $$</div>
+                <p>
+                    <span class="lang-content" lang="it">Poiché $N_{anno} \cdot \Theta_{Terra}$ è uguale a $T_{Terra}$, otteniamo la relazione finale:</span>
+                    <span class="lang-content" lang="en">Since $N_{year} \cdot \Theta_{Earth}$ is equal to $T_{Earth}$, we get the final relation:</span>
+                </p>
+                <div class="formula-box final-result">$$ T_{viaggiatore} = \frac{T_{Terra}}{\gamma} $$</div>
+
+                <h3><span class="lang-content" lang="it">4. Conclusione: Il Paradosso è Risolto</span><span class="lang-content" lang="en">4. Conclusion: The Paradox is Resolved</span></h3>
+                <p>
+                    <span class="lang-content" lang="it">La matematica mostra che per completare lo stesso numero di processi biologici, il gemello viaggiatore impiega una frazione del tempo terrestre. Se il viaggio dura $T_{Terra}$ anni per chi è a casa, il gemello viaggiatore sarà invecchiato solo di $T_{Terra}/\gamma$ anni. Non c'è paradosso, solo un'aritmetica rigorosa: l'energia cinetica accelera il ritmo fondamentale di un sistema, "bruciando" i processi interni più in fretta se misurati da un orologio esterno più lento.</span>
+                    <span class="lang-content" lang="en">The mathematics shows that to complete the same number of biological processes, the traveling twin takes a fraction of the Earth time. If the journey lasts $T_{Earth}$ years for the one at home, the traveling twin will have aged only by $T_{Earth}/\gamma$ years. There is no paradox, only rigorous arithmetic: kinetic energy accelerates a system's fundamental rhythm, "burning through" internal processes more quickly when measured by a slower external clock.</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Mauro Pacetti. <span class="lang-content" lang="it">Tutti i diritti riservati.</span><span class="lang-content" lang="en">All rights reserved.</span></p>
+            <p>
+                <span class="lang-content" lang="it">Contatti:</span><span class="lang-content" lang="en">Contact:</span>
+                <a href="mailto:info@obliviontheory.org" class="contact-link">info@obliviontheory.org</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        function setLanguage(lang) {
+            if (!['it', 'en'].includes(lang)) lang = 'it';
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang;
+            
+            const itBtn = document.getElementById('lang-it-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (itBtn && enBtn) {
+                itBtn.classList.toggle('active', lang === 'it');
+                enBtn.classList.toggle('active', lang === 'en');
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'it';
+            setLanguage(savedLang);
+        });
+    </script>
+
+</body>
+</html>
